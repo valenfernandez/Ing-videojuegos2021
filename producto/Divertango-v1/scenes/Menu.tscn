@@ -1,0 +1,49 @@
+[gd_scene format=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 0.377
+margin_left = 475.145
+margin_top = 66.3241
+margin_right = 623.145
+margin_bottom = 116.324
+rect_min_size = Vector2( 50, 50 )
+rect_pivot_offset = Vector2( -45.1655, 256.301 )
+size_flags_stretch_ratio = 0.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "MENU"
+percent_visible = -0.25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="."]
+margin_left = 837.315
+margin_top = 509.863
+margin_right = 991.315
+margin_bottom = 590.863
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 842.578
+margin_top = 511.265
+margin_right = 898.578
+margin_bottom = 525.265
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "volumen"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 366.299
+margin_top = 216.633
+margin_right = 606.299
+margin_bottom = 273.633
+text = "COMENZAR"
+__meta__ = {
+"_edit_use_anchors_": false
+}

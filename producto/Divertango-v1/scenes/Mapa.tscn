@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/img/teatro-desbloq.png" type="Texture" id=1]
+[ext_resource path="res://assets/img/teatro.png" type="Texture" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="boton-teatro1" type="TextureButton" parent="."]
+margin_left = 139.564
+margin_top = 289.091
+margin_right = 364.564
+margin_bottom = 514.091
+texture_normal = ExtResource( 1 )
+texture_disabled = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="boton-teatro2" type="TextureButton" parent="."]
+margin_left = 738.248
+margin_top = 53.8937
+margin_right = 963.248
+margin_bottom = 278.894
+disabled = true
+texture_normal = ExtResource( 1 )
+texture_disabled = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="boton-teatro3" type="TextureButton" parent="."]
+margin_left = 381.888
+margin_top = 151.893
+margin_right = 606.888
+margin_bottom = 376.893
+disabled = true
+texture_normal = ExtResource( 1 )
+texture_disabled = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

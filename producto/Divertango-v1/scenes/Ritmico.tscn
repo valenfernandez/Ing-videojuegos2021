@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/img/carriles.png" type="Texture" id=1]
+[ext_resource path="res://assets/img/cuadrado.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/circulo.png" type="Texture" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="bandoneon" type="Sprite" parent="."]
+position = Vector2( 937.335, 440 )
+scale = Vector2( 0.141107, 0.277184 )
+texture = ExtResource( 2 )
+
+[node name="linea" type="Sprite" parent="."]
+position = Vector2( 233.851, 204.519 )
+scale = Vector2( 0.0152728, 0.492273 )
+texture = ExtResource( 2 )
+
+[node name="carriles" type="Sprite" parent="."]
+position = Vector2( 958.476, 314.657 )
+scale = Vector2( 0.849283, 0.849283 )
+texture = ExtResource( 1 )
+offset = Vector2( -449.285, -167.735 )
+
+[node name="blanca" type="TextureButton" parent="."]
+margin_left = 518.769
+margin_top = 444.326
+margin_right = 628.769
+margin_bottom = 554.326
+texture_normal = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="negra" type="TextureButton" parent="."]
+margin_left = 171.701
+margin_top = 443.995
+margin_right = 281.701
+margin_bottom = 553.995
+texture_normal = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="semicorchea" type="TextureButton" parent="."]
+margin_left = 689.954
+margin_top = 440.652
+margin_right = 799.954
+margin_bottom = 550.652
+texture_normal = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="corchea" type="TextureButton" parent="."]
+margin_left = 343.57
+margin_top = 445.986
+margin_right = 453.57
+margin_bottom = 555.986
+texture_normal = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

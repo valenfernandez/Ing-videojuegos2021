@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/img/walk-person-png.webp" type="Texture" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="musico1" type="TextureButton" parent="."]
+margin_left = 170.136
+margin_top = 137.544
+margin_right = 301.136
+margin_bottom = 415.544
+texture_normal = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="musico2" type="TextureButton" parent="."]
+margin_left = 427.45
+margin_top = 184.634
+margin_right = 558.45
+margin_bottom = 462.634
+texture_normal = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="musico3" type="TextureButton" parent="."]
+margin_left = 757.081
+margin_top = 147.635
+margin_right = 888.081
+margin_bottom = 425.635
+texture_normal = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 380.085
+margin_top = 36.9994
+margin_right = 684.085
+margin_bottom = 90.9994
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Elige un musico para tocar una pieza"
+__meta__ = {
+"_edit_use_anchors_": false
+}
