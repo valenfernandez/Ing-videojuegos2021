@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/circulo.png-efefd7299b4e43a2618b0cff3f2b08a8.stex"
+path="res://.import/negra.png-2a19fb38041f37347560c20c5ee5a73f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/circulo.png"
-dest_files=[ "res://.import/circulo.png-efefd7299b4e43a2618b0cff3f2b08a8.stex" ]
+source_file="res://assets/img/negra.png"
+dest_files=[ "res://.import/negra.png-2a19fb38041f37347560c20c5ee5a73f.stex" ]
 
 [params]
 
