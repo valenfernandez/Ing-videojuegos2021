@@ -2,7 +2,7 @@ extends Area2D
 
 
 # Declare member variables here. Examples:
-const TARGET_X = 234
+const TARGET_X = 230
 const SPAWN_X = 920
 const DIST_TO_TARGET = SPAWN_X - TARGET_X
 
@@ -26,7 +26,7 @@ func _ready():
 #	pass
 func _physics_process(delta):
 	if !hit:
-		position.x += speed * delta
+		position.x -= speed * delta
 		if position.x < 200:
 			queue_free()
 			get_parent().reset_combo()
