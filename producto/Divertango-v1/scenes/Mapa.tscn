@@ -17,10 +17,10 @@ __meta__ = {
 }
 
 [node name="boton-teatro2" type="TextureButton" parent="."]
-margin_left = 738.248
-margin_top = 53.8937
-margin_right = 963.248
-margin_bottom = 278.894
+margin_left = 741.811
+margin_top = 52.1119
+margin_right = 966.811
+margin_bottom = 277.112
 disabled = true
 texture_normal = ExtResource( 1 )
 texture_disabled = ExtResource( 2 )
@@ -29,10 +29,10 @@ __meta__ = {
 }
 
 [node name="boton-teatro3" type="TextureButton" parent="."]
-margin_left = 381.888
-margin_top = 151.893
-margin_right = 606.888
-margin_bottom = 376.893
+margin_left = 382.0
+margin_top = 152.0
+margin_right = 607.0
+margin_bottom = 379.0
 disabled = true
 texture_normal = ExtResource( 1 )
 texture_disabled = ExtResource( 2 )

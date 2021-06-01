@@ -59,15 +59,19 @@ func destroy(score):
 	$AnimatedSprite.visible = false
 	$Timer.start()
 	hit = true  
-	if score == 3: # ver si vamos a hacer el score asi.
-		$Node2D/Label.text = "GREAT"
+	if score == 3: 
+		$Node2D/Label.text = "PERFECTO"
 		$Node2D/Label.modulate = Color("f6d6bd")
 	elif score == 2:
-		$Node2D/Label.text = "GOOD"
+		$Node2D/Label.text = "BIEN"
 		$Node2D/Label.modulate = Color("c3a38a")
 	elif score == 1:
 		$Node2D/Label.text = "OKAY"
 		$Node2D/Label.modulate = Color("997577")
+	else:
+		$Node2D/Label.text = "NOTA PERDIDA"
+		$Node2D/Label.modulate = Color("997577") #CAMBIAR
+	
 
 
 func _on_Timer_timeout():

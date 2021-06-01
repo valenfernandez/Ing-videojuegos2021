@@ -16,10 +16,10 @@ __meta__ = {
 }
 
 [node name="musico2" type="TextureButton" parent="."]
-margin_left = 427.45
-margin_top = 184.634
-margin_right = 558.45
-margin_bottom = 462.634
+margin_left = 477.904
+margin_top = 172.861
+margin_right = 608.904
+margin_bottom = 450.861
 texture_normal = ExtResource( 1 )
 expand = true
 __meta__ = {
@@ -27,10 +27,10 @@ __meta__ = {
 }
 
 [node name="musico3" type="TextureButton" parent="."]
-margin_left = 757.081
-margin_top = 147.635
-margin_right = 888.081
-margin_bottom = 425.635
+margin_left = 758.763
+margin_top = 144.271
+margin_right = 889.763
+margin_bottom = 422.271
 texture_normal = ExtResource( 1 )
 expand = true
 __meta__ = {

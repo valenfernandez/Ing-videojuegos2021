@@ -1,10 +1,13 @@
 extends Node2D
 
 
-var score = 0
-var combo = 0
+var perfect_area = false
+var good_area = false
+var okay_area = false
+var current_note =null
 
-var max_combo = 0
+var score = 0
+
 var great = 0
 var good = 0
 var okay = 0
@@ -26,6 +29,7 @@ var lane = 0
 var rand = 0
 var note = load("res://scenes/Notas_Musicales.tscn")
 var instance
+#var current note
 
 
 func _ready():
@@ -135,15 +139,53 @@ func _spawn_notes(to_spawn):
 		instance = note.instance()
 		instance.initialize(lane)
 		add_child(instance)
+	# current_note = intance
+	# podemos hacer que aparezcan tres notas a la vez, por ahi es muy complicado para jugar.
 		
 
-
-func increment_score(by):  #ver si nuestros puntos van a ser asi 3 2 1 o si hacemos puntajes mas altos
-	if by > 0:
-		combo += 1
-	else:
-		combo = 0
+func check_collision_perfect(area):
+	#funcion que devuelve si la nota esta colisionando area perfect.
+	# if area.is_in_group("note"):
+	# que nota colisiona con esta area?
+	perfect_area = true
+	return 
 	
+func check_collision_good(area):
+	#funcion que devuelve si la nota esta colisionando area good.
+	good_area= true
+	return 
+	
+func check_collision_okay(area):
+	#funcion que devuelve si la nota esta colisionando area ok.
+	okay_area = true
+	return 
+
+
+func check_player_action(): 
+	#cuando se apreta un boton chequea si hay colision y
+	# dependiendo de que colision hay da puntos (llama a increment score)
+	#if boton apretado 
+	if current_note != null:
+		if perfect_area:
+			increment_score(3)
+			current_note.destroy(3)
+		elif good_area:
+			increment_score(2)
+			current_note.destroy(2)
+		elif okay_area:
+			increment_score(1)
+			current_note.destroy(1)
+		_reset()
+	else:
+		increment_score(-1) #por ahi se puede añadir un aviso (cartel o label de "le erraste") 
+	
+func _reset():
+	current_note = null
+	perfect_area = false
+	good_area = false
+	okay_area = false
+
+func increment_score(by): 
 	if by == 3:
 		great += 1
 	elif by == 2:
@@ -152,18 +194,31 @@ func increment_score(by):  #ver si nuestros puntos van a ser asi 3 2 1 o si hace
 		okay += 1
 	else:
 		missed += 1
-	
-	
-	score += by * combo
-	$Label.text = str(score)
-	if combo > 0:
-		$Combo.text = str(combo) + " combo!"
-		if combo > max_combo:
-			max_combo = combo
-	else:
-		$Combo.text = ""
+	score += by
+	$score.text = str(score)
 
 
-func reset_combo():
-	combo = 0
-	$Combo.text = ""
+
+func _on_blanca_pressed():
+	# nombre_boton_apretado= "blanca"
+	# chequear colision de ese tipo de nota/carril con una de las areas. 
+	
+	pass
+
+
+func _on_negra_pressed():
+	pass # Replace with function body.
+
+
+func _on_semicorchea_pressed():
+	pass # Replace with function body.
+
+
+func _on_corchea_pressed():
+	pass # Replace with function body.
+
+
+func area_exited(area): # la nota paso y no se apreto ningun boton.
+	increment_score(-2)
+	current_note.destroy(-1)
+	pass # Replace with function body.
