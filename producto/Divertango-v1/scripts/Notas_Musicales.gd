@@ -13,9 +13,14 @@ const FORTH_LANE_SPAWN = Vector2(SPAWN_X, 270)
 
 var speed = 0
 var hit = false
+var puntos=0
 
-
-
+func set_puntos(num):
+	puntos=num
+	
+func get_puntos():
+	return puntos
+	
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

@@ -1,11 +1,11 @@
 extends Node2D
 
-var current_note = null
-var area_points = 0
+var area_points = 0 # esta fprma de calcular cuantos puntos se van a incrementar no funciona!!!!!!!!!
 var area_blancas = false
 var area_negras = false
 var area_corchea = false
 var area_semi = false
+var current_note = null
 
 var score = 0
 var great = 0
@@ -124,7 +124,6 @@ func _spawn_notes(to_spawn):
 		instance = note.instance()
 		instance.initialize(lane)
 		add_child(instance)
-		current_note = instance
 	if to_spawn > 1:
 		while rand == lane:
 			rand = randi() % 4
@@ -152,7 +151,7 @@ func check_player_action(button):
 #cuando se apreta un boton chequea si hay colision y dependiendo de que colision hay da puntos (llama a increment score)
 	if correct_button(button) : 
 		increment_score(area_points)
-		current_note.destroy(area_points) # ver esto
+		current_note.destroy(area_points)
 		_reset()
 	else:
 		increment_score(-1) #por ahi se puede añadir un aviso (cartel o label de "le erraste") 
@@ -192,11 +191,13 @@ func increment_score(by):
 
 
 func area_exited(area): # la nota paso y no se apreto ningun boton.
-	increment_score(-2)
+	increment_score(-1)
 	area.destroy(-1)
+	current_note = null
 
 
 func _on_AreaBlancaPerfect_area_entered(area): #esa area que viene de parametro es el area que colisiona
+	# area.set_puntos(3)
 	area_blancas = true
 	area_points = 3
 
@@ -209,6 +210,7 @@ func _on_AreaBlancaGood_area_entered(area):
 func _on_AreaBlancaOK_area_entered(area):
 	area_blancas = true
 	area_points = 1
+	current_note = area
 
 
 func _on_AreaNegraPerfect_area_entered(area):
@@ -224,6 +226,7 @@ func _on_AreaNegraGood_area_entered(area):
 func _on_AreaNegraOK_area_entered(area):
 	area_negras = true
 	area_points = 1
+	current_note = area
 
 
 func _on_AreaCorcheaPerfect_area_entered(area):
@@ -239,6 +242,7 @@ func _on_AreaCorcheaGood_area_entered(area):
 func _on_AreaCorcheaOK_area_entered(area):
 	area_corchea = true
 	area_points = 1
+	current_note = area
 
 
 func _on_AreaSemiCorcheaPerfect2_area_entered(area):
@@ -254,3 +258,4 @@ func _on_AreaSemiCorcheaGood2_area_entered(area):
 func _on_AreaSemiCorcheaOK_area_entered(area):
 	area_semi = true
 	area_points = 1
+	current_note = area
