@@ -6,10 +6,10 @@ const TARGET_X = 230
 const SPAWN_X = 920
 const DIST_TO_TARGET = SPAWN_X - TARGET_X
 
-const FIRST_LANE_SPAWN = Vector2(SPAWN_X, 120) #ver si estos valores de x e y estan en los carrilles
-const SECOND_LANE_SPAWN = Vector2(SPAWN_X, 160)
+const FIRST_LANE_SPAWN = Vector2(SPAWN_X, 80) #ver si estos valores de x e y estan en los carrilles
+const SECOND_LANE_SPAWN = Vector2(SPAWN_X, 144)
 const THIRD_LANE_SPAWN = Vector2(SPAWN_X, 200)
-const FORTH_LANE_SPAWN = Vector2(SPAWN_X, 240)
+const FORTH_LANE_SPAWN = Vector2(SPAWN_X, 270)
 
 var speed = 0
 var hit = false
@@ -29,7 +29,6 @@ func _physics_process(delta):
 		position.x -= speed * delta
 		if position.x < 200:
 			queue_free()
-			get_parent().reset_combo()
 	else:
 		$Node2D.position.x -= speed * delta
 
@@ -51,7 +50,7 @@ func initialize(lane):
 		printerr("Invalid lane set for note: " + str(lane))
 		return
 	
-	speed = DIST_TO_TARGET / 2.0
+	speed = DIST_TO_TARGET / 10.0
 
 
 func destroy(score):

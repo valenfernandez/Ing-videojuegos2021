@@ -13,7 +13,7 @@ var good = 0
 var okay = 0
 var missed = 0
 
-var bpm = 159
+var bpm = 100
 
 var song_position = 0.0
 var song_position_in_beats = 0
@@ -36,12 +36,6 @@ func _ready():
 	$Conductor.play_with_beat_offset(8)
 
 
-func _input(event):
-	if event.is_action("escape"):
-		if get_tree().change_scene("res://scenes/Menu.tscn") != OK:
-			print ("Error cambiando escena a Menu")
-
-
 func _on_Conductor_measure(position):
 	if position == 1:
 		_spawn_notes(spawn_1_beat)
@@ -57,47 +51,47 @@ func _on_Conductor_beat(position):
 	if song_position_in_beats > 36:
 		spawn_1_beat = 1
 		spawn_2_beat = 1
-		spawn_3_beat = 1
-		spawn_4_beat = 1
+		spawn_3_beat = 0
+		spawn_4_beat = 0
 	if song_position_in_beats > 98:
-		spawn_1_beat = 2
+		spawn_1_beat = 1
 		spawn_2_beat = 0
 		spawn_3_beat = 1
 		spawn_4_beat = 0
 	if song_position_in_beats > 132:
 		spawn_1_beat = 0
-		spawn_2_beat = 2
+		spawn_2_beat = 1
 		spawn_3_beat = 0
-		spawn_4_beat = 2
+		spawn_4_beat = 1
 	if song_position_in_beats > 162:
-		spawn_1_beat = 2
-		spawn_2_beat = 2
+		spawn_1_beat = 0
+		spawn_2_beat = 0
 		spawn_3_beat = 1
 		spawn_4_beat = 1
 	if song_position_in_beats > 194:
-		spawn_1_beat = 2
-		spawn_2_beat = 2
+		spawn_1_beat = 0
+		spawn_2_beat = 0
 		spawn_3_beat = 1
 		spawn_4_beat = 2
 	if song_position_in_beats > 228:
 		spawn_1_beat = 0
-		spawn_2_beat = 2
+		spawn_2_beat = 0
 		spawn_3_beat = 1
-		spawn_4_beat = 2
+		spawn_4_beat = 1
 	if song_position_in_beats > 258:
 		spawn_1_beat = 1
-		spawn_2_beat = 2
+		spawn_2_beat = 0
 		spawn_3_beat = 1
-		spawn_4_beat = 2
+		spawn_4_beat = 0
 	if song_position_in_beats > 288:
 		spawn_1_beat = 0
-		spawn_2_beat = 2
+		spawn_2_beat = 1
 		spawn_3_beat = 0
-		spawn_4_beat = 2
+		spawn_4_beat = 1
 	if song_position_in_beats > 322:
-		spawn_1_beat = 3
-		spawn_2_beat = 2
-		spawn_3_beat = 2
+		spawn_1_beat = 0
+		spawn_2_beat = 0
+		spawn_3_beat = 1
 		spawn_4_beat = 1
 	if song_position_in_beats > 388:
 		spawn_1_beat = 1
@@ -130,6 +124,7 @@ func _spawn_notes(to_spawn):
 		instance = note.instance()
 		instance.initialize(lane)
 		add_child(instance)
+		current_note = instance
 	if to_spawn > 1:
 		while rand == lane:
 			rand = randi() % 4
@@ -137,6 +132,7 @@ func _spawn_notes(to_spawn):
 		instance = note.instance()
 		instance.initialize(lane)
 		add_child(instance)
+		
 
 
 func _on_blanca_pressed():
@@ -152,16 +148,27 @@ func _on_corchea_pressed():
 	check_player_action("corchea")
 
 
-func check_player_action(boton): 
+func check_player_action(button): 
 #cuando se apreta un boton chequea si hay colision y dependiendo de que colision hay da puntos (llama a increment score)
-	if current_note != null : # && boton == area entrada 
+	if correct_button(button) : 
 		increment_score(area_points)
-		current_note.destroy(area_points)
+		current_note.destroy(area_points) # ver esto
 		_reset()
 	else:
 		increment_score(-1) #por ahi se puede añadir un aviso (cartel o label de "le erraste") 
 
-
+func correct_button(button):
+	var correct = false
+	if(button == "blanca" && area_blancas == true):
+		correct = true
+	elif(button == "negra" && area_negras == true):
+		correct = true
+	elif(button == "semi" && area_semi == true):
+		correct = true
+	elif(button == "corchea" && area_corchea == true):
+		correct = true
+	return correct
+	
 func _reset():
 	area_blancas = false
 	area_negras = false
@@ -186,77 +193,64 @@ func increment_score(by):
 
 func area_exited(area): # la nota paso y no se apreto ningun boton.
 	increment_score(-2)
-	current_note = area
-	current_note.destroy(-1) 
+	area.destroy(-1)
 
 
 func _on_AreaBlancaPerfect_area_entered(area): #esa area que viene de parametro es el area que colisiona
 	area_blancas = true
-	current_note = area
 	area_points = 3
 
 
 func _on_AreaBlancaGood_area_entered(area):
 	area_blancas = true
-	current_note = area
 	area_points = 2
 
 
 func _on_AreaBlancaOK_area_entered(area):
 	area_blancas = true
-	current_note = area
 	area_points = 1
 
 
 func _on_AreaNegraPerfect_area_entered(area):
 	area_negras = true
-	current_note = area
 	area_points = 3
 
 
 func _on_AreaNegraGood_area_entered(area):
 	area_negras = true
-	current_note = area
 	area_points = 2
 
 
 func _on_AreaNegraOK_area_entered(area):
 	area_negras = true
-	current_note = area
 	area_points = 1
 
 
 func _on_AreaCorcheaPerfect_area_entered(area):
 	area_corchea = true
-	current_note = area
 	area_points = 3
 
 
 func _on_AreaCorcheaGood_area_entered(area):
 	area_corchea = true
-	current_note = area
 	area_points = 2
 
 
 func _on_AreaCorcheaOK_area_entered(area):
 	area_corchea = true
-	current_note = area
 	area_points = 1
 
 
 func _on_AreaSemiCorcheaPerfect2_area_entered(area):
 	area_semi = true
-	current_note = area
 	area_points = 3
 
 
 func _on_AreaSemiCorcheaGood2_area_entered(area):
 	area_semi = true
-	current_note = area
 	area_points = 2
 
 
 func _on_AreaSemiCorcheaOK_area_entered(area):
 	area_semi = true
-	current_note = area
 	area_points = 1

@@ -193,3 +193,5 @@ __meta__ = {
 [connection signal="pressed" from="negra" to="." method="_on_negra_pressed"]
 [connection signal="pressed" from="semicorchea" to="." method="_on_semicorchea_pressed"]
 [connection signal="pressed" from="corchea" to="." method="_on_corchea_pressed"]
+[connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
+[connection signal="measure" from="Conductor" to="." method="_on_Conductor_measure"]

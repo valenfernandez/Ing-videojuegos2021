@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Libertango.mp3-e46cc57993a003cad7e7fec2f25043a6.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Libertango.mp3"
+dest_files=[ "res://.import/Libertango.mp3-e46cc57993a003cad7e7fec2f25043a6.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
