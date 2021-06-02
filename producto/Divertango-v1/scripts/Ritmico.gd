@@ -1,19 +1,19 @@
 extends Node2D
 
-
-var perfect_area = false
-var good_area = false
-var okay_area = false
-var current_note =null
+var current_note = null
+var area_points = 0
+var area_blancas = false
+var area_negras = false
+var area_corchea = false
+var area_semi = false
 
 var score = 0
-
 var great = 0
 var good = 0
 var okay = 0
 var missed = 0
 
-var bpm = 115
+var bpm = 159
 
 var song_position = 0.0
 var song_position_in_beats = 0
@@ -29,7 +29,6 @@ var lane = 0
 var rand = 0
 var note = load("res://scenes/Notas_Musicales.tscn")
 var instance
-#var current note
 
 
 func _ready():
@@ -125,7 +124,6 @@ func _on_Conductor_beat(position):
 		#	print ("Error changing scene to End")
 
 
-
 func _spawn_notes(to_spawn):
 	if to_spawn > 0:
 		lane = randi() % 4
@@ -139,51 +137,39 @@ func _spawn_notes(to_spawn):
 		instance = note.instance()
 		instance.initialize(lane)
 		add_child(instance)
-	# current_note = intance
-	# podemos hacer que aparezcan tres notas a la vez, por ahi es muy complicado para jugar.
-		
-
-func check_collision_perfect(area):
-	#funcion que devuelve si la nota esta colisionando area perfect.
-	# if area.is_in_group("note"):
-	# que nota colisiona con esta area?
-	perfect_area = true
-	return 
-	
-func check_collision_good(area):
-	#funcion que devuelve si la nota esta colisionando area good.
-	good_area= true
-	return 
-	
-func check_collision_okay(area):
-	#funcion que devuelve si la nota esta colisionando area ok.
-	okay_area = true
-	return 
 
 
-func check_player_action(): 
-	#cuando se apreta un boton chequea si hay colision y
-	# dependiendo de que colision hay da puntos (llama a increment score)
-	#if boton apretado 
-	if current_note != null:
-		if perfect_area:
-			increment_score(3)
-			current_note.destroy(3)
-		elif good_area:
-			increment_score(2)
-			current_note.destroy(2)
-		elif okay_area:
-			increment_score(1)
-			current_note.destroy(1)
+func _on_blanca_pressed():
+	check_player_action("blanca")
+
+func _on_negra_pressed():
+	check_player_action("negra")
+
+func _on_semicorchea_pressed():
+	check_player_action("semi")
+
+func _on_corchea_pressed():
+	check_player_action("corchea")
+
+
+func check_player_action(boton): 
+#cuando se apreta un boton chequea si hay colision y dependiendo de que colision hay da puntos (llama a increment score)
+	if current_note != null : # && boton == area entrada 
+		increment_score(area_points)
+		current_note.destroy(area_points)
 		_reset()
 	else:
 		increment_score(-1) #por ahi se puede añadir un aviso (cartel o label de "le erraste") 
-	
+
+
 func _reset():
+	area_blancas = false
+	area_negras = false
+	area_corchea = false
+	area_semi = false
+	area_points = 0
 	current_note = null
-	perfect_area = false
-	good_area = false
-	okay_area = false
+
 
 func increment_score(by): 
 	if by == 3:
@@ -198,27 +184,79 @@ func increment_score(by):
 	$score.text = str(score)
 
 
-
-func _on_blanca_pressed():
-	# nombre_boton_apretado= "blanca"
-	# chequear colision de ese tipo de nota/carril con una de las areas. 
-	
-	pass
-
-
-func _on_negra_pressed():
-	pass # Replace with function body.
-
-
-func _on_semicorchea_pressed():
-	pass # Replace with function body.
-
-
-func _on_corchea_pressed():
-	pass # Replace with function body.
-
-
 func area_exited(area): # la nota paso y no se apreto ningun boton.
 	increment_score(-2)
-	current_note.destroy(-1)
-	pass # Replace with function body.
+	current_note = area
+	current_note.destroy(-1) 
+
+
+func _on_AreaBlancaPerfect_area_entered(area): #esa area que viene de parametro es el area que colisiona
+	area_blancas = true
+	current_note = area
+	area_points = 3
+
+
+func _on_AreaBlancaGood_area_entered(area):
+	area_blancas = true
+	current_note = area
+	area_points = 2
+
+
+func _on_AreaBlancaOK_area_entered(area):
+	area_blancas = true
+	current_note = area
+	area_points = 1
+
+
+func _on_AreaNegraPerfect_area_entered(area):
+	area_negras = true
+	current_note = area
+	area_points = 3
+
+
+func _on_AreaNegraGood_area_entered(area):
+	area_negras = true
+	current_note = area
+	area_points = 2
+
+
+func _on_AreaNegraOK_area_entered(area):
+	area_negras = true
+	current_note = area
+	area_points = 1
+
+
+func _on_AreaCorcheaPerfect_area_entered(area):
+	area_corchea = true
+	current_note = area
+	area_points = 3
+
+
+func _on_AreaCorcheaGood_area_entered(area):
+	area_corchea = true
+	current_note = area
+	area_points = 2
+
+
+func _on_AreaCorcheaOK_area_entered(area):
+	area_corchea = true
+	current_note = area
+	area_points = 1
+
+
+func _on_AreaSemiCorcheaPerfect2_area_entered(area):
+	area_semi = true
+	current_note = area
+	area_points = 3
+
+
+func _on_AreaSemiCorcheaGood2_area_entered(area):
+	area_semi = true
+	current_note = area
+	area_points = 2
+
+
+func _on_AreaSemiCorcheaOK_area_entered(area):
+	area_semi = true
+	current_note = area
+	area_points = 1

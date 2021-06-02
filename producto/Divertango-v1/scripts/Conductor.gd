@@ -1,6 +1,6 @@
 extends AudioStreamPlayer
 
-export var bpm := 100 # este valor deberia cambiar segun la cacion de piazzolla que este cargada
+export var bpm := 159 # este valor deberia cambiar segun la cacion de piazzolla que este cargada
 export var measures := 4
 
 # Tracking the beat and song position

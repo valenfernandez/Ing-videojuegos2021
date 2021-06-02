@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Verano Porteño.mp3-b5b215471eab9c5bfbaeb0a4f428f726.mp3str"
+
+[deps]
+
+source_file="res://music/Verano Porteño.mp3"
+dest_files=[ "res://.import/Verano Porteño.mp3-b5b215471eab9c5bfbaeb0a4f428f726.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
