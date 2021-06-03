@@ -62,7 +62,7 @@ func destroy(score):
 	$CPUParticles2D.emitting = true
 	$AnimatedSprite.visible = false
 	$Timer.start()
-	hit = true
+	hit = true  
 	if score == 3: 
 		$Node2D/Label.text = "PERFECTO"
 		$Node2D/Label.modulate = Color("f6d6bd")
@@ -75,7 +75,6 @@ func destroy(score):
 	else:
 		$Node2D/Label.text = "NOTA PERDIDA"
 		$Node2D/Label.modulate = Color("997577") #CAMBIAR
-		print(score)
 	
 
 
