@@ -1,4 +1,6 @@
 extends Node2D
+# A VECES SE APRIETA UN BOTON INCORRECTO O SE DAN PUNTOS POR UNA NOTA EN PTRA
+# AREA PORQUE LA NOTA ENTRA EN EL AREA DE COLISION QUE NO LE CORRESPONDE
 
 var area_points = 0 # esta fprma de calcular cuantos puntos se van a incrementar no funciona!!!!!!!!!
 var area_blancas = false
@@ -33,6 +35,7 @@ var instance
 
 func _ready():
 	randomize()
+	_reset()
 	$Conductor.play_with_beat_offset(8)
 
 
@@ -149,11 +152,12 @@ func _on_corchea_pressed():
 
 func check_player_action(button): 
 #cuando se apreta un boton chequea si hay colision y dependiendo de que colision hay da puntos (llama a increment score)
-	if correct_button(button) : 
+	if ((current_note != null) && correct_button(button)): #aca podemos devolver en vez de true o false los area points
 		increment_score(area_points)
 		current_note.destroy(area_points)
 		_reset()
 	else:
+		print("boton mal presionado")
 		increment_score(-1) #por ahi se puede añadir un aviso (cartel o label de "le erraste") 
 
 func correct_button(button):
@@ -166,6 +170,8 @@ func correct_button(button):
 		correct = true
 	elif(button == "corchea" && area_corchea == true):
 		correct = true
+	else:
+		correct=false
 	return correct
 	
 func _reset():

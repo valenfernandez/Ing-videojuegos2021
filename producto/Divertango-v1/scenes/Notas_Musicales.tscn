@@ -15,7 +15,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 22.2694, 32.2935 )
+extents = Vector2( 12.7343, 22.7584 )
 
 [node name="Area2D" type="Area2D"]
 script = ExtResource( 5 )
@@ -24,6 +24,7 @@ script = ExtResource( 5 )
 position = Vector2( 5.69424, -0.909643 )
 scale = Vector2( 0.0545064, 0.053582 )
 frames = SubResource( 1 )
+frame = 3
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 

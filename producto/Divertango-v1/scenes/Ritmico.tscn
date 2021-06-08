@@ -10,13 +10,13 @@
 [ext_resource path="res://scripts/Ritmico.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 392.855, 65.0046 )
+extents = Vector2( 392.855, 48.7535 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 1047.62, 65.0046 )
+extents = Vector2( 1047.62, 48.7538 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 1571.41, 65.0046 )
+extents = Vector2( 2619, 48.7535 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 8 )
@@ -49,7 +49,7 @@ shape = SubResource( 2 )
 position = Vector2( -13226.1, -106.687 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaBlanca-OK"]
-position = Vector2( 14666.6, -146.26 )
+position = Vector2( 13618.9, -146.26 )
 shape = SubResource( 3 )
 
 [node name="AreaNegra-Perfect" type="Area2D" parent="linea"]
@@ -69,7 +69,7 @@ shape = SubResource( 2 )
 position = Vector2( -13226.1, -106.687 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaNegra-OK"]
-position = Vector2( 14666.6, -16.2511 )
+position = Vector2( 13618.9, -16.2509 )
 shape = SubResource( 3 )
 
 [node name="AreaCorchea-Perfect" type="Area2D" parent="linea"]
@@ -89,7 +89,7 @@ shape = SubResource( 2 )
 position = Vector2( -13226.1, -106.687 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaCorchea-OK"]
-position = Vector2( 14666.6, 107.664 )
+position = Vector2( 13618.9, 113.758 )
 shape = SubResource( 3 )
 
 [node name="AreaSemiCorchea-Perfect2" type="Area2D" parent="linea"]
@@ -109,7 +109,7 @@ shape = SubResource( 2 )
 position = Vector2( -13226.1, -106.687 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaSemiCorchea-OK"]
-position = Vector2( 14666.6, 239.704 )
+position = Vector2( 13618.9, 243.767 )
 shape = SubResource( 3 )
 
 [node name="carriles" type="Sprite" parent="."]
@@ -163,6 +163,7 @@ __meta__ = {
 }
 
 [node name="Conductor" parent="." instance=ExtResource( 7 )]
+volume_db = -32.842
 
 [node name="score" type="Label" parent="."]
 margin_left = 24.0
