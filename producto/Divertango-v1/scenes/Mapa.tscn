@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/img/teatro-desbloq.png" type="Texture" id=1]
 [ext_resource path="res://assets/img/teatro.png" type="Texture" id=2]
+[ext_resource path="res://scripts/Mapa.gd" type="Script" id=3]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="boton-teatro1" type="TextureButton" parent="."]
 margin_left = 139.564
@@ -39,3 +41,7 @@ texture_disabled = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[connection signal="pressed" from="boton-teatro1" to="." method="_on_botonteatro1_pressed"]
+[connection signal="pressed" from="boton-teatro2" to="." method="_on_botonteatro2_pressed"]
+[connection signal="pressed" from="boton-teatro3" to="." method="_on_botonteatro3_pressed"]
