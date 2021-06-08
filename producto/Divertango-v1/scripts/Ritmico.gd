@@ -1,6 +1,4 @@
 extends Node2D
-# A VECES SE APRIETA UN BOTON INCORRECTO O SE DAN PUNTOS POR UNA NOTA EN PTRA
-# AREA PORQUE LA NOTA ENTRA EN EL AREA DE COLISION QUE NO LE CORRESPONDE
 
 var area_points = 0 # esta fprma de calcular cuantos puntos se van a incrementar no funciona!!!!!!!!!
 var area_blancas = false
@@ -8,6 +6,7 @@ var area_negras = false
 var area_corchea = false
 var area_semi = false
 var current_note = null
+var bandoneon_activo = false
 
 var score = 0
 var great = 0
@@ -36,6 +35,7 @@ var instance
 func _ready():
 	randomize()
 	_reset()
+	$boton_bandoneon.hide()
 	$Conductor.play_with_beat_offset(8)
 
 
@@ -48,56 +48,97 @@ func _on_Conductor_measure(position):
 		_spawn_notes(spawn_3_beat)
 	elif position == 4:
 		_spawn_notes(spawn_4_beat)
-
+	
+		
+func bandoneon_activar(prob):
+	var activo = false
+	var num = randi() % 100
+	if( num < prob):
+		$boton_bandoneon.show()
+		$boton_bandoneon.disabled = false
+		activo = true
+		print(num)
+	return activo
+	
+func bandoneon_desactivar():
+	$boton_bandoneon.disabled = true
+	$boton_bandoneon.hide()
+	return false
+	
+#segun nivel y musico 
 func _on_Conductor_beat(position):
 	song_position_in_beats = position
 	if song_position_in_beats > 36:
-		spawn_1_beat = 1
-		spawn_2_beat = 1
-		spawn_3_beat = 0
-		spawn_4_beat = 0
-	if song_position_in_beats > 98:
-		spawn_1_beat = 1
+		spawn_1_beat = 0
 		spawn_2_beat = 0
 		spawn_3_beat = 1
 		spawn_4_beat = 0
+	if song_position_in_beats == 36:
+		if(! bandoneon_activo):
+			bandoneon_activo = bandoneon_activar(20)
+	if song_position_in_beats == 46:
+		if (bandoneon_activo):
+			bandoneon_activo = bandoneon_desactivar()
+	if song_position_in_beats > 98:
+		spawn_1_beat = 0
+		spawn_2_beat = 0
+		spawn_3_beat = 1
+		spawn_4_beat = 0
+	if song_position_in_beats == 98:
+		if(! bandoneon_activo):
+			bandoneon_activo = bandoneon_activar(100)
+	if song_position_in_beats == 108:
+		if (bandoneon_activo):
+			bandoneon_activo = bandoneon_desactivar()
 	if song_position_in_beats > 132:
 		spawn_1_beat = 0
-		spawn_2_beat = 1
-		spawn_3_beat = 0
-		spawn_4_beat = 1
+		spawn_2_beat = 0
+		spawn_3_beat = 1
+		spawn_4_beat = 0
+	if song_position_in_beats == 132:
+		if(! bandoneon_activo):
+			bandoneon_activo = bandoneon_activar(80)
+	if song_position_in_beats == 142:
+		if (bandoneon_activo):
+			bandoneon_activo = bandoneon_desactivar()
 	if song_position_in_beats > 162:
 		spawn_1_beat = 0
 		spawn_2_beat = 0
 		spawn_3_beat = 1
-		spawn_4_beat = 1
+		spawn_4_beat = 0
+	if song_position_in_beats == 162:
+		if(! bandoneon_activo):
+			bandoneon_activo = bandoneon_activar(70)
+	if song_position_in_beats == 172:
+		if (bandoneon_activo):
+			bandoneon_activo = bandoneon_desactivar()
 	if song_position_in_beats > 194:
 		spawn_1_beat = 0
 		spawn_2_beat = 0
 		spawn_3_beat = 1
-		spawn_4_beat = 2
+		spawn_4_beat = 0
 	if song_position_in_beats > 228:
 		spawn_1_beat = 0
 		spawn_2_beat = 0
 		spawn_3_beat = 1
-		spawn_4_beat = 1
+		spawn_4_beat = 0
 	if song_position_in_beats > 258:
-		spawn_1_beat = 1
+		spawn_1_beat = 0
 		spawn_2_beat = 0
-		spawn_3_beat = 1
+		spawn_3_beat = 0
 		spawn_4_beat = 0
 	if song_position_in_beats > 288:
 		spawn_1_beat = 0
-		spawn_2_beat = 1
+		spawn_2_beat = 0
 		spawn_3_beat = 0
-		spawn_4_beat = 1
+		spawn_4_beat = 0
 	if song_position_in_beats > 322:
 		spawn_1_beat = 0
 		spawn_2_beat = 0
-		spawn_3_beat = 1
-		spawn_4_beat = 1
+		spawn_3_beat = 0
+		spawn_4_beat = 0
 	if song_position_in_beats > 388:
-		spawn_1_beat = 1
+		spawn_1_beat = 0
 		spawn_2_beat = 0
 		spawn_3_beat = 0
 		spawn_4_beat = 0
@@ -109,7 +150,6 @@ func _on_Conductor_beat(position):
 	#if song_position_in_beats > 404:
 		#parte que maneja la puntuacion, ver bien.
 		#Global.set_score(score)
-		#Global.combo = max_combo
 		#Global.great = great
 		#Global.good = good
 		#Global.okay = okay
@@ -190,7 +230,7 @@ func increment_score(by):
 		good += 1
 	elif by == 1:
 		okay += 1
-	else:
+	elif by <= 0:
 		missed += 1
 	score += by
 	$score.text = str(score)
@@ -265,3 +305,10 @@ func _on_AreaSemiCorcheaOK_area_entered(area):
 	area_semi = true
 	area_points = 1
 	current_note = area
+
+
+func _on_boton_bandoneon_pressed():
+	increment_score(100)
+	$boton_bandoneon.disabled = true
+	$boton_bandoneon.hide()
+	bandoneon_activo = false
