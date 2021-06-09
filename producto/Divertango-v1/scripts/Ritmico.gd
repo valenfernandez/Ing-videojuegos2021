@@ -9,7 +9,7 @@ var current_note = null
 var bandoneon_activo = false
 
 var score = 0
-var great = 0
+var perfect = 0
 var good = 0
 var okay = 0
 var missed = 0
@@ -120,45 +120,16 @@ func _on_Conductor_beat(position):
 	if song_position_in_beats > 228:
 		spawn_1_beat = 0
 		spawn_2_beat = 0
-		spawn_3_beat = 1
-		spawn_4_beat = 0
-	if song_position_in_beats > 258:
-		spawn_1_beat = 0
-		spawn_2_beat = 0
 		spawn_3_beat = 0
 		spawn_4_beat = 0
-	if song_position_in_beats > 288:
-		spawn_1_beat = 0
-		spawn_2_beat = 0
-		spawn_3_beat = 0
-		spawn_4_beat = 0
-	if song_position_in_beats > 322:
-		spawn_1_beat = 0
-		spawn_2_beat = 0
-		spawn_3_beat = 0
-		spawn_4_beat = 0
-	if song_position_in_beats > 388:
-		spawn_1_beat = 0
-		spawn_2_beat = 0
-		spawn_3_beat = 0
-		spawn_4_beat = 0
-	if song_position_in_beats > 396:
-		spawn_1_beat = 0
-		spawn_2_beat = 0
-		spawn_3_beat = 0
-		spawn_4_beat = 0
-	#if song_position_in_beats > 404:
-		#parte que maneja la puntuacion, ver bien.
-		#Global.set_score(score)
-		#Global.great = great
-		#Global.good = good
-		#Global.okay = okay
-		#Global.missed = missed
-		
-		
-		#pantalla de fin
-		#if get_tree().change_scene("res://Scenes/End.tscn") != OK:
-		#	print ("Error changing scene to End")
+	if song_position_in_beats > 238:
+		Global.set_score(score)
+		Global.set_perfect(perfect)
+		Global.set_ok(okay)
+		Global.set_good(good)
+		Global.set_missed(missed)
+		if get_tree().change_scene("res://scenes/Puntaje.tscn") != OK:
+			print ("Error")
 
 
 func _spawn_notes(to_spawn):
@@ -197,7 +168,6 @@ func check_player_action(button):
 		current_note.destroy(area_points)
 		_reset()
 	else:
-		print("boton mal presionado")
 		increment_score(-1) #por ahi se puede añadir un aviso (cartel o label de "le erraste") 
 
 func correct_button(button):
@@ -225,7 +195,7 @@ func _reset():
 
 func increment_score(by): 
 	if by == 3:
-		great += 1
+		perfect += 1
 	elif by == 2:
 		good += 1
 	elif by == 1:
@@ -238,7 +208,6 @@ func increment_score(by):
 
 func area_exited(area): # la nota paso y no se apreto ningun boton.
 	increment_score(-1)
-	area.destroy(-1)
 	current_note = null
 
 
@@ -308,7 +277,7 @@ func _on_AreaSemiCorcheaOK_area_entered(area):
 
 
 func _on_boton_bandoneon_pressed():
-	increment_score(100)
+	increment_score(10)
 	$boton_bandoneon.disabled = true
 	$boton_bandoneon.hide()
 	bandoneon_activo = false

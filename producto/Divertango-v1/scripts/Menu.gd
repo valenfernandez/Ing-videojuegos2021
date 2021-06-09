@@ -18,4 +18,4 @@ func _ready():
 
 func _on_BotonComenzar_pressed():
 	if get_tree().change_scene("res://scenes/Mapa.tscn") != OK:
-		print ("Error changing scene")
+		print ("Error")
