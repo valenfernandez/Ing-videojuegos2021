@@ -1,5 +1,8 @@
 extends Node2D
 
+
+
+
 var area_points = 0 # esta fprma de calcular cuantos puntos se van a incrementar no funciona!!!!!!!!!
 var area_blancas = false
 var area_negras = false
@@ -37,6 +40,13 @@ func _ready():
 	_reset()
 	$boton_bandoneon.hide()
 	$Conductor.play_with_beat_offset(8)
+	# if (Global.nivel_actual == 1):
+	#CARGARIA LA CANCION QUE TIENE QUE CARGAR  
+	#SETEA POR EJEMPLO NUMERO DE LANES, bpm u otras variables
+	# $Conductor.set_stream("res://assets/music/Adios Nonino.mp3")
+	# if (Global.musico_actual == 1)
+	#SETEA  VELOCIDAD DE LAS NOTAS, O TIPO DE POWERUPS, ETC
+	
 
 
 func _on_Conductor_measure(position):

@@ -12,15 +12,18 @@ func _ready():
 
 
 func _on_musico1_pressed():
+	Global.set_musico(1)
 	if get_tree().change_scene("res://scenes/Ritmico.tscn") != OK:
 		print ("Error")
 
 
 func _on_musico2_pressed():
+	Global.set_musico(2)
 	if get_tree().change_scene("res://scenes/Ritmico.tscn") != OK:
 		print ("Error")
 
 
 func _on_musico3_pressed():
+	Global.set_musico(3)
 	if get_tree().change_scene("res://scenes/Ritmico.tscn") != OK:
 		print ("Error")

@@ -13,15 +13,18 @@ func _ready():
 
 
 func _on_botonteatro1_pressed(): 
+	Global.set_nivel(1);
 	if get_tree().change_scene("res://scenes/Musicos.tscn") != OK:
 		print ("Error")
 
 
 func _on_botonteatro2_pressed():
+	Global.set_nivel(2);
 	if get_tree().change_scene("res://scenes/Musicos.tscn") != OK:
 		print ("Error")
 
 
 func _on_botonteatro3_pressed():
+	Global.set_nivel(3);
 	if get_tree().change_scene("res://scenes/Musicos.tscn") != OK:
 		print ("Error")
