@@ -1,23 +1,23 @@
 extends Node2D
 
 
-
-
-var area_points = 0 # esta fprma de calcular cuantos puntos se van a incrementar no funciona!!!!!!!!!
+var area_points = 0 
 var area_blancas = false
 var area_negras = false
 var area_corchea = false
 var area_semi = false
 var current_note = null
 var bandoneon_activo = false
+var num_lanes = 4
 
 var score = 0
 var perfect = 0
 var good = 0
 var okay = 0
+var bandoneon = 0
 var missed = 0
 
-var bpm = 100
+var bpm = 160 #default
 
 var song_position = 0.0
 var song_position_in_beats = 0
@@ -37,19 +37,17 @@ var instance
 
 func _ready():
 	randomize()
-	_reset()
 	$boton_bandoneon.hide()
-	
-	# if (Global.nivel_actual == 1):
-	#CARGARIA LA CANCION QUE TIENE QUE CARGAR  
-	#SETEA POR EJEMPLO NUMERO DE LANES, bpm u otras variables
-	# $Conductor.set_stream("res://assets/music/Adios Nonino.mp3")
-	# if (Global.musico_actual == 1)
-	#SETEA  VELOCIDAD DE LAS NOTAS, O TIPO DE POWERUPS, ETC
-	
+	cargar_nivel()
 	$Conductor.play_with_beat_offset(8)
 	
-	
+
+func cargar_nivel():
+	var diccionario = DiccionarioNiveles.getDiccionario()
+	bpm = diccionario["bpm"]
+	$Conductor.bpm =  diccionario["bpm"]
+	num_lanes = diccionario["lanes"]
+
 
 
 func _on_Conductor_measure(position):
@@ -139,15 +137,16 @@ func _on_Conductor_beat(position):
 		Global.set_score(score)
 		Global.set_perfect(perfect)
 		Global.set_ok(okay)
+		Global.set_bandoneon(bandoneon)
 		Global.set_good(good)
-		Global.set_missed(missed)
+		Global.set_missed(missed-perfect)  # REVISAR PERDIDOS DA UN NUM INCORRECTO!!!!!!!!!!!!!!!!!!
 		if get_tree().change_scene("res://scenes/Puntaje.tscn") != OK:
 			print ("Error")
 
 
 func _spawn_notes(to_spawn):
 	if to_spawn > 0:
-		lane = randi() % 4
+		lane = randi() % num_lanes
 		print(current_note)
 		instance = note.instance()
 		print(current_note)
@@ -217,6 +216,8 @@ func increment_score(by):
 		good += 1
 	elif by == 1:
 		okay += 1
+	elif by == 10:
+		bandoneon += 1
 	elif by <= 0:
 		missed += 1
 	score += by

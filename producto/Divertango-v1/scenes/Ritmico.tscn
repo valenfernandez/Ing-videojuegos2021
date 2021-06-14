@@ -80,7 +80,7 @@ shape = SubResource( 3 )
 [node name="AreaCorchea-Perfect" type="Area2D" parent="linea"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaCorchea-Perfect"]
-position = Vector2( -130.969, 3.00854 )
+position = Vector2( -130.951, 7.07128 )
 shape = SubResource( 1 )
 
 [node name="AreaCorchea-Good" type="Area2D" parent="linea"]
@@ -100,14 +100,14 @@ shape = SubResource( 3 )
 [node name="AreaSemiCorchea-Perfect2" type="Area2D" parent="linea"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaSemiCorchea-Perfect2"]
-position = Vector2( -130.969, 133.018 )
+position = Vector2( -130.951, 137.08 )
 shape = SubResource( 1 )
 
 [node name="AreaSemiCorchea-Good2" type="Area2D" parent="linea"]
 position = Vector2( -10083.3, 137.08 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaSemiCorchea-Good2"]
-position = Vector2( 11000, 0.000462532 )
+position = Vector2( 10999.9, 0.000462532 )
 shape = SubResource( 2 )
 
 [node name="AreaSemiCorchea-OK" type="Area2D" parent="linea"]
@@ -169,6 +169,7 @@ __meta__ = {
 
 [node name="Conductor" parent="." instance=ExtResource( 7 )]
 volume_db = -32.842
+bpm = 160
 
 [node name="score" type="Label" parent="."]
 margin_left = 24.0

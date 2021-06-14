@@ -7,7 +7,7 @@
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
 
-[node name="boton-teatro1" type="TextureButton" parent="."]
+[node name="botonteatro1" type="TextureButton" parent="."]
 margin_left = 139.564
 margin_top = 289.091
 margin_right = 364.564
@@ -18,11 +18,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="boton-teatro2" type="TextureButton" parent="."]
-margin_left = 741.811
-margin_top = 52.1119
-margin_right = 966.811
-margin_bottom = 277.112
+[node name="botonteatro2" type="TextureButton" parent="."]
+margin_left = 435.342
+margin_top = 221.383
+margin_right = 660.342
+margin_bottom = 446.383
 disabled = true
 texture_normal = ExtResource( 1 )
 texture_disabled = ExtResource( 2 )
@@ -30,11 +30,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="boton-teatro3" type="TextureButton" parent="."]
-margin_left = 382.0
-margin_top = 152.0
-margin_right = 607.0
-margin_bottom = 379.0
+[node name="botonteatro3" type="TextureButton" parent="."]
+margin_left = 727.669
+margin_top = 66.4737
+margin_right = 952.669
+margin_bottom = 293.474
 disabled = true
 texture_normal = ExtResource( 1 )
 texture_disabled = ExtResource( 2 )
@@ -42,6 +42,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="boton-teatro1" to="." method="_on_botonteatro1_pressed"]
-[connection signal="pressed" from="boton-teatro2" to="." method="_on_botonteatro2_pressed"]
-[connection signal="pressed" from="boton-teatro3" to="." method="_on_botonteatro3_pressed"]
+[connection signal="pressed" from="botonteatro1" to="." method="_on_botonteatro1_pressed"]
+[connection signal="pressed" from="botonteatro2" to="." method="_on_botonteatro2_pressed"]
+[connection signal="pressed" from="botonteatro3" to="." method="_on_botonteatro3_pressed"]

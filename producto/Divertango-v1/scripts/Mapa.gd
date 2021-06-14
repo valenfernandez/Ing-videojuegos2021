@@ -1,30 +1,30 @@
 extends Node2D
 
+var level_2_score = 50
+var level_3_score = 100
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	if(Global.score > level_2_score):
+		$botonteatro2.disabled = false
+	if(Global.score > level_3_score):
+		$botonteatro3.disabled = false
 
 
 func _on_botonteatro1_pressed(): 
-	Global.set_nivel(1);
+	DiccionarioNiveles.set_nivel(1);
 	if get_tree().change_scene("res://scenes/Musicos.tscn") != OK:
 		print ("Error")
 
 
 func _on_botonteatro2_pressed():
-	Global.set_nivel(2);
+	DiccionarioNiveles.set_nivel(2);
 	if get_tree().change_scene("res://scenes/Musicos.tscn") != OK:
 		print ("Error")
 
 
 func _on_botonteatro3_pressed():
-	Global.set_nivel(3);
+	DiccionarioNiveles.set_nivel(3);
 	if get_tree().change_scene("res://scenes/Musicos.tscn") != OK:
 		print ("Error")
+
+

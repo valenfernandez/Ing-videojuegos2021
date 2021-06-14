@@ -42,9 +42,9 @@ __meta__ = {
 
 [node name="bien_Label" type="Label" parent="."]
 margin_left = 352.0
-margin_top = 97.0
+margin_top = 81.0
 margin_right = 440.0
-margin_bottom = 112.0
+margin_bottom = 96.0
 custom_colors/font_color = Color( 0.2, 0.12549, 0.345098, 1 )
 text = "BIEN:"
 __meta__ = {
@@ -53,11 +53,22 @@ __meta__ = {
 
 [node name="ok_Label" type="Label" parent="."]
 margin_left = 352.0
-margin_top = 144.0
+margin_top = 112.0
 margin_right = 440.0
-margin_bottom = 168.0
+margin_bottom = 136.0
 custom_colors/font_color = Color( 0.2, 0.12549, 0.345098, 1 )
 text = "OKAY:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bandoneon_Label" type="Label" parent="."]
+margin_left = 352.0
+margin_top = 143.0
+margin_right = 440.0
+margin_bottom = 167.0
+custom_colors/font_color = Color( 0.2, 0.12549, 0.345098, 1 )
+text = "BANDONEON:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -96,9 +107,9 @@ __meta__ = {
 
 [node name="bien_num" type="Label" parent="."]
 margin_left = 472.0
-margin_top = 96.0
+margin_top = 80.0
 margin_right = 512.0
-margin_bottom = 110.0
+margin_bottom = 94.0
 rect_pivot_offset = Vector2( -240, 304 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -106,9 +117,19 @@ __meta__ = {
 
 [node name="ok_num" type="Label" parent="."]
 margin_left = 472.0
-margin_top = 144.0
+margin_top = 112.0
 margin_right = 512.0
-margin_bottom = 160.0
+margin_bottom = 128.0
+rect_pivot_offset = Vector2( -240, 304 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bandoneon_num" type="Label" parent="."]
+margin_left = 472.0
+margin_top = 143.0
+margin_right = 512.0
+margin_bottom = 159.0
 rect_pivot_offset = Vector2( -240, 304 )
 __meta__ = {
 "_edit_use_anchors_": false

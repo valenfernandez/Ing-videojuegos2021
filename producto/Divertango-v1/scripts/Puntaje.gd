@@ -8,6 +8,7 @@ func _ready():
 	$perfect_num.text = str(Global.perfect)
 	$missed_num.text = str(Global.missed)
 	$score_num.text = str(Global.score)
+	$bandoneon_num.text = str(Global.bandoneon)
 
 
 

@@ -43,4 +43,5 @@ position = Vector2( 521.411, 98.8883 )
 scale = Vector2( 1.01873, 1.02997 )
 texture = ExtResource( 3 )
 
+[connection signal="value_changed" from="HSlider" to="." method="_on_HSlider_value_changed"]
 [connection signal="pressed" from="BotonComenzar" to="." method="_on_BotonComenzar_pressed"]
