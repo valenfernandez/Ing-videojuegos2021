@@ -39,13 +39,16 @@ func _ready():
 	randomize()
 	_reset()
 	$boton_bandoneon.hide()
-	$Conductor.play_with_beat_offset(8)
+	
 	# if (Global.nivel_actual == 1):
 	#CARGARIA LA CANCION QUE TIENE QUE CARGAR  
 	#SETEA POR EJEMPLO NUMERO DE LANES, bpm u otras variables
 	# $Conductor.set_stream("res://assets/music/Adios Nonino.mp3")
 	# if (Global.musico_actual == 1)
 	#SETEA  VELOCIDAD DE LAS NOTAS, O TIPO DE POWERUPS, ETC
+	
+	$Conductor.play_with_beat_offset(8)
+	
 	
 
 
@@ -122,10 +125,10 @@ func _on_Conductor_beat(position):
 	if song_position_in_beats == 172:
 		if (bandoneon_activo):
 			bandoneon_activo = bandoneon_desactivar()
-	if song_position_in_beats > 194:
+	if song_position_in_beats > 190:
 		spawn_1_beat = 0
 		spawn_2_beat = 0
-		spawn_3_beat = 1
+		spawn_3_beat = 0
 		spawn_4_beat = 0
 	if song_position_in_beats > 228:
 		spawn_1_beat = 0
@@ -145,8 +148,11 @@ func _on_Conductor_beat(position):
 func _spawn_notes(to_spawn):
 	if to_spawn > 0:
 		lane = randi() % 4
+		print(current_note)
 		instance = note.instance()
+		print(current_note)
 		instance.initialize(lane)
+		print(current_note)
 		add_child(instance)
 	if to_spawn > 1:
 		while rand == lane:
@@ -174,6 +180,7 @@ func _on_corchea_pressed():
 func check_player_action(button): 
 #cuando se apreta un boton chequea si hay colision y dependiendo de que colision hay da puntos (llama a increment score)
 	if ((current_note != null) && correct_button(button)): #aca podemos devolver en vez de true o false los area points
+		print(current_note)
 		increment_score(area_points)
 		current_note.destroy(area_points)
 		_reset()

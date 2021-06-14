@@ -15,10 +15,10 @@
 extents = Vector2( 392.855, 48.7535 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 1047.62, 48.7538 )
+extents = Vector2( 508.761, 48.7538 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 2619, 48.7535 )
+extents = Vector2( 1047.58, 48.7535 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
@@ -47,14 +47,14 @@ position = Vector2( -3273.79, 7.07129 )
 scale = Vector2( 1.02959, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaBlanca-Good"]
-position = Vector2( 3666.64, -260.018 )
+position = Vector2( 4070.03, -260.018 )
 shape = SubResource( 2 )
 
 [node name="AreaBlanca-OK" type="Area2D" parent="linea"]
 position = Vector2( -13226.1, -106.687 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaBlanca-OK"]
-position = Vector2( 13618.9, -146.26 )
+position = Vector2( 15714.3, -146.26 )
 shape = SubResource( 3 )
 
 [node name="AreaNegra-Perfect" type="Area2D" parent="linea"]
@@ -67,14 +67,14 @@ shape = SubResource( 1 )
 position = Vector2( -7988.06, 283.341 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaNegra-Good"]
-position = Vector2( 8380.92, -406.279 )
+position = Vector2( 8904.75, -406.279 )
 shape = SubResource( 2 )
 
 [node name="AreaNegra-OK" type="Area2D" parent="linea"]
 position = Vector2( -13226.1, -106.687 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaNegra-OK"]
-position = Vector2( 13618.9, -16.2509 )
+position = Vector2( 15714.2, -16.2509 )
 shape = SubResource( 3 )
 
 [node name="AreaCorchea-Perfect" type="Area2D" parent="linea"]
@@ -87,14 +87,14 @@ shape = SubResource( 1 )
 position = Vector2( -10083.3, 137.08 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaCorchea-Good"]
-position = Vector2( 10476.1, -136.103 )
+position = Vector2( 11000, -130.009 )
 shape = SubResource( 2 )
 
 [node name="AreaCorchea-OK" type="Area2D" parent="linea"]
 position = Vector2( -13226.1, -106.687 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaCorchea-OK"]
-position = Vector2( 13618.9, 113.758 )
+position = Vector2( 15714.1, 113.758 )
 shape = SubResource( 3 )
 
 [node name="AreaSemiCorchea-Perfect2" type="Area2D" parent="linea"]
@@ -107,14 +107,14 @@ shape = SubResource( 1 )
 position = Vector2( -10083.3, 137.08 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaSemiCorchea-Good2"]
-position = Vector2( 10476.1, -4.06277 )
+position = Vector2( 11000, 0.000462532 )
 shape = SubResource( 2 )
 
 [node name="AreaSemiCorchea-OK" type="Area2D" parent="linea"]
 position = Vector2( -13226.1, -106.687 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaSemiCorchea-OK"]
-position = Vector2( 13618.9, 243.767 )
+position = Vector2( 15714.3, 243.767 )
 shape = SubResource( 3 )
 
 [node name="carriles" type="Sprite" parent="."]
