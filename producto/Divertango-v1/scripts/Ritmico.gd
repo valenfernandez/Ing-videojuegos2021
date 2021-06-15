@@ -6,10 +6,17 @@ var area_blancas = false
 var area_negras = false
 var area_corchea = false
 var area_semi = false
+var trampa_blanca = false
+var trampa_negra = false
+var trampa_corchea = false
+var trampa_semi = false
+
 var current_note = null
 var bandoneon_activo = false
-var num_lanes = 4 # carriles habilitados para que se spawneen notas
-# que tal si justamente llamamos a la variable: enabled_lanes ???
+var enabled_lanes = 4 # carriles habilitados para que se spawneen notas
+var spawn_multiplier = 1 
+var bandoneon_prob = [100,100,100,100]
+var trap_prob = 0
 
 var score = 0
 var perfect = 0   # contadores de notas acertadas
@@ -23,7 +30,7 @@ var bpm = 160 # 'beats per minute' de la canción (por default 160)
 var song_position = 0.0
 var song_position_in_beats = 0
 var last_spawned_beat = 0
-var sec_per_beat = 60.0 / bpm # ESTA VARIABLE Y BPM NO SE USAN NUNCA MEPA. EN EL CONDUCTOR SÍ.
+var sec_per_beat = 60.0 / bpm 
 
 # Estas 4 variables representan la cantidad de notas que aparecerán en cada pulso de la canción.
 # Se van tomando de a 4 pulsos ya que se definen compases de 4 tiempos (4/4) (measures=4)
@@ -36,6 +43,7 @@ var spawn_4_beat = 0
 var lane = 0
 var rand = 0
 var note = load("res://scenes/Notas_Musicales.tscn")
+var trap_note = load("res://scenes/Notas_Trampa.tscn")
 var instance
 
 
@@ -48,10 +56,13 @@ func _ready():
 
 func cargar_nivel():
 	var nivel = DiccionarioNiveles.get_nivel()
+	$Conductor.stream = load(nivel.cancion)
 	$Conductor.bpm = nivel.bpm
 	bpm = nivel.bpm
-	num_lanes = nivel.lanes
-
+	enabled_lanes = nivel.lanes
+	spawn_multiplier = nivel.spawn_multiplier
+	bandoneon_prob = nivel.bandoneon_prob
+	# trap_prob = nivel.trap_prob   #AGREGAR SPRITES DE NOTAS TRAMPA Y DESCOMENTAR!!!!!
 
 # El Conductor nos va diciendo en qué tiempo del compás estamos en cada momento (1, 2, 3 o 4).
 # En base a eso, spawnearemos tantas notas como indique 'spawn_X_beat'.
@@ -61,7 +72,11 @@ func _on_Conductor_measure(position):
 	elif position == 2:
 		_spawn_notes(spawn_2_beat)
 	elif position == 3:
-		_spawn_notes(spawn_3_beat)
+		var aux = randi() % 100
+		if (aux < trap_prob):
+			_spawn_trap_note()
+		else:
+			_spawn_notes(spawn_3_beat)
 	elif position == 4:
 		_spawn_notes(spawn_4_beat)
 	
@@ -73,7 +88,6 @@ func bandoneon_activar(prob):
 		$boton_bandoneon.show()
 		$boton_bandoneon.disabled = false
 		activo = true
-		print(num)
 	return activo
 	
 func bandoneon_desactivar():
@@ -95,7 +109,7 @@ func _on_Conductor_beat(position):
 		spawn_4_beat = 0
 	if song_position_in_beats == 36:
 		if(! bandoneon_activo):
-			bandoneon_activo = bandoneon_activar(20)
+			bandoneon_activo = bandoneon_activar(bandoneon_prob[0])
 	if song_position_in_beats == 46:
 		if (bandoneon_activo):
 			bandoneon_activo = bandoneon_desactivar()
@@ -106,7 +120,7 @@ func _on_Conductor_beat(position):
 		spawn_4_beat = 0
 	if song_position_in_beats == 98:
 		if(! bandoneon_activo):
-			bandoneon_activo = bandoneon_activar(100)
+			bandoneon_activo = bandoneon_activar(bandoneon_prob[1])
 	if song_position_in_beats == 108:
 		if (bandoneon_activo):
 			bandoneon_activo = bandoneon_desactivar()
@@ -117,32 +131,32 @@ func _on_Conductor_beat(position):
 		spawn_4_beat = 0
 	if song_position_in_beats == 132:
 		if(! bandoneon_activo):
-			bandoneon_activo = bandoneon_activar(80)
+			bandoneon_activo = bandoneon_activar(bandoneon_prob[2])
 	if song_position_in_beats == 142:
 		if (bandoneon_activo):
 			bandoneon_activo = bandoneon_desactivar()
 	if song_position_in_beats > 162:
 		spawn_1_beat = 0
 		spawn_2_beat = 0
-		spawn_3_beat = 1
+		spawn_3_beat = 1 * spawn_multiplier
 		spawn_4_beat = 0
 	if song_position_in_beats == 162:
 		if(! bandoneon_activo):
-			bandoneon_activo = bandoneon_activar(70)
+			bandoneon_activo = bandoneon_activar(bandoneon_prob[3])
 	if song_position_in_beats == 172:
 		if (bandoneon_activo):
 			bandoneon_activo = bandoneon_desactivar()
 	if song_position_in_beats > 190:
 		spawn_1_beat = 0
-		spawn_2_beat = 0
-		spawn_3_beat = 0
+		spawn_2_beat = 1
+		spawn_3_beat = spawn_multiplier
 		spawn_4_beat = 0
-	if song_position_in_beats > 228:
+	if song_position_in_beats > 200:
 		spawn_1_beat = 0
 		spawn_2_beat = 0
 		spawn_3_beat = 0
 		spawn_4_beat = 0
-	if song_position_in_beats > 238:
+	if song_position_in_beats > 230:
 		Global.set_score(score)
 		Global.set_perfect(perfect)
 		Global.set_ok(okay)
@@ -163,22 +177,22 @@ func _on_Conductor_beat(position):
 # ---
 func _spawn_notes(to_spawn):
 	if to_spawn > 0:
-		lane = randi() % num_lanes
-		#print(current_note)
+		lane = randi() % enabled_lanes
 		instance = note.instance()
-		#print(current_note)
 		instance.initialize(lane)
-		#print(current_note)
 		add_child(instance)
-	if to_spawn > 1:
+	if to_spawn > 1 && enabled_lanes >= to_spawn:
 		while rand == lane: # para evitar que en un mismo momento (pulso) aparezcan 2 notas en el mismo carril
-			rand = randi() % 4 # ESTE 4 DEBERIA SER 'num_lanes' NO ???????
+			rand = randi()  % enabled_lanes 
 		lane = rand
 		instance = note.instance()
 		instance.initialize(lane)
 		add_child(instance)
 		
-
+func _spawn_trap_note():
+	instance = trap_note.instance()
+	instance.initialize(enabled_lanes)
+	add_child(instance)
 
 func _on_blanca_pressed():
 	check_player_action("blanca")
@@ -196,12 +210,15 @@ func _on_corchea_pressed():
 func check_player_action(button): 
 #cuando se apreta un boton chequea si hay colision y dependiendo de que colision hay da puntos (llama a increment score)
 	if ((current_note != null) && correct_button(button)): #aca podemos devolver en vez de true o false los area points
-		print(current_note)
 		increment_score(area_points)
 		current_note.destroy(area_points)
 		_reset()
 	else:
-		increment_score(-1) #por ahi se puede añadir un aviso (cartel o label de "le erraste") 
+		if ((current_note != null) && trap_pressed(button)):
+			increment_score(-2)
+			current_note.destroy(area_points)
+		else:
+			increment_score(-1) #por ahi se puede añadir un aviso (cartel o label de "le erraste") 
 
 func correct_button(button):
 	var correct = false
@@ -216,6 +233,21 @@ func correct_button(button):
 	else:
 		correct=false
 	return correct
+	
+func trap_pressed(button):
+	var traped = false
+	if(button == "blanca" && trampa_blanca == true):
+		traped = true
+	elif(button == "negra" && trampa_negra == true):
+		traped = true
+	elif(button == "semi" && trampa_semi == true):
+		traped = true
+	elif(button == "corchea" && trampa_corchea == true):
+		traped = true
+	else:
+		traped=false
+	return traped 
+	
 	
 func _reset():
 	area_blancas = false
@@ -247,68 +279,112 @@ func area_exited(area): # la nota paso y no se apreto ningun boton.
 
 
 func _on_AreaBlancaPerfect_area_entered(area): #esa area que viene de parametro es el area que colisiona
-	# area.set_puntos(3)
-	area_blancas = true
-	area_points = 3
+	if(area.get_class() == "Notas_Musicales"):
+		area_blancas = true
+		area_points = 3
+	elif(area.get_class() == "Notas_Trampa"):
+		trampa_blanca= true
 
 
 func _on_AreaBlancaGood_area_entered(area):
-	area_blancas = true
-	area_points = 2
+	if(area.get_class() == "Notas_Musicales"):
+		area_blancas = true
+		area_points = 2
+	elif(area.get_class() == "Notas_Trampa"):
+		trampa_blanca= true
 
 
 func _on_AreaBlancaOK_area_entered(area):
-	area_blancas = true
-	area_points = 1
-	current_note = area
+	if(area.get_class() == "Notas_Musicales"):
+		current_note = area
+		area_blancas = true
+		area_points = 1
+	elif(area.get_class() == "Notas_Trampa"):
+		current_note = area
+		trampa_blanca= true
+	
 
 
 func _on_AreaNegraPerfect_area_entered(area):
-	area_negras = true
-	area_points = 3
+	if(area.get_class() == "Notas_Musicales"):
+		area_negras = true
+		area_points = 3
+	elif(area.get_class() == "Notas_Trampa"):
+		trampa_negra= true
 
 
 func _on_AreaNegraGood_area_entered(area):
-	area_negras = true
-	area_points = 2
+	if(area.get_class() == "Notas_Musicales"):
+		area_negras = true
+		area_points = 2
+	elif(area.get_class() == "Notas_Trampa"):
+		trampa_negra= true
 
 
 func _on_AreaNegraOK_area_entered(area):
-	area_negras = true
-	area_points = 1
-	current_note = area
+	if(area.get_class() == "Notas_Musicales"):
+		current_note = area
+		area_negras = true
+		area_points = 1
+	elif(area.get_class() == "Notas_Trampa"):
+		current_note = area
+		trampa_negra= true
+	
 
 
 func _on_AreaCorcheaPerfect_area_entered(area):
-	area_corchea = true
-	area_points = 3
+	if(area.get_class() == "Notas_Musicales"):
+		area_corchea = true
+		area_points = 3
+	elif(area.get_class() == "Notas_Trampa"):
+		trampa_corchea= true
+	
 
 
 func _on_AreaCorcheaGood_area_entered(area):
-	area_corchea = true
-	area_points = 2
+	if(area.get_class() == "Notas_Musicales"):
+		area_corchea = true
+		area_points = 2
+	elif(area.get_class() == "Notas_Trampa"):
+		trampa_corchea= true
 
 
 func _on_AreaCorcheaOK_area_entered(area):
-	area_corchea = true
-	area_points = 1
-	current_note = area
+	if(area.get_class() == "Notas_Musicales"):
+		current_note = area
+		area_corchea = true
+		area_points = 1
+	elif(area.get_class() == "Notas_Trampa"):
+		current_note = area
+		trampa_corchea= true
+	
 
 
 func _on_AreaSemiCorcheaPerfect2_area_entered(area):
-	area_semi = true
-	area_points = 3
-
+	if(area.get_class() == "Notas_Musicales"):
+		area_semi = true
+		area_points = 3
+	elif(area.get_class() == "Notas_Trampa"):
+		trampa_semi= true
+	
 
 func _on_AreaSemiCorcheaGood2_area_entered(area):
-	area_semi = true
-	area_points = 2
+	if(area.get_class() == "Notas_Musicales"):
+		area_semi = true
+		area_points = 2
+	elif(area.get_class() == "Notas_Trampa"):
+		trampa_semi= true
 
 
 func _on_AreaSemiCorcheaOK_area_entered(area):
-	area_semi = true
-	area_points = 1
-	current_note = area
+	if(area.get_class() == "Notas_Musicales"):
+		current_note = area
+		area_semi = true
+		area_points = 1
+	elif(area.get_class() == "Notas_Trampa"):
+		current_note = area
+		trampa_semi= true
+	
 
 
 func _on_boton_bandoneon_pressed():

@@ -1,7 +1,6 @@
 extends Area2D
 
 
-# Declare member variables here. Examples:
 const TARGET_X = 230
 const SPAWN_X = 920
 const DIST_TO_TARGET = SPAWN_X - TARGET_X
@@ -20,14 +19,12 @@ func set_puntos(num):
 	
 func get_puntos():
 	return puntos
-	
+
+func get_class():
+	return "Notas_Trampa"
 
 func _ready():
 	pass 
-
-func get_class():
-	return "Notas_Musicales"
-
 
 func _physics_process(delta):
 	if !hit:
@@ -36,45 +33,31 @@ func _physics_process(delta):
 			queue_free()
 	else:
 		$Node2D.position.x -= speed * delta
-
-# Cada carril tiene asignada un tipo de nota diferente
-func initialize(lane):
+		
+func initialize(enabeled_lanes):
+	var lane = randi() % enabeled_lanes
+	var note = randi() % 2
+	$AnimatedSprite.frame = note #tipo de nota trampa
 	if lane == 0:
-		$AnimatedSprite.frame = 0 #blanca
 		position = FIRST_LANE_SPAWN 
 	elif lane == 1:
-		$AnimatedSprite.frame = 1 # negra
 		position = SECOND_LANE_SPAWN
 	elif lane == 2:
-		$AnimatedSprite.frame = 2 #corchea
 		position = THIRD_LANE_SPAWN
 	elif lane == 3:
-		$AnimatedSprite.frame = 3 #semicorchea
 		position = FORTH_LANE_SPAWN
 	else:
 		printerr("Invalid lane set for note: " + str(lane))
 		return
-	
 	speed = DIST_TO_TARGET / 10.0
-
-
+	
 func destroy(score):
 	$CPUParticles2D.emitting = true
 	$AnimatedSprite.visible = false
-	$Timer.start()
-	hit = true  
-	if score == 3: 
-		$Node2D/Label.text = "PERFECTO"
+	$Timer.start() 
+	if score <= 0: 
+		$Node2D/Label.text = "NOTA TRAMPA"
 		$Node2D/Label.modulate = Color("f6d6bd")
-	elif score == 2:
-		$Node2D/Label.text = "BIEN"
-		$Node2D/Label.modulate = Color("c3a38a")
-	elif score == 1:
-		$Node2D/Label.text = "OKAY"
-		$Node2D/Label.modulate = Color("997577")
-	else:
-		$Node2D/Label.text = "NOTA PERDIDA"
-		$Node2D/Label.modulate = Color("997577") #CAMBIAR
 	
 
 
