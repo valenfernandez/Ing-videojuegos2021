@@ -8,25 +8,29 @@ var area_corchea = false
 var area_semi = false
 var current_note = null
 var bandoneon_activo = false
-var num_lanes = 4
+var num_lanes = 4 # carriles habilitados para que se spawneen notas
+# que tal si justamente llamamos a la variable: enabled_lanes ???
 
 var score = 0
-var perfect = 0
+var perfect = 0   # contadores de notas acertadas
 var good = 0
 var okay = 0
-var bandoneon = 0
-var missed = 0
+var bandoneon = 0 # contador de tocadas de bandoneon
+var missed = 0    # contador de notas perdidas
 
-var bpm = 160 #default
+var bpm = 160 # 'beats per minute' de la canción (por default 160)
 
 var song_position = 0.0
 var song_position_in_beats = 0
 var last_spawned_beat = 0
-var sec_per_beat = 60.0 / bpm
+var sec_per_beat = 60.0 / bpm # ESTA VARIABLE Y BPM NO SE USAN NUNCA MEPA. EN EL CONDUCTOR SÍ.
 
+# Estas 4 variables representan la cantidad de notas que aparecerán en cada pulso de la canción.
+# Se van tomando de a 4 pulsos ya que se definen compases de 4 tiempos (4/4) (measures=4)
+# Estos valores se van cambiando a medida que avancemos en la cancion (ver '_on_Conductor_beat()')
 var spawn_1_beat = 0
 var spawn_2_beat = 0
-var spawn_3_beat = 1
+var spawn_3_beat = 1 # en este caso, en los pulsos 3,7,11 ... aparecerá un nota (1 nota cada 4 pulsos)
 var spawn_4_beat = 0
 
 var lane = 0
@@ -43,13 +47,14 @@ func _ready():
 	
 
 func cargar_nivel():
-	var diccionario = DiccionarioNiveles.getDiccionario()
-	bpm = diccionario["bpm"]
-	$Conductor.bpm =  diccionario["bpm"]
-	num_lanes = diccionario["lanes"]
+	var nivel = DiccionarioNiveles.get_nivel()
+	$Conductor.bpm = nivel.bpm
+	bpm = nivel.bpm
+	num_lanes = nivel.lanes
 
 
-
+# El Conductor nos va diciendo en qué tiempo del compás estamos en cada momento (1, 2, 3 o 4).
+# En base a eso, spawnearemos tantas notas como indique 'spawn_X_beat'.
 func _on_Conductor_measure(position):
 	if position == 1:
 		_spawn_notes(spawn_1_beat)
@@ -76,7 +81,11 @@ func bandoneon_desactivar():
 	$boton_bandoneon.hide()
 	return false
 	
-#segun nivel y musico 
+#segun nivel y musico
+# El Conductor nos va diciendo en qué posicion (beat/pulso) de la cancion estamos.
+# En base a eso, definimos intervalos donde se spawnearán mas o menos notas por pulso.
+# La cantidad depende del tiempo (1, 2, 3 o 4) en el que cae/esté el pulso,
+# entonces vamos modificando la cantidad de notas a spawnearse segun el tiempo.
 func _on_Conductor_beat(position):
 	song_position_in_beats = position
 	if song_position_in_beats > 36:
@@ -143,19 +152,27 @@ func _on_Conductor_beat(position):
 		if get_tree().change_scene("res://scenes/Puntaje.tscn") != OK:
 			print ("Error")
 
-
+# Cada tipo de nota aparece en un determinado carril, entonces obtenemos aleatoriamente
+# un carril en base al número de carriles que tengamos habilitados (1, 2, 3 o 4),
+# e instanciamos la nota de dicho carril.
+# Por como pusimos los ifs, como mucho se pueden spawnear 2 notas a la vez por pulso.
+# ---
+# Hay que tener cuidado con 'num_lanes', ya que si fuera = 1 (1 carril solo habilitado)
+# y 'to_spawn' nos llega con >= 2, el while que tenemos sería infinito.
+# Lo ideal sería que siempre 'to_spawn' <= 'num_lanes'
+# ---
 func _spawn_notes(to_spawn):
 	if to_spawn > 0:
 		lane = randi() % num_lanes
-		print(current_note)
+		#print(current_note)
 		instance = note.instance()
-		print(current_note)
+		#print(current_note)
 		instance.initialize(lane)
-		print(current_note)
+		#print(current_note)
 		add_child(instance)
 	if to_spawn > 1:
-		while rand == lane:
-			rand = randi() % 4
+		while rand == lane: # para evitar que en un mismo momento (pulso) aparezcan 2 notas en el mismo carril
+			rand = randi() % 4 # ESTE 4 DEBERIA SER 'num_lanes' NO ???????
 		lane = rand
 		instance = note.instance()
 		instance.initialize(lane)

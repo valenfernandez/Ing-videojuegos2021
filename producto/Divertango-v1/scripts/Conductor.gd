@@ -1,7 +1,7 @@
 extends AudioStreamPlayer
 
 export var bpm := 159 # este valor deberia cambiar segun la cacion de piazzolla que este cargada
-export var measures := 4
+export var measures := 4 # tiempos por compás (no hace falta modificarlo)
 
 # Tracking the beat and song position
 var song_position = 0.0
@@ -9,7 +9,7 @@ var song_position_in_beats = 1
 var sec_per_beat = 60.0 / bpm
 var last_reported_beat = 0
 var beats_before_start = 0
-var measure = 1
+var measure = 1 # en cuál de los 4 tiempos del compás estamos (en cada momento de la cancion)
 
 # Determining how close to the beat an event is
 var closest = 0

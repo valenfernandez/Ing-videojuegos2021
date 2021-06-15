@@ -37,7 +37,7 @@ func _physics_process(delta):
 	else:
 		$Node2D.position.x -= speed * delta
 
-
+# Cada carril tiene asignada un tipo de nota diferente
 func initialize(lane):
 	if lane == 0:
 		$AnimatedSprite.frame = 0 #blanca
