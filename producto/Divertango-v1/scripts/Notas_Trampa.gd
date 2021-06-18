@@ -55,13 +55,12 @@ func initialize(enabeled_lanes):
 		return
 	speed = DIST_TO_TARGET / 10.0
 	
-func destroy(score):
+func destroy():
 	$CPUParticles2D.emitting = true
 	$AnimatedSprite.visible = false
 	$Timer.start() 
-	if score <= 0: 
-		$Node2D/Label.text = "NOTA TRAMPA"
-		$Node2D/Label.modulate = Color("f6d6bd")
+	$Node2D/Label.text = "NOTA TRAMPA"
+	$Node2D/Label.modulate = Color("f6d6bd")
 	
 
 
