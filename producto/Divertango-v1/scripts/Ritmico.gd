@@ -212,11 +212,13 @@ func check_player_action(button):
 	if ((current_note != null) && correct_button(button)): #aca podemos devolver en vez de true o false los area points
 		increment_score(area_points)
 		current_note.destroy(area_points)
+		current_note.hitted()
 		_reset()
 	else:
-		if ((current_note != null) && trap_pressed(button)):
+		if ((current_note != null) && trap_pressed(button)): #se apreto una nota trampa
 			increment_score(-2)
 			current_note.destroy(area_points)
+			current_note.hitted()
 		else:
 			increment_score(-1) #por ahi se puede añadir un aviso (cartel o label de "le erraste") 
 
@@ -274,8 +276,10 @@ func increment_score(by):
 
 
 func area_exited(area): # la nota paso y no se apreto ningun boton.
-	increment_score(-1)
-	current_note = null
+	if(area.get_class() == "Notas_Musicales" || area.get_class() == "Notas_Trampa"):
+		if (area.hitted == false) :
+			increment_score(-1)
+		current_note = null
 
 
 func _on_AreaBlancaPerfect_area_entered(area): #esa area que viene de parametro es el area que colisiona
@@ -284,6 +288,7 @@ func _on_AreaBlancaPerfect_area_entered(area): #esa area que viene de parametro 
 		area_points = 3
 	elif(area.get_class() == "Notas_Trampa"):
 		trampa_blanca= true
+	#current_note.hitted = true #bandera
 
 
 func _on_AreaBlancaGood_area_entered(area):

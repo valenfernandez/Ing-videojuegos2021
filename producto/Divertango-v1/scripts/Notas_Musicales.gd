@@ -14,6 +14,7 @@ const FORTH_LANE_SPAWN = Vector2(SPAWN_X, 270)
 var speed = 0
 var hit = false
 var puntos=0
+var hitted = false
 
 func set_puntos(num):
 	puntos=num
@@ -21,6 +22,9 @@ func set_puntos(num):
 func get_puntos():
 	return puntos
 	
+func hitted():
+	hitted = true
+
 
 func _ready():
 	pass 

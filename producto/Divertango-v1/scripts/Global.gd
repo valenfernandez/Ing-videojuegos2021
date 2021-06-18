@@ -8,11 +8,8 @@ var missed = 0
 var score = 0
 
 
-
-
 func cargar_nivel():
 	pass
-
 
 func set_score(num):
 	score = num
