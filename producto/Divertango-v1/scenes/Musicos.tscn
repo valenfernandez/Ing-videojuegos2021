@@ -40,10 +40,10 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="."]
-margin_left = 380.085
-margin_top = 36.9994
-margin_right = 684.085
-margin_bottom = 90.9994
+margin_left = 380.0
+margin_top = 37.0
+margin_right = 618.0
+margin_bottom = 55.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Elige un musico para tocar una pieza"
 __meta__ = {

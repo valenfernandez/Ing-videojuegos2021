@@ -4,9 +4,9 @@ var level_2_score = 0
 var level_3_score = 0
 
 func _ready():
-	if(Global.score >= level_2_score):
+	if(Global.level_1_passed == true):
 		$botonteatro2.disabled = false
-	if(Global.score >= level_3_score):
+	if(Global.level_2_passed == true):
 		$botonteatro3.disabled = false
 
 

@@ -10,6 +10,7 @@ var trampa_blanca = false
 var trampa_negra = false
 var trampa_corchea = false
 var trampa_semi = false
+var notas_perdidas = 0
 
 var current_note = null
 var bandoneon_activo = false
@@ -23,7 +24,7 @@ var perfect = 0   # contadores de notas acertadas
 var good = 0
 var okay = 0
 var bandoneon = 0 # contador de tocadas de bandoneon
-var missed = 0    # contador de notas perdidas
+var notas_trampa = 0    # contador de notas trampa presionadas
 
 var bpm = 160 # 'beats per minute' de la canción (por default 160)
 
@@ -81,6 +82,21 @@ func _on_Conductor_measure(position):
 		_spawn_notes(spawn_4_beat)
 	
 		
+		
+		
+func terminar_juego():
+	if(notas_trampa < 5 && score > Global.score_ganador):
+		Global.encuentro_ganado()
+	Global.set_score(score)
+	Global.set_perfect(perfect)
+	Global.set_ok(okay)
+	Global.set_bandoneon(bandoneon)
+	Global.set_good(good)
+	Global.set_trampas(notas_trampa)
+	if get_tree().change_scene("res://scenes/Puntaje.tscn") != OK:
+		print ("Error")
+	
+	
 func bandoneon_activar(prob):
 	var activo = false
 	var num = randi() % 100
@@ -94,6 +110,7 @@ func bandoneon_desactivar():
 	$boton_bandoneon.disabled = true
 	$boton_bandoneon.hide()
 	return false
+	
 	
 #segun nivel y musico
 # El Conductor nos va diciendo en qué posicion (beat/pulso) de la cancion estamos.
@@ -157,14 +174,7 @@ func _on_Conductor_beat(position):
 		spawn_3_beat = 0
 		spawn_4_beat = 0
 	if song_position_in_beats > 230:
-		Global.set_score(score)
-		Global.set_perfect(perfect)
-		Global.set_ok(okay)
-		Global.set_bandoneon(bandoneon)
-		Global.set_good(good)
-		Global.set_missed(missed-perfect)  # REVISAR PERDIDOS DA UN NUM INCORRECTO!!!!!!!!!!!!!!!!!!
-		if get_tree().change_scene("res://scenes/Puntaje.tscn") != OK:
-			print ("Error")
+		terminar_juego()
 
 # Cada tipo de nota aparece en un determinado carril, entonces obtenemos aleatoriamente
 # un carril en base al número de carriles que tengamos habilitados (1, 2, 3 o 4),
@@ -216,11 +226,12 @@ func check_player_action(button):
 		_reset()
 	else:
 		if ((current_note != null) && trap_pressed(button)): #se apreto una nota trampa
-			increment_score(-2)
+			increment_score(-10)
 			current_note.hitted()
 			current_note.destroy()
 		else:
-			increment_score(-1) #por ahi se puede añadir un aviso (cartel o label de "le erraste") 
+			increment_score(-10) #apreto un boton cuando no habia nada
+			
 
 func correct_button(button):
 	var correct = false
@@ -265,16 +276,14 @@ func _reset():
 
 
 func increment_score(by): 
-	if by == 3:
+	if by == 20:
 		perfect += 1
-	elif by == 2:
+	elif by == 15:
 		good += 1
-	elif by == 1:
-		okay += 1
 	elif by == 10:
+		okay += 1
+	elif by == 30:
 		bandoneon += 1
-	elif by <= 0:
-		missed += 1
 	score += by
 	$score.text = str(score)
 
@@ -282,13 +291,17 @@ func increment_score(by):
 func area_exited(area): # la nota paso y no se apreto ningun boton.
 	if(area.get_class() == "Notas_Musicales"):
 		if (area.hitted == false) :
-			increment_score(-1)
+			notas_perdidas += 1
+			$perdidas.text = str(notas_perdidas)
+			#MOSTRAR CARTEL (LABEL Y CARTELITO QUE MUESTRE EL NUMERO DE NOTAS PERDIDAS)
+			if(notas_perdidas >= 5):
+				terminar_juego()
 	current_note = null
 
 func _on_AreaBlancaPerfect_area_entered(area): #esa area que viene de parametro es el area que colisiona
 	if(area.get_class() == "Notas_Musicales"):
 		area_blancas = true
-		area_points = 3
+		area_points = 20
 	elif(area.get_class() == "Notas_Trampa"):
 		trampa_blanca= true
 
@@ -296,7 +309,7 @@ func _on_AreaBlancaPerfect_area_entered(area): #esa area que viene de parametro 
 func _on_AreaBlancaGood_area_entered(area):
 	if(area.get_class() == "Notas_Musicales"):
 		area_blancas = true
-		area_points = 2
+		area_points = 15
 	elif(area.get_class() == "Notas_Trampa"):
 		trampa_blanca= true
 
@@ -305,7 +318,7 @@ func _on_AreaBlancaOK_area_entered(area):
 	if(area.get_class() == "Notas_Musicales"):
 		current_note = area
 		area_blancas = true
-		area_points = 1
+		area_points = 10
 	elif(area.get_class() == "Notas_Trampa"):
 		current_note = area
 		trampa_blanca= true
@@ -315,7 +328,7 @@ func _on_AreaBlancaOK_area_entered(area):
 func _on_AreaNegraPerfect_area_entered(area):
 	if(area.get_class() == "Notas_Musicales"):
 		area_negras = true
-		area_points = 3
+		area_points = 20
 	elif(area.get_class() == "Notas_Trampa"):
 		trampa_negra= true
 
@@ -323,7 +336,7 @@ func _on_AreaNegraPerfect_area_entered(area):
 func _on_AreaNegraGood_area_entered(area):
 	if(area.get_class() == "Notas_Musicales"):
 		area_negras = true
-		area_points = 2
+		area_points = 15
 	elif(area.get_class() == "Notas_Trampa"):
 		trampa_negra= true
 
@@ -332,7 +345,7 @@ func _on_AreaNegraOK_area_entered(area):
 	if(area.get_class() == "Notas_Musicales"):
 		current_note = area
 		area_negras = true
-		area_points = 1
+		area_points = 10
 	elif(area.get_class() == "Notas_Trampa"):
 		current_note = area
 		trampa_negra= true
@@ -342,7 +355,7 @@ func _on_AreaNegraOK_area_entered(area):
 func _on_AreaCorcheaPerfect_area_entered(area):
 	if(area.get_class() == "Notas_Musicales"):
 		area_corchea = true
-		area_points = 3
+		area_points = 20
 	elif(area.get_class() == "Notas_Trampa"):
 		trampa_corchea= true
 	
@@ -351,7 +364,7 @@ func _on_AreaCorcheaPerfect_area_entered(area):
 func _on_AreaCorcheaGood_area_entered(area):
 	if(area.get_class() == "Notas_Musicales"):
 		area_corchea = true
-		area_points = 2
+		area_points = 15
 	elif(area.get_class() == "Notas_Trampa"):
 		trampa_corchea= true
 
@@ -360,7 +373,7 @@ func _on_AreaCorcheaOK_area_entered(area):
 	if(area.get_class() == "Notas_Musicales"):
 		current_note = area
 		area_corchea = true
-		area_points = 1
+		area_points = 10
 	elif(area.get_class() == "Notas_Trampa"):
 		current_note = area
 		trampa_corchea= true
@@ -370,7 +383,7 @@ func _on_AreaCorcheaOK_area_entered(area):
 func _on_AreaSemiCorcheaPerfect2_area_entered(area):
 	if(area.get_class() == "Notas_Musicales"):
 		area_semi = true
-		area_points = 3
+		area_points = 20
 	elif(area.get_class() == "Notas_Trampa"):
 		trampa_semi= true
 	
@@ -378,7 +391,7 @@ func _on_AreaSemiCorcheaPerfect2_area_entered(area):
 func _on_AreaSemiCorcheaGood2_area_entered(area):
 	if(area.get_class() == "Notas_Musicales"):
 		area_semi = true
-		area_points = 2
+		area_points = 15
 	elif(area.get_class() == "Notas_Trampa"):
 		trampa_semi= true
 
@@ -387,7 +400,7 @@ func _on_AreaSemiCorcheaOK_area_entered(area):
 	if(area.get_class() == "Notas_Musicales"):
 		current_note = area
 		area_semi = true
-		area_points = 1
+		area_points = 10
 	elif(area.get_class() == "Notas_Trampa"):
 		current_note = area
 		trampa_semi= true
@@ -395,7 +408,7 @@ func _on_AreaSemiCorcheaOK_area_entered(area):
 
 
 func _on_boton_bandoneon_pressed():
-	increment_score(10)
+	increment_score(30)
 	$boton_bandoneon.disabled = true
 	$boton_bandoneon.hide()
 	bandoneon_activo = false

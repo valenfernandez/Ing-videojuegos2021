@@ -198,6 +198,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="perdidas" type="Label" parent="."]
+margin_left = 24.0
+margin_top = 72.0
+margin_right = 136.0
+margin_bottom = 118.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="area_entered" from="linea/AreaBlanca-Perfect" to="." method="_on_AreaBlancaPerfect_area_entered"]
 [connection signal="area_exited" from="linea/AreaBlanca-Perfect" to="." method="area_exited"]
 [connection signal="area_entered" from="linea/AreaBlanca-Good" to="." method="_on_AreaBlancaGood_area_entered"]
