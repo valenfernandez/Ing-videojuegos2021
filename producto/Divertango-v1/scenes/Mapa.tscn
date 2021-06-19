@@ -42,6 +42,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="points_t1" type="Label" parent="."]
+margin_left = 212.0
+margin_top = 501.0
+margin_right = 291.0
+margin_bottom = 527.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="points_t2" type="Label" parent="."]
+margin_left = 535.182
+margin_top = 408.218
+margin_right = 634.182
+margin_bottom = 436.218
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="points_t3" type="Label" parent="."]
+margin_left = 829.746
+margin_top = 248.618
+margin_right = 924.746
+margin_bottom = 278.618
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="tree_entered" from="." to="." method="_on_Node2D_tree_entered"]
 [connection signal="pressed" from="botonteatro1" to="." method="_on_botonteatro1_pressed"]
 [connection signal="pressed" from="botonteatro2" to="." method="_on_botonteatro2_pressed"]
 [connection signal="pressed" from="botonteatro3" to="." method="_on_botonteatro3_pressed"]

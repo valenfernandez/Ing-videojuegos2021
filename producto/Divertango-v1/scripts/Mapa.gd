@@ -1,9 +1,12 @@
 extends Node2D
 
-var level_2_score = 0
-var level_3_score = 0
 
 func _ready():
+	
+	$points_t1.text = str(Global.puntos_teatro1)
+	$points_t2.text = str(Global.puntos_teatro2)
+	$points_t3.text = str(Global.puntos_teatro3)
+	
 	if(Global.level_1_passed == true):
 		$botonteatro2.disabled = false
 	if(Global.level_2_passed == true):
@@ -28,3 +31,7 @@ func _on_botonteatro3_pressed():
 		print ("Error")
 
 
+func _on_Node2D_tree_entered():
+	$points_t1.text = str(Global.puntos_teatro1)
+	$points_t2.text = str(Global.puntos_teatro2)
+	$points_t3.text = str(Global.puntos_teatro3)

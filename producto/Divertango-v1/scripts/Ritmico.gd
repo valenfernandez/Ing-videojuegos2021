@@ -85,14 +85,17 @@ func _on_Conductor_measure(position):
 		
 		
 func terminar_juego():
-	if(notas_trampa < 5 && score > Global.score_ganador):
-		Global.encuentro_ganado()
 	Global.set_score(score)
 	Global.set_perfect(perfect)
 	Global.set_ok(okay)
 	Global.set_bandoneon(bandoneon)
 	Global.set_good(good)
 	Global.set_trampas(notas_trampa)
+	if(notas_trampa < 5 && score > Global.score_ganador):
+		Global.set_encuentro_ganado(true)
+	else:
+		Global.set_encuentro_ganado(false)
+	Global.persistir_partida()
 	if get_tree().change_scene("res://scenes/Puntaje.tscn") != OK:
 		print ("Error")
 	
@@ -285,6 +288,8 @@ func increment_score(by):
 	elif by == 30:
 		bandoneon += 1
 	score += by
+	if(score < 0):
+		score = 0
 	$score.text = str(score)
 
 

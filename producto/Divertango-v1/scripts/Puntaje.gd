@@ -9,7 +9,10 @@ func _ready():
 	$score_num.text = str(Global.score)
 	$trampa_num.text = str(Global.notas_trampa)
 	$bandoneon_num.text = str(Global.bandoneon)
-
+	if(Global.encuentro_ganado == true):
+		$AnimatedSprite.frame = 0
+	else:
+		$AnimatedSprite.frame = 1
 
 
 

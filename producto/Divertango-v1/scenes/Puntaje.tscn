@@ -1,8 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/Puntaje.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/menu.png" type="Texture" id=2]
 [ext_resource path="res://assets/img/menu_boton.png" type="Texture" id=3]
+[ext_resource path="res://assets/img/ganaste.png" type="Texture" id=4]
+[ext_resource path="res://assets/img/perdiste.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -154,6 +164,11 @@ rect_pivot_offset = Vector2( -240, 304 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 464, 352 )
+scale = Vector2( 0.207857, 0.205 )
+frames = SubResource( 1 )
 
 [connection signal="pressed" from="volver_jugar" to="." method="_on_volver_jugar_pressed"]
 [connection signal="pressed" from="a_menu" to="." method="_on_a_menu_pressed"]
