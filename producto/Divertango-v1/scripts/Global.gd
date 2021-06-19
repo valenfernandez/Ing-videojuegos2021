@@ -12,7 +12,6 @@ var encuentro_ganado = false
 
 var level_1_passed = false
 var level_2_passed = false
-var level_3_passed = false
 
 var puntos_pasar_nivel1 = 100
 var puntos_pasar_nivel2 = 100
@@ -25,6 +24,8 @@ const SAVE_PATH = "res://saves.sav"
 
 var partidas = []
 
+signal back_to_map
+
 var encuentro = {
 "teatro":0,
 "musico":0,
@@ -32,10 +33,16 @@ var encuentro = {
 "highscore":0
 }
 
+func ir_a_mapa(): # para actualizar el mapa (puntajes y niveles)
+	emit_signal("back_to_map")
+
 func _ready():
 	cargar_partidas()
 	iniciar_puntaje()
-	pass
+	if(puntos_teatro1 >= puntos_pasar_nivel1):
+		level_1_passed = true
+	if(puntos_teatro2 >= puntos_pasar_nivel2):
+		level_2_passed = true
 	
 	
 func cargar_partidas():

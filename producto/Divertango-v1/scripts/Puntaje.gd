@@ -22,5 +22,6 @@ func _on_volver_jugar_pressed():
 
 
 func _on_a_menu_pressed():
+	Global.ir_a_mapa()
 	if get_tree().change_scene("res://scenes/Menu.tscn") != OK:
 		print ("Error")
