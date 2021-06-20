@@ -28,4 +28,3 @@ func _on_botonteatro3_pressed():
 	DiccionarioNiveles.set_nivel(3);
 	if get_tree().change_scene("res://scenes/Musicos.tscn") != OK:
 		print ("Error")
-

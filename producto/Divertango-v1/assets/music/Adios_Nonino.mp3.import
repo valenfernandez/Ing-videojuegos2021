@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Adios_Nonino.mp3-6ae3ac58b6d980f4baf1ae2df79415fe.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Adios_Nonino.mp3"
+dest_files=[ "res://.import/Adios_Nonino.mp3-6ae3ac58b6d980f4baf1ae2df79415fe.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

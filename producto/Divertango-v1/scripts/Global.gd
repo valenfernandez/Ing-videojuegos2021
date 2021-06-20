@@ -20,7 +20,7 @@ var puntos_teatro1 = 0 # sumo los max_score que tengo en la persistencia
 var puntos_teatro2 = 0
 var puntos_teatro3 = 0
 
-const SAVE_PATH = "res://saves.sav"
+const SAVE_PATH = "res://saves.sav" # CUANDO QUERAMOS EXPORTAR EL APK, CAMBIAR 'res' POR 'user' para que ande bien
 
 var partidas = []
 

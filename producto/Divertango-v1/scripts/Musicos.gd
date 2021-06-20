@@ -1,7 +1,7 @@
 extends Node2D
 
 func _ready():
-	pass 
+	pass
 
 func _on_musico1_pressed():
 	DiccionarioNiveles.set_musico(1)

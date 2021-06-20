@@ -10,7 +10,7 @@ var musico_actual = 0 # 3 tipos de dificultad por nivel (musicos)
 
 #  - Cargar Adios Nonino
 var nivel1_musico1 = {
-	"cancion": "res://assets/music/Adios Nonino.mp3",
+	"cancion": "res://assets/music/Adios_Nonino.mp3",
 	 "bpm": 81, 
 	"lanes": 2,
 	"spawn_multiplier": 1,
@@ -18,7 +18,7 @@ var nivel1_musico1 = {
 	"trap_prob": 0
 	}
 var nivel1_musico2 = {
-	"cancion": "res://assets/music/Adios Nonino.mp3",
+	"cancion": "res://assets/music/Adios_Nonino.mp3",
 	"bpm": 81, 
 	"lanes": 3,
 	"spawn_multiplier" : 1,
@@ -26,7 +26,7 @@ var nivel1_musico2 = {
 	"trap_prob": 5
 	}
 var nivel1_musico3 = {
-	"cancion": "res://assets/music/Adios Nonino.mp3",
+	"cancion": "res://assets/music/Adios_Nonino.mp3",
 	"bpm": 81, 
 	"lanes": 4,
 	"spawn_multiplier" : 2,
@@ -36,7 +36,7 @@ var nivel1_musico3 = {
 
 #  - Cargar Verano Porteño
 var nivel2_musico1 = {
-	"cancion": "res://assets/music/Verano Porteño.mp3",
+	"cancion": "res://assets/music/Verano_Portenio.mp3",
 	"bpm": 134, 
 	"lanes": 2,
 	"spawn_multiplier" : 1,
@@ -44,7 +44,7 @@ var nivel2_musico1 = {
 	"trap_prob": 5
 	}
 var nivel2_musico2 = {
-	"cancion": "res://assets/music/Verano Porteño.mp3",
+	"cancion": "res://assets/music/Verano_Portenio.mp3",
 	"bpm": 134, 
 	"lanes": 3,
 	"spawn_multiplier" : 1,
@@ -52,7 +52,7 @@ var nivel2_musico2 = {
 	"trap_prob": 10
 	}
 var nivel2_musico3 = {
-	"cancion": "res://assets/music/Verano Porteño.mp3",
+	"cancion": "res://assets/music/Verano_Portenio.mp3",
 	"bpm": 134, 
 	"lanes": 4,
 	"spawn_multiplier" : 2,
