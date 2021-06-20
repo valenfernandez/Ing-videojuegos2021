@@ -91,10 +91,11 @@ func terminar_juego():
 	Global.set_bandoneon(bandoneon)
 	Global.set_good(good)
 	Global.set_trampas(notas_trampa)
-	if(notas_trampa < 5 && score > Global.score_ganador):
+	if(notas_perdidas < 5 && score > Global.score_ganador):
 		Global.set_encuentro_ganado(true)
 	else:
 		Global.set_encuentro_ganado(false)
+	Global.actualizar_puntaje_teatros()
 	Global.persistir_partida()
 	if get_tree().change_scene("res://scenes/Puntaje.tscn") != OK:
 		print ("Error")
