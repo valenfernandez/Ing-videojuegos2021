@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/semicorchea-1.png-d1c14edd11b6602d6d87858291b3d93c.stex"
+path="res://.import/blanca_trap.png-ef1a01da896648e3ae056b0cd7fc6b89.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/semicorchea-1.png"
-dest_files=[ "res://.import/semicorchea-1.png-d1c14edd11b6602d6d87858291b3d93c.stex" ]
+source_file="res://assets/img/blanca_trap.png"
+dest_files=[ "res://.import/blanca_trap.png-ef1a01da896648e3ae056b0cd7fc6b89.stex" ]
 
 [params]
 

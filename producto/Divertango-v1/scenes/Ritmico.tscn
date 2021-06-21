@@ -3,9 +3,9 @@
 [ext_resource path="res://assets/img/carriles.png" type="Texture" id=1]
 [ext_resource path="res://assets/img/cuadrado.png" type="Texture" id=2]
 [ext_resource path="res://assets/img/blanca.png" type="Texture" id=3]
-[ext_resource path="res://assets/img/negra.png" type="Texture" id=4]
-[ext_resource path="res://assets/img/corchea.png" type="Texture" id=5]
-[ext_resource path="res://assets/img/semicorchea-1.png" type="Texture" id=6]
+[ext_resource path="res://assets/img/corchea.png" type="Texture" id=4]
+[ext_resource path="res://assets/img/semicorchea.png" type="Texture" id=5]
+[ext_resource path="res://assets/img/negra.png" type="Texture" id=6]
 [ext_resource path="res://scenes/Conductor.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scripts/Ritmico.gd" type="Script" id=8]
 [ext_resource path="res://assets/img/flecha.png" type="Texture" id=9]
@@ -125,9 +125,9 @@ offset = Vector2( -449.285, -167.735 )
 
 [node name="blanca" type="TextureButton" parent="."]
 margin_left = 184.0
-margin_top = 456.0
+margin_top = 454.74
 margin_right = 294.0
-margin_bottom = 566.0
+margin_bottom = 564.74
 texture_normal = ExtResource( 3 )
 expand = true
 __meta__ = {
@@ -139,7 +139,7 @@ margin_left = 328.0
 margin_top = 456.0
 margin_right = 438.0
 margin_bottom = 566.0
-texture_normal = ExtResource( 4 )
+texture_normal = ExtResource( 6 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -150,7 +150,7 @@ margin_left = 648.0
 margin_top = 456.0
 margin_right = 758.0
 margin_bottom = 566.0
-texture_normal = ExtResource( 6 )
+texture_normal = ExtResource( 5 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -161,7 +161,7 @@ margin_left = 480.0
 margin_top = 456.0
 margin_right = 590.0
 margin_bottom = 566.0
-texture_normal = ExtResource( 5 )
+texture_normal = ExtResource( 4 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false

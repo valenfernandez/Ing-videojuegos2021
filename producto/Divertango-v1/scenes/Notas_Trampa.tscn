@@ -1,18 +1,21 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/Notas_Trampa.gd" type="Script" id=1]
-[ext_resource path="res://assets/img/1200px-Red-circle.svg.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/negra_trap.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/corchea_trap.png" type="Texture" id=3]
+[ext_resource path="res://assets/img/semicorchea_trap.png" type="Texture" id=4]
+[ext_resource path="res://assets/img/blanca_trap.png" type="Texture" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 24.0
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 17.7549, 25.5538 )
 
 [node name="Area2D" type="Area2D"]
 script = ExtResource( 1 )
@@ -21,10 +24,12 @@ script = ExtResource( 1 )
 position = Vector2( 3.8147e-06, 3.8147e-06 )
 scale = Vector2( 0.055, 0.05375 )
 frames = SubResource( 1 )
+frame = 3
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -2.97302, 0.297302 )
 shape = SubResource( 2 )
 
 [node name="Node2D" type="Node2D" parent="."]

@@ -53,8 +53,6 @@ func cargar_partidas():
 
 func iniciar_puntaje():
 	for enc in partidas:
-		print(enc)
-		print(partidas)
 		if(enc != null):
 			if (enc.teatro == 1):
 				puntos_teatro1 += enc.highscore
