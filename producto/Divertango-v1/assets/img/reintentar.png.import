@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/1200px-Red-circle.svg.png-6ad9bfd75ce65702d640604b933e8cd6.stex"
+path="res://.import/reintentar.png-106227f94dda745e7c806f5141c59a90.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/1200px-Red-circle.svg.png"
-dest_files=[ "res://.import/1200px-Red-circle.svg.png-6ad9bfd75ce65702d640604b933e8cd6.stex" ]
+source_file="res://assets/img/reintentar.png"
+dest_files=[ "res://.import/reintentar.png-106227f94dda745e7c806f5141c59a90.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/menu.png-a8fbc9bbd977e7b0f58c9f3bdcd13641.stex"
+path="res://.import/regalo_bandoneon.png-366472048649fdcf12a7cf096ad65a49.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/menu.png"
-dest_files=[ "res://.import/menu.png-a8fbc9bbd977e7b0f58c9f3bdcd13641.stex" ]
+source_file="res://assets/img/regalo_bandoneon.png"
+dest_files=[ "res://.import/regalo_bandoneon.png-366472048649fdcf12a7cf096ad65a49.stex" ]
 
 [params]
 

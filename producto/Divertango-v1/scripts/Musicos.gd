@@ -1,7 +1,8 @@
 extends Node2D
 
 func _ready():
-	pass
+	var teatro = DiccionarioNiveles.nivel_actual
+	$AnimatedSprite.frame = teatro - 1
 
 func _on_musico1_pressed():
 	DiccionarioNiveles.set_musico(1)

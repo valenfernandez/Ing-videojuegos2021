@@ -1,47 +1,38 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/Menu.gd" type="Script" id=1]
-[ext_resource path="res://assets/img/menu_boton.png" type="Texture" id=2]
-[ext_resource path="res://assets/img/menu.png" type="Texture" id=3]
+[ext_resource path="res://assets/img/iniciar.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/iniciar_pressed.png" type="Texture" id=4]
+[ext_resource path="res://assets/img/volumen.png" type="Texture" id=5]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="HSlider" type="HSlider" parent="."]
-margin_left = 837.315
-margin_top = 513.863
-margin_right = 991.315
-margin_bottom = 594.863
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label2" type="Label" parent="."]
-margin_left = 842.578
-margin_top = 511.265
-margin_right = 898.578
-margin_bottom = 525.265
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "volumen"
+margin_left = 757.59
+margin_top = 501.986
+margin_right = 996.59
+margin_bottom = 606.986
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BotonComenzar" type="TextureButton" parent="."]
-margin_left = 187.373
-margin_top = 64.403
-margin_right = 858.373
-margin_bottom = 529.404
+margin_left = 373.454
+margin_top = 351.078
+margin_right = 739.454
+margin_bottom = 488.078
 texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 4 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Menu" type="Sprite" parent="."]
-position = Vector2( 521.411, 98.8883 )
-scale = Vector2( 1.01873, 1.02997 )
-texture = ExtResource( 3 )
+[node name="volumen" type="Sprite" parent="."]
+position = Vector2( 823.32, 515.418 )
+scale = Vector2( 0.21803, 0.178864 )
+texture = ExtResource( 5 )
 
 [connection signal="value_changed" from="HSlider" to="." method="_on_HSlider_value_changed"]
 [connection signal="pressed" from="BotonComenzar" to="." method="_on_BotonComenzar_pressed"]

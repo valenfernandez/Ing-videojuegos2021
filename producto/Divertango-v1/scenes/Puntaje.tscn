@@ -1,10 +1,19 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/Puntaje.gd" type="Script" id=1]
-[ext_resource path="res://assets/img/menu.png" type="Texture" id=2]
-[ext_resource path="res://assets/img/menu_boton.png" type="Texture" id=3]
+[ext_resource path="res://assets/img/bien.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/ok.png" type="Texture" id=3]
 [ext_resource path="res://assets/img/ganaste.png" type="Texture" id=4]
 [ext_resource path="res://assets/img/perdiste.png" type="Texture" id=5]
+[ext_resource path="res://assets/img/inicio_pressed.png" type="Texture" id=6]
+[ext_resource path="res://assets/img/bandoneon.png" type="Texture" id=7]
+[ext_resource path="res://assets/img/reintentar_pressed.png" type="Texture" id=8]
+[ext_resource path="res://assets/img/trampa.png" type="Texture" id=9]
+[ext_resource path="res://assets/img/inicio.png" type="Texture" id=10]
+[ext_resource path="res://assets/img/SCORE.png" type="Texture" id=11]
+[ext_resource path="res://assets/img/reintentar.png" type="Texture" id=12]
+[ext_resource path="res://assets/img/perfecto.png" type="Texture" id=13]
+[ext_resource path="res://assets/fonts/numerosfont.tres" type="DynamicFont" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -18,157 +27,135 @@ animations = [ {
 script = ExtResource( 1 )
 
 [node name="volver_jugar" type="TextureButton" parent="."]
-margin_left = 480.0
-margin_top = 384.0
-margin_right = 760.0
-margin_bottom = 576.0
-texture_normal = ExtResource( 3 )
+margin_left = 512.0
+margin_top = 432.0
+margin_right = 768.0
+margin_bottom = 528.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 8 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="a_menu" type="TextureButton" parent="."]
-margin_left = 168.0
-margin_top = 384.0
-margin_right = 456.0
-margin_bottom = 576.0
-texture_normal = ExtResource( 2 )
+margin_left = 208.0
+margin_top = 432.0
+margin_right = 496.0
+margin_bottom = 520.0
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 6 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="perfecto_Label" type="Label" parent="."]
-margin_left = 352.0
-margin_top = 48.0
-margin_right = 472.0
-margin_bottom = 72.0
-custom_colors/font_color = Color( 0.2, 0.12549, 0.345098, 1 )
-text = "PERFECTO:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="bien_Label" type="Label" parent="."]
-margin_left = 352.0
-margin_top = 81.0
-margin_right = 440.0
-margin_bottom = 96.0
-custom_colors/font_color = Color( 0.2, 0.12549, 0.345098, 1 )
-text = "BIEN:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ok_Label" type="Label" parent="."]
-margin_left = 352.0
-margin_top = 112.0
-margin_right = 440.0
-margin_bottom = 136.0
-custom_colors/font_color = Color( 0.2, 0.12549, 0.345098, 1 )
-text = "OKAY:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="bandoneon_Label" type="Label" parent="."]
-margin_left = 352.0
-margin_top = 143.0
-margin_right = 440.0
-margin_bottom = 167.0
-custom_colors/font_color = Color( 0.2, 0.12549, 0.345098, 1 )
-text = "BANDONEON:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="trampa_Label" type="Label" parent="."]
-margin_left = 352.0
-margin_top = 184.0
-margin_right = 440.0
-margin_bottom = 208.0
-custom_colors/font_color = Color( 0.2, 0.12549, 0.345098, 1 )
-text = "NOTAS TRAMPA:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="score_Label" type="Label" parent="."]
-margin_left = 432.0
-margin_top = 272.0
-margin_right = 520.0
-margin_bottom = 296.0
-custom_colors/font_color = Color( 0.2, 0.12549, 0.345098, 1 )
-text = "SCORE:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="perfect_num" type="Label" parent="."]
-margin_left = 464.0
-margin_top = 48.0
-margin_right = 504.0
-margin_bottom = 62.0
+margin_left = 448.0
+margin_top = 128.0
+margin_right = 488.0
+margin_bottom = 150.0
 rect_pivot_offset = Vector2( -240, 304 )
+custom_fonts/font = ExtResource( 14 )
+valign = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="bien_num" type="Label" parent="."]
-margin_left = 472.0
-margin_top = 80.0
-margin_right = 512.0
-margin_bottom = 94.0
+margin_left = 448.0
+margin_top = 160.0
+margin_right = 488.0
+margin_bottom = 182.0
 rect_pivot_offset = Vector2( -240, 304 )
+custom_fonts/font = ExtResource( 14 )
+valign = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ok_num" type="Label" parent="."]
-margin_left = 472.0
-margin_top = 112.0
+margin_left = 448.0
+margin_top = 200.0
 margin_right = 512.0
-margin_bottom = 128.0
+margin_bottom = 224.0
 rect_pivot_offset = Vector2( -240, 304 )
+custom_fonts/font = ExtResource( 14 )
+valign = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="bandoneon_num" type="Label" parent="."]
-margin_left = 472.0
-margin_top = 143.0
+margin_left = 448.0
+margin_top = 232.0
 margin_right = 512.0
-margin_bottom = 159.0
+margin_bottom = 256.0
 rect_pivot_offset = Vector2( -240, 304 )
+custom_fonts/font = ExtResource( 14 )
+valign = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="trampa_num" type="Label" parent="."]
-margin_left = 496.0
-margin_top = 184.0
-margin_right = 536.0
-margin_bottom = 200.0
+margin_left = 448.0
+margin_top = 280.0
+margin_right = 512.0
+margin_bottom = 304.0
 rect_pivot_offset = Vector2( -240, 304 )
+custom_fonts/font = ExtResource( 14 )
+valign = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="score_num" type="Label" parent="."]
-margin_left = 560.0
-margin_top = 272.0
-margin_right = 600.0
-margin_bottom = 288.0
+margin_left = 576.0
+margin_top = 368.0
+margin_right = 640.0
+margin_bottom = 400.0
 rect_pivot_offset = Vector2( -240, 304 )
+custom_fonts/font = ExtResource( 14 )
+valign = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 464, 352 )
-scale = Vector2( 0.207857, 0.205 )
+position = Vector2( 520, 64 )
+scale = Vector2( 0.384279, 0.444137 )
 frames = SubResource( 1 )
+
+[node name="perfecto" type="Sprite" parent="."]
+position = Vector2( 368, 140 )
+scale = Vector2( 0.169587, 0.215302 )
+texture = ExtResource( 13 )
+
+[node name="bien" type="Sprite" parent="."]
+position = Vector2( 384, 176 )
+scale = Vector2( 0.227628, 0.199288 )
+texture = ExtResource( 2 )
+
+[node name="ok" type="Sprite" parent="."]
+position = Vector2( 397, 215 )
+scale = Vector2( 0.197591, 0.210409 )
+texture = ExtResource( 3 )
+
+[node name="bandoneon" type="Sprite" parent="."]
+position = Vector2( 288, 254 )
+scale = Vector2( 0.359825, 0.329181 )
+texture = ExtResource( 7 )
+
+[node name="trampa" type="Sprite" parent="."]
+position = Vector2( 328, 296 )
+scale = Vector2( 0.329787, 0.329181 )
+texture = ExtResource( 9 )
+
+[node name="score" type="Sprite" parent="."]
+position = Vector2( 448, 392 )
+scale = Vector2( 0.45995, 0.44306 )
+texture = ExtResource( 11 )
 
 [connection signal="pressed" from="volver_jugar" to="." method="_on_volver_jugar_pressed"]
 [connection signal="pressed" from="a_menu" to="." method="_on_a_menu_pressed"]
