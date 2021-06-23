@@ -20,6 +20,8 @@ var puntos_teatro1 = 0 # sumo los max_score que tengo en la persistencia
 var puntos_teatro2 = 0
 var puntos_teatro3 = 0
 
+var textura_musico = null
+
 const SAVE_PATH = "res://saves.sav" # CUANDO QUERAMOS EXPORTAR EL APK, CAMBIAR 'res' POR 'user' para que ande bien
 
 var partidas = []
@@ -38,7 +40,6 @@ func _ready():
 		level_1_passed = true
 	if(puntos_teatro2 >= puntos_pasar_nivel2):
 		level_2_passed = true
-	
 	
 func cargar_partidas():
 	var aux = []

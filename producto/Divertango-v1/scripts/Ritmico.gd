@@ -50,6 +50,7 @@ var instance
 
 func _ready():
 	randomize()
+	$musico.texture = Global.textura_musico
 	$boton_bandoneon.hide()
 	cargar_nivel()
 	$Conductor.play_with_beat_offset(8)
