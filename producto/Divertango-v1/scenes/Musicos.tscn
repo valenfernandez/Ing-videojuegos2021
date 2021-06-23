@@ -1,12 +1,16 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://assets/img/walk-person-png.webp" type="Texture" id=1]
+[ext_resource path="res://assets/img/musico3.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Musicos.gd" type="Script" id=2]
 [ext_resource path="res://assets/img/cartel_musicos.png" type="Texture" id=3]
 [ext_resource path="res://assets/img/gran-rex.png" type="Texture" id=4]
 [ext_resource path="res://assets/img/regina.png" type="Texture" id=5]
 [ext_resource path="res://assets/img/colon.png" type="Texture" id=6]
 [ext_resource path="res://assets/sounds/click.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/img/fondo_ritmico.png" type="Texture" id=8]
+[ext_resource path="res://assets/img/musico1.png" type="Texture" id=9]
+[ext_resource path="res://assets/img/musico2.png" type="Texture" id=10]
+[ext_resource path="res://assets/fonts/numerosfont.tres" type="DynamicFont" id=11]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -19,33 +23,44 @@ animations = [ {
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
 
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -102.465
+margin_top = -6.67325
+margin_right = 1158.53
+margin_bottom = 663.327
+texture = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="musico1" type="TextureButton" parent="."]
-margin_left = 170.136
-margin_top = 137.544
-margin_right = 301.136
-margin_bottom = 415.544
-texture_normal = ExtResource( 1 )
+margin_left = 98.2274
+margin_top = 83.1815
+margin_right = 354.227
+margin_bottom = 453.182
+texture_normal = ExtResource( 9 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="musico2" type="TextureButton" parent="."]
-margin_left = 477.904
-margin_top = 172.861
-margin_right = 608.904
-margin_bottom = 450.861
-texture_normal = ExtResource( 1 )
+margin_left = 392.454
+margin_top = 38.409
+margin_right = 658.454
+margin_bottom = 412.409
+texture_normal = ExtResource( 10 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="musico3" type="TextureButton" parent="."]
-margin_left = 758.763
-margin_top = 144.271
-margin_right = 889.763
-margin_bottom = 422.271
+margin_left = 654.0
+margin_top = 42.0
+margin_right = 955.0
+margin_bottom = 492.0
 texture_normal = ExtResource( 1 )
 expand = true
 __meta__ = {
@@ -68,24 +83,27 @@ margin_left = 192.272
 margin_top = 420.272
 margin_right = 271.272
 margin_bottom = 448.272
+custom_fonts/font = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LabelPuntaje2" type="Label" parent="."]
-margin_left = 496.328
-margin_top = 452.799
-margin_right = 575.328
-margin_bottom = 480.799
+margin_left = 468.012
+margin_top = 381.065
+margin_right = 547.012
+margin_bottom = 409.065
+custom_fonts/font = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LabelPuntaje3" type="Label" parent="."]
-margin_left = 801.983
+margin_left = 751.014
 margin_top = 434.819
-margin_right = 880.983
+margin_right = 830.014
 margin_bottom = 462.819
+custom_fonts/font = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

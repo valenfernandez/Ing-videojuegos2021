@@ -3,6 +3,18 @@ extends Node2D
 func _ready():
 	var teatro = DiccionarioNiveles.nivel_actual
 	$AnimatedSprite.frame = teatro - 1
+	if (teatro == 1):
+		$musico1.set_normal_texture(load("res://assets/img/musico1.png"))
+		$musico2.set_normal_texture(load("res://assets/img/musico2.png"))
+		$musico3.set_normal_texture(load("res://assets/img/musico7.png"))
+	elif(teatro == 2):
+		$musico1.set_normal_texture(load("res://assets/img/musico4.png"))
+		$musico2.set_normal_texture(load("res://assets/img/musico5.png"))
+		$musico3.set_normal_texture(load("res://assets/img/musico6.png"))
+	elif(teatro == 3):
+		$musico1.set_normal_texture(load("res://assets/img/musico3.png"))
+		$musico2.set_normal_texture(load("res://assets/img/musico8.png"))
+		$musico3.set_normal_texture(load("res://assets/img/musico9.png"))
 	var partidas_ant = Global.partidas
 	for enc in partidas_ant:
 		if(enc != null && enc.teatro == teatro):

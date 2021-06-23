@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/teatro-desbloq.png-5d35162ce57fb6122cc4e9b3ca9bbaf5.stex"
+path="res://.import/linea.png-7b9438aa6578b0715ae1cee6a997f639.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/teatro-desbloq.png"
-dest_files=[ "res://.import/teatro-desbloq.png-5d35162ce57fb6122cc4e9b3ca9bbaf5.stex" ]
+source_file="res://assets/img/linea.png"
+dest_files=[ "res://.import/linea.png-7b9438aa6578b0715ae1cee6a997f639.stex" ]
 
 [params]
 

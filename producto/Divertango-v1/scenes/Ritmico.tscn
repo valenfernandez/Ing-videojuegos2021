@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/img/carriles.png" type="Texture" id=1]
 [ext_resource path="res://assets/img/cuadrado.png" type="Texture" id=2]
@@ -11,15 +11,18 @@
 [ext_resource path="res://assets/img/flecha.png" type="Texture" id=9]
 [ext_resource path="res://assets/img/flecha-des.png" type="Texture" id=10]
 [ext_resource path="res://assets/sounds/incorrect_note.wav" type="AudioStream" id=11]
+[ext_resource path="res://assets/img/fondo_ritmico.png" type="Texture" id=12]
+[ext_resource path="res://assets/img/linea.png" type="Texture" id=13]
+[ext_resource path="res://assets/fonts/numerosfont.tres" type="DynamicFont" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 392.855, 48.7535 )
+extents = Vector2( 58.9984, 84.8701 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 508.761, 48.7538 )
+extents = Vector2( 78.03, 83.2029 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 1047.58, 48.7535 )
+extents = Vector2( 98.0463, 84.8728 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
@@ -32,15 +35,26 @@ animations = [ {
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 8 )
 
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -8.0
+margin_top = -16.0
+margin_right = 1032.0
+margin_bottom = 608.0
+texture = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="linea" type="Sprite" parent="."]
-position = Vector2( 234, 204.519 )
-scale = Vector2( 0.0152728, 0.492273 )
-texture = ExtResource( 2 )
+position = Vector2( 243.439, 173.371 )
+scale = Vector2( 0.18517, 0.270288 )
+texture = ExtResource( 13 )
 
 [node name="AreaBlanca-Perfect" type="Area2D" parent="linea"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaBlanca-Perfect"]
-position = Vector2( -130.969, -252.947 )
+position = Vector2( -10.6876, -351.831 )
 shape = SubResource( 1 )
 
 [node name="AreaBlanca-Good" type="Area2D" parent="linea"]
@@ -48,74 +62,74 @@ position = Vector2( -3273.79, 7.07129 )
 scale = Vector2( 1.02959, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaBlanca-Good"]
-position = Vector2( 4070.03, -260.018 )
+position = Vector2( 3309.25, -359.261 )
 shape = SubResource( 2 )
 
 [node name="AreaBlanca-OK" type="Area2D" parent="linea"]
 position = Vector2( -13226.1, -106.687 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaBlanca-OK"]
-position = Vector2( 15714.3, -146.26 )
+position = Vector2( 13542.3, -244.693 )
 shape = SubResource( 3 )
 
 [node name="AreaNegra-Perfect" type="Area2D" parent="linea"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaNegra-Perfect"]
-position = Vector2( -130.969, -127.001 )
+position = Vector2( -5.87646, -120.409 )
 shape = SubResource( 1 )
 
 [node name="AreaNegra-Good" type="Area2D" parent="linea"]
 position = Vector2( -7988.06, 283.341 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaNegra-Good"]
-position = Vector2( 8904.75, -406.279 )
+position = Vector2( 8123.98, -403.343 )
 shape = SubResource( 2 )
 
 [node name="AreaNegra-OK" type="Area2D" parent="linea"]
 position = Vector2( -13226.1, -106.687 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaNegra-OK"]
-position = Vector2( 15714.2, -16.2509 )
+position = Vector2( 13544.9, -13.3144 )
 shape = SubResource( 3 )
 
 [node name="AreaCorchea-Perfect" type="Area2D" parent="linea"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaCorchea-Perfect"]
-position = Vector2( -130.951, 7.07128 )
+position = Vector2( -2.93805, 130.635 )
 shape = SubResource( 1 )
 
 [node name="AreaCorchea-Good" type="Area2D" parent="linea"]
 position = Vector2( -10083.3, 137.08 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaCorchea-Good"]
-position = Vector2( 11000, -130.009 )
+position = Vector2( 10223.8, -8.67227 )
 shape = SubResource( 2 )
 
 [node name="AreaCorchea-OK" type="Area2D" parent="linea"]
 position = Vector2( -13226.1, -106.687 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaCorchea-OK"]
-position = Vector2( 15714.1, 113.758 )
+position = Vector2( 13547.8, 237.653 )
 shape = SubResource( 3 )
 
 [node name="AreaSemiCorchea-Perfect2" type="Area2D" parent="linea"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaSemiCorchea-Perfect2"]
-position = Vector2( -130.951, 137.08 )
+position = Vector2( -1.12299, 367.808 )
 shape = SubResource( 1 )
 
 [node name="AreaSemiCorchea-Good2" type="Area2D" parent="linea"]
 position = Vector2( -10083.3, 137.08 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaSemiCorchea-Good2"]
-position = Vector2( 10999.9, 0.000462532 )
+position = Vector2( 10223.3, 228.606 )
 shape = SubResource( 2 )
 
 [node name="AreaSemiCorchea-OK" type="Area2D" parent="linea"]
 position = Vector2( -13226.1, -106.687 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaSemiCorchea-OK"]
-position = Vector2( 15714.3, 243.767 )
+position = Vector2( 13547.7, 472.743 )
 shape = SubResource( 3 )
 
 [node name="carriles" type="Sprite" parent="."]
@@ -177,6 +191,7 @@ margin_left = 24.0
 margin_top = 16.0
 margin_right = 144.0
 margin_bottom = 56.0
+custom_fonts/font = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -204,6 +219,7 @@ margin_left = 24.0
 margin_top = 72.0
 margin_right = 136.0
 margin_bottom = 118.0
+custom_fonts/font = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -211,6 +227,10 @@ __meta__ = {
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
 volume_db = -30.0
+
+[node name="Daniel" type="Sprite" parent="."]
+
+[node name="musico" type="Sprite" parent="."]
 
 [connection signal="area_entered" from="linea/AreaBlanca-Perfect" to="." method="_on_AreaBlancaPerfect_area_entered"]
 [connection signal="area_exited" from="linea/AreaBlanca-Perfect" to="." method="area_exited"]

@@ -1,71 +1,92 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://assets/img/teatro-desbloq.png" type="Texture" id=1]
-[ext_resource path="res://assets/img/teatro.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/teatro_colon.png" type="Texture" id=1]
+[ext_resource path="res://assets/img/teatro_colon_byn.png" type="Texture" id=2]
 [ext_resource path="res://scripts/Mapa.gd" type="Script" id=3]
 [ext_resource path="res://assets/sounds/click.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/img/mapa.png" type="Texture" id=5]
+[ext_resource path="res://assets/img/teatro_rex.png" type="Texture" id=6]
+[ext_resource path="res://assets/img/teatro_rex_byn.png" type="Texture" id=7]
+[ext_resource path="res://assets/img/teatro_regina.png" type="Texture" id=8]
+[ext_resource path="res://assets/img/teatro_regina_byn.png" type="Texture" id=9]
+[ext_resource path="res://assets/fonts/numerosfont.tres" type="DynamicFont" id=10]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
 
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1073.0
+margin_bottom = 836.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="botonteatro1" type="TextureButton" parent="."]
-margin_left = 139.564
-margin_top = 289.091
-margin_right = 364.564
-margin_bottom = 514.091
-texture_normal = ExtResource( 1 )
-texture_disabled = ExtResource( 2 )
+margin_left = 103.153
+margin_top = 102.42
+margin_right = 328.153
+margin_bottom = 254.42
+texture_normal = ExtResource( 6 )
+texture_disabled = ExtResource( 7 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="botonteatro2" type="TextureButton" parent="."]
-margin_left = 435.342
-margin_top = 221.383
-margin_right = 660.342
-margin_bottom = 446.383
+margin_left = 421.786
+margin_top = 336.152
+margin_right = 612.786
+margin_bottom = 543.153
 disabled = true
-texture_normal = ExtResource( 1 )
-texture_disabled = ExtResource( 2 )
+texture_normal = ExtResource( 8 )
+texture_disabled = ExtResource( 9 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="botonteatro3" type="TextureButton" parent="."]
-margin_left = 727.669
-margin_top = 66.4737
-margin_right = 952.669
-margin_bottom = 293.474
+margin_left = 725.781
+margin_top = 41.933
+margin_right = 950.781
+margin_bottom = 268.933
 disabled = true
 texture_normal = ExtResource( 1 )
 texture_disabled = ExtResource( 2 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="points_t1" type="Label" parent="."]
-margin_left = 212.0
-margin_top = 501.0
-margin_right = 291.0
-margin_bottom = 527.0
+margin_left = 234.475
+margin_top = 246.284
+margin_right = 313.475
+margin_bottom = 275.284
+custom_fonts/font = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="points_t2" type="Label" parent="."]
-margin_left = 535.182
-margin_top = 408.218
-margin_right = 634.182
-margin_bottom = 436.218
+margin_left = 550.165
+margin_top = 550.557
+margin_right = 649.165
+margin_bottom = 578.557
+custom_fonts/font = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="points_t3" type="Label" parent="."]
-margin_left = 829.746
-margin_top = 248.618
-margin_right = 924.746
-margin_bottom = 278.618
+margin_left = 853.719
+margin_top = 260.604
+margin_right = 948.719
+margin_bottom = 290.604
+custom_fonts/font = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

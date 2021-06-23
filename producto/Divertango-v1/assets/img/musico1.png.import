@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/teatro.png-51c43c63fb74b913a18888910cba9262.stex"
+path="res://.import/musico1.png-1e47a39d9d280862aee7b827b6fd16fa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/teatro.png"
-dest_files=[ "res://.import/teatro.png-51c43c63fb74b913a18888910cba9262.stex" ]
+source_file="res://assets/img/musico1.png"
+dest_files=[ "res://.import/musico1.png-1e47a39d9d280862aee7b827b6fd16fa.stex" ]
 
 [params]
 

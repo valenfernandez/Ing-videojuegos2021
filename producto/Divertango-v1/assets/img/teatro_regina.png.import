@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/walk-person-png.webp-c8d03e1614eb7c701ff3622a77199786.stex"
+path="res://.import/teatro_regina.png-3a0ae56ca85011efce22f8eccf196fea.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/walk-person-png.webp"
-dest_files=[ "res://.import/walk-person-png.webp-c8d03e1614eb7c701ff3622a77199786.stex" ]
+source_file="res://assets/img/teatro_regina.png"
+dest_files=[ "res://.import/teatro_regina.png-3a0ae56ca85011efce22f8eccf196fea.stex" ]
 
 [params]
 
