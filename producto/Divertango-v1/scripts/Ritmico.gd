@@ -106,6 +106,7 @@ func bandoneon_activar(prob):
 	var activo = false
 	var num = randi() % 100
 	if( num < prob):
+		$animacion_bandoneon.frame = 1
 		$boton_bandoneon.show()
 		$boton_bandoneon.disabled = false
 		activo = true
@@ -113,6 +114,7 @@ func bandoneon_activar(prob):
 	
 func bandoneon_desactivar():
 	$boton_bandoneon.disabled = true
+	$animacion_bandoneon.frame = 2
 	$boton_bandoneon.hide()
 	return false
 	

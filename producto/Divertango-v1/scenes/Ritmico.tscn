@@ -1,14 +1,13 @@
 [gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/img/carriles.png" type="Texture" id=1]
-[ext_resource path="res://assets/img/cuadrado.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/bandoneon_cerrado.png" type="Texture" id=2]
 [ext_resource path="res://assets/img/blanca.png" type="Texture" id=3]
 [ext_resource path="res://assets/img/corchea.png" type="Texture" id=4]
 [ext_resource path="res://assets/img/semicorchea.png" type="Texture" id=5]
 [ext_resource path="res://assets/img/negra.png" type="Texture" id=6]
 [ext_resource path="res://scenes/Conductor.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scripts/Ritmico.gd" type="Script" id=8]
-[ext_resource path="res://assets/img/flecha.png" type="Texture" id=9]
 [ext_resource path="res://assets/img/flecha-des.png" type="Texture" id=10]
 [ext_resource path="res://assets/sounds/incorrect_note.wav" type="AudioStream" id=11]
 [ext_resource path="res://assets/img/fondo_ritmico.png" type="Texture" id=12]
@@ -16,6 +15,7 @@
 [ext_resource path="res://assets/fonts/numerosfont.tres" type="DynamicFont" id=14]
 [ext_resource path="res://assets/img/musico1.png" type="Texture" id=15]
 [ext_resource path="res://assets/img/daniel.png" type="Texture" id=16]
+[ext_resource path="res://assets/img/bandoneon_abierto.png" type="Texture" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 58.9984, 84.8701 )
@@ -28,7 +28,7 @@ extents = Vector2( 98.0463, 84.8728 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 17 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -199,9 +199,10 @@ __meta__ = {
 }
 
 [node name="animacion_bandoneon" type="AnimatedSprite" parent="."]
-position = Vector2( 936, 480 )
-scale = Vector2( 0.117188, 0.242188 )
+position = Vector2( 951.46, 507.946 )
+scale = Vector2( 0.304488, 0.316513 )
 frames = SubResource( 4 )
+frame = 1
 
 [node name="boton_bandoneon" type="TextureButton" parent="."]
 margin_left = 912.0
@@ -209,8 +210,7 @@ margin_top = 456.0
 margin_right = 960.0
 margin_bottom = 496.0
 disabled = true
-texture_normal = ExtResource( 9 )
-texture_disabled = ExtResource( 10 )
+texture_normal = ExtResource( 10 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -231,7 +231,7 @@ stream = ExtResource( 11 )
 volume_db = -30.0
 
 [node name="Daniel" type="Sprite" parent="."]
-position = Vector2( 856.113, 265.005 )
+position = Vector2( 837.086, 217.436 )
 scale = Vector2( 0.175778, 0.152948 )
 texture = ExtResource( 16 )
 

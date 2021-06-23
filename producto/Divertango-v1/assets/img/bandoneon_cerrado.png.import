@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/flecha.png-1b0fd3286aa7fa48ce8c5e757cdce803.stex"
+path="res://.import/bandoneon_cerrado.png-fbdb4b6396339d6038b50823dea63024.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/flecha.png"
-dest_files=[ "res://.import/flecha.png-1b0fd3286aa7fa48ce8c5e757cdce803.stex" ]
+source_file="res://assets/img/bandoneon_cerrado.png"
+dest_files=[ "res://.import/bandoneon_cerrado.png-fbdb4b6396339d6038b50823dea63024.stex" ]
 
 [params]
 
