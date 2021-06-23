@@ -17,17 +17,23 @@ func _ready():
 
 func _on_musico1_pressed():
 	DiccionarioNiveles.set_musico(1)
+	$AudioStreamPlayer.play()
+	yield($AudioStreamPlayer, "finished")
 	if get_tree().change_scene("res://scenes/Ritmico.tscn") != OK:
 		print ("Error")
 
 
 func _on_musico2_pressed():
 	DiccionarioNiveles.set_musico(2)
+	$AudioStreamPlayer.play()
+	yield($AudioStreamPlayer, "finished")
 	if get_tree().change_scene("res://scenes/Ritmico.tscn") != OK:
 		print ("Error")
 
 
 func _on_musico3_pressed():
 	DiccionarioNiveles.set_musico(3)
+	$AudioStreamPlayer.play()
+	yield($AudioStreamPlayer, "finished")
 	if get_tree().change_scene("res://scenes/Ritmico.tscn") != OK:
 		print ("Error")

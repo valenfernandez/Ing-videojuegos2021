@@ -14,17 +14,23 @@ func _ready():
 
 func _on_botonteatro1_pressed(): 
 	DiccionarioNiveles.set_nivel(1);
+	$AudioStreamPlayer.play()
+	yield($AudioStreamPlayer, "finished")
 	if get_tree().change_scene("res://scenes/Musicos.tscn") != OK:
 		print("Error")
 
 
 func _on_botonteatro2_pressed():
 	DiccionarioNiveles.set_nivel(2);
+	$AudioStreamPlayer.play()
+	yield($AudioStreamPlayer, "finished")
 	if get_tree().change_scene("res://scenes/Musicos.tscn") != OK:
 		print ("Error")
 
 
 func _on_botonteatro3_pressed():
 	DiccionarioNiveles.set_nivel(3);
+	$AudioStreamPlayer.play()
+	yield($AudioStreamPlayer, "finished")
 	if get_tree().change_scene("res://scenes/Musicos.tscn") != OK:
 		print ("Error")

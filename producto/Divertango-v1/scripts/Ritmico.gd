@@ -299,7 +299,8 @@ func area_exited(area): # la nota paso y no se apreto ningun boton.
 		if (area.hitted == false) :
 			notas_perdidas += 1
 			$perdidas.text = str(notas_perdidas)
-			#MOSTRAR CARTEL (LABEL Y CARTELITO QUE MUESTRE EL NUMERO DE NOTAS PERDIDAS)
+			$AudioStreamPlayer.play()
+			yield($AudioStreamPlayer, "finished")
 			if(notas_perdidas >= 5):
 				terminar_juego()
 	current_note = null

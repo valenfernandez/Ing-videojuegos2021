@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/Menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/iniciar.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/img/volumen.png" type="Texture" id=5]
 [ext_resource path="res://assets/img/nombre_titulo.png" type="Texture" id=6]
 [ext_resource path="res://assets/music/astor-piazzolla-milonga-del-angel.mp3" type="AudioStream" id=7]
+[ext_resource path="res://assets/sounds/click.wav" type="AudioStream" id=8]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -54,10 +55,14 @@ position = Vector2( 535.241, 190.54 )
 scale = Vector2( 0.874489, 0.773726 )
 texture = ExtResource( 6 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="MusicaFondo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 volume_db = -30.0
 autoplay = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -24.0
 
 [connection signal="value_changed" from="HSlider" to="." method="_on_HSlider_value_changed"]
 [connection signal="pressed" from="BotonComenzar" to="." method="_on_BotonComenzar_pressed"]
