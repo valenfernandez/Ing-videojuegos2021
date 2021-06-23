@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/img/carriles.png" type="Texture" id=1]
 [ext_resource path="res://assets/img/cuadrado.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://assets/img/linea.png" type="Texture" id=13]
 [ext_resource path="res://assets/fonts/numerosfont.tres" type="DynamicFont" id=14]
 [ext_resource path="res://assets/img/musico1.png" type="Texture" id=15]
+[ext_resource path="res://assets/img/daniel.png" type="Texture" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 58.9984, 84.8701 )
@@ -230,6 +231,9 @@ stream = ExtResource( 11 )
 volume_db = -30.0
 
 [node name="Daniel" type="Sprite" parent="."]
+position = Vector2( 856.113, 265.005 )
+scale = Vector2( 0.175778, 0.152948 )
+texture = ExtResource( 16 )
 
 [node name="musico" type="Sprite" parent="."]
 position = Vector2( 124.405, 250.451 )
