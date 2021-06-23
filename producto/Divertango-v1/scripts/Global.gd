@@ -13,8 +13,8 @@ var encuentro_ganado = false
 var level_1_passed = false
 var level_2_passed = false
 
-var puntos_pasar_nivel1 = 100 # puntos totales del teatro 1 para considerarse pasado
-var puntos_pasar_nivel2 = 100 # puntos totales del teatro 2 para considerarse pasado
+var puntos_pasar_nivel1 = 1000 # puntos totales del teatro 1 para considerarse pasado
+var puntos_pasar_nivel2 = 2000 # puntos totales del teatro 2 para considerarse pasado
 
 var puntos_teatro1 = 0 # sumo los max_score que tengo en la persistencia
 var puntos_teatro2 = 0

@@ -2,7 +2,7 @@ extends Node2D
 
 
 func _ready():
-	pass 
+	$HSlider.set_value(10)
 
 func _on_BotonComenzar_pressed():
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), 

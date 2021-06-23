@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/astor-piazzolla-milonga-del-angel.mp3-8aaaee58f56e5cf64824c98f56390493.mp3str"
+
+[deps]
+
+source_file="res://assets/music/astor-piazzolla-milonga-del-angel.mp3"
+dest_files=[ "res://.import/astor-piazzolla-milonga-del-angel.mp3-8aaaee58f56e5cf64824c98f56390493.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
