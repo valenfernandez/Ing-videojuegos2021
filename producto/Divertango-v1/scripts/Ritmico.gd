@@ -105,9 +105,9 @@ func terminar_juego():
 	
 func bandoneon_activar(prob):
 	var activo = false
-	$animacion_bandoneon.frame = 1
 	var num = randi() % 100
 	if( num < prob):
+		$animacion_bandoneon.frame = 1
 		$boton_bandoneon.show()
 		$boton_bandoneon.disabled = false
 		activo = true
