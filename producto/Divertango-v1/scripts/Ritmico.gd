@@ -51,6 +51,7 @@ var instance
 func _ready():
 	randomize()
 	$musico.texture = Global.textura_musico
+	$animacion_bandoneon.frame = 0
 	$boton_bandoneon.hide()
 	cargar_nivel()
 	$Conductor.play_with_beat_offset(8)
@@ -104,6 +105,7 @@ func terminar_juego():
 	
 func bandoneon_activar(prob):
 	var activo = false
+	$animacion_bandoneon.frame = 1
 	var num = randi() % 100
 	if( num < prob):
 		$boton_bandoneon.show()
@@ -112,6 +114,7 @@ func bandoneon_activar(prob):
 	return activo
 	
 func bandoneon_desactivar():
+	$animacion_bandoneon.frame = 0
 	$boton_bandoneon.disabled = true
 	$boton_bandoneon.hide()
 	return false
