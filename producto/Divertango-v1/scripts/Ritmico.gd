@@ -106,7 +106,6 @@ func bandoneon_activar(prob):
 	var activo = false
 	var num = randi() % 100
 	if( num < prob):
-		$animacion_bandoneon.frame = 1
 		$boton_bandoneon.show()
 		$boton_bandoneon.disabled = false
 		activo = true
@@ -114,11 +113,10 @@ func bandoneon_activar(prob):
 	
 func bandoneon_desactivar():
 	$boton_bandoneon.disabled = true
-	$animacion_bandoneon.frame = 2
 	$boton_bandoneon.hide()
 	return false
-	
-	
+
+
 #segun nivel y musico
 # El Conductor nos va diciendo en qué posicion (beat/pulso) de la cancion estamos.
 # En base a eso, definimos intervalos donde se spawnearán mas o menos notas por pulso.
@@ -299,11 +297,12 @@ func increment_score(by):
 
 func area_exited(area): # la nota paso y no se apreto ningun boton.
 	if(area.get_class() == "Notas_Musicales"):
-		if (area.hitted == false) :
+		if (area.hitted_note == false):
 			notas_perdidas += 1
 			$perdidas.text = str(notas_perdidas)
 			$AudioStreamPlayer.play()
-			yield($AudioStreamPlayer, "finished")
+			# habia casos que este yield tardaba en ejecutarse y provocaba errores en las notas siguientes
+			#yield($AudioStreamPlayer, "finished")
 			if(notas_perdidas >= 5):
 				terminar_juego()
 	current_note = null
@@ -421,4 +420,10 @@ func _on_boton_bandoneon_pressed():
 	increment_score(30)
 	$boton_bandoneon.disabled = true
 	$boton_bandoneon.hide()
+	if $animacion_bandoneon.frame == 0:
+		$animacion_bandoneon.frame = 1 # expandir
+		$boton_bandoneon.rect_position.y = 440.0
+	else:
+		$animacion_bandoneon.frame = 0 # contraer
+		$boton_bandoneon.rect_position.y = 497.0
 	bandoneon_activo = false

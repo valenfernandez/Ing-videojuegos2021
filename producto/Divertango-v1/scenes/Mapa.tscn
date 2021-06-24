@@ -49,10 +49,10 @@ __meta__ = {
 }
 
 [node name="botonteatro3" type="TextureButton" parent="."]
-margin_left = 725.781
-margin_top = 41.933
-margin_right = 950.781
-margin_bottom = 268.933
+margin_left = 752.781
+margin_top = 43.933
+margin_right = 977.781
+margin_bottom = 270.933
 disabled = true
 texture_normal = ExtResource( 1 )
 texture_disabled = ExtResource( 2 )

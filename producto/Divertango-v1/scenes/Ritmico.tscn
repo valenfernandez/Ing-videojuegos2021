@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/img/negra.png" type="Texture" id=6]
 [ext_resource path="res://scenes/Conductor.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scripts/Ritmico.gd" type="Script" id=8]
-[ext_resource path="res://assets/img/flecha-des.png" type="Texture" id=10]
+[ext_resource path="res://assets/img/boton_bandoneon.png" type="Texture" id=9]
 [ext_resource path="res://assets/sounds/incorrect_note.wav" type="AudioStream" id=11]
 [ext_resource path="res://assets/img/fondo_ritmico.png" type="Texture" id=12]
 [ext_resource path="res://assets/img/linea.png" type="Texture" id=13]
@@ -18,13 +18,13 @@
 [ext_resource path="res://assets/img/bandoneon_abierto.png" type="Texture" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 58.9984, 84.8701 )
+extents = Vector2( 51.9894, 84.8701 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 78.03, 83.2029 )
+extents = Vector2( 54.741, 84.7291 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 98.0463, 84.8728 )
+extents = Vector2( 66.101, 84.8728 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
@@ -48,6 +48,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="carriles" type="Sprite" parent="."]
+position = Vector2( 958.476, 314.657 )
+scale = Vector2( 0.849283, 0.849283 )
+texture = ExtResource( 1 )
+offset = Vector2( -449.285, -167.735 )
+
 [node name="linea" type="Sprite" parent="."]
 position = Vector2( 243.439, 173.371 )
 scale = Vector2( 0.18517, 0.270288 )
@@ -56,7 +62,7 @@ texture = ExtResource( 13 )
 [node name="AreaBlanca-Perfect" type="Area2D" parent="linea"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaBlanca-Perfect"]
-position = Vector2( -10.6876, -351.831 )
+position = Vector2( -5.28709, -351.831 )
 shape = SubResource( 1 )
 
 [node name="AreaBlanca-Good" type="Area2D" parent="linea"]
@@ -64,14 +70,14 @@ position = Vector2( -3273.79, 7.07129 )
 scale = Vector2( 1.02959, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaBlanca-Good"]
-position = Vector2( 3309.25, -359.261 )
+position = Vector2( 3280.52, -358.849 )
 shape = SubResource( 2 )
 
 [node name="AreaBlanca-OK" type="Area2D" parent="linea"]
 position = Vector2( -13226.1, -106.687 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaBlanca-OK"]
-position = Vector2( 13542.3, -244.693 )
+position = Vector2( 13453.1, -245.02 )
 shape = SubResource( 3 )
 
 [node name="AreaNegra-Perfect" type="Area2D" parent="linea"]
@@ -84,14 +90,14 @@ shape = SubResource( 1 )
 position = Vector2( -7988.06, 283.341 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaNegra-Good"]
-position = Vector2( 8123.98, -403.343 )
+position = Vector2( 8089.7, -403.755 )
 shape = SubResource( 2 )
 
 [node name="AreaNegra-OK" type="Area2D" parent="linea"]
 position = Vector2( -13226.1, -106.687 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaNegra-OK"]
-position = Vector2( 13544.9, -13.3144 )
+position = Vector2( 13449.3, -13.6193 )
 shape = SubResource( 3 )
 
 [node name="AreaCorchea-Perfect" type="Area2D" parent="linea"]
@@ -104,14 +110,14 @@ shape = SubResource( 1 )
 position = Vector2( -10083.3, 137.08 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaCorchea-Good"]
-position = Vector2( 10223.8, -8.67227 )
+position = Vector2( 10187.6, -6.59354 )
 shape = SubResource( 2 )
 
 [node name="AreaCorchea-OK" type="Area2D" parent="linea"]
 position = Vector2( -13226.1, -106.687 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaCorchea-OK"]
-position = Vector2( 13547.8, 237.653 )
+position = Vector2( 13451.5, 237.326 )
 shape = SubResource( 3 )
 
 [node name="AreaSemiCorchea-Perfect2" type="Area2D" parent="linea"]
@@ -124,21 +130,15 @@ shape = SubResource( 1 )
 position = Vector2( -10083.3, 137.08 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaSemiCorchea-Good2"]
-position = Vector2( 10223.3, 228.606 )
+position = Vector2( 10189.3, 230.643 )
 shape = SubResource( 2 )
 
 [node name="AreaSemiCorchea-OK" type="Area2D" parent="linea"]
 position = Vector2( -13226.1, -106.687 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaSemiCorchea-OK"]
-position = Vector2( 13547.7, 472.743 )
+position = Vector2( 13453.5, 474.616 )
 shape = SubResource( 3 )
-
-[node name="carriles" type="Sprite" parent="."]
-position = Vector2( 958.476, 314.657 )
-scale = Vector2( 0.849283, 0.849283 )
-texture = ExtResource( 1 )
-offset = Vector2( -449.285, -167.735 )
 
 [node name="blanca" type="TextureButton" parent="."]
 margin_left = 184.0
@@ -205,12 +205,12 @@ frames = SubResource( 4 )
 frame = 1
 
 [node name="boton_bandoneon" type="TextureButton" parent="."]
-margin_left = 912.0
-margin_top = 456.0
-margin_right = 960.0
-margin_bottom = 496.0
+margin_left = 908.0
+margin_top = 440.0
+margin_right = 966.0
+margin_bottom = 488.0
 disabled = true
-texture_normal = ExtResource( 10 )
+texture_normal = ExtResource( 9 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -231,8 +231,8 @@ stream = ExtResource( 11 )
 volume_db = -30.0
 
 [node name="Daniel" type="Sprite" parent="."]
-position = Vector2( 837.086, 217.436 )
-scale = Vector2( 0.175778, 0.152948 )
+position = Vector2( 811.057, 268.597 )
+scale = Vector2( 0.138, 0.125 )
 texture = ExtResource( 16 )
 
 [node name="musico" type="Sprite" parent="."]
