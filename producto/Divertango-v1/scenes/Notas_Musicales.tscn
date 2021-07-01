@@ -17,7 +17,7 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 10.4805, 25.8347 )
 
-[node name="Area2D" type="Area2D"]
+[node name="Area2D_Notas" type="Area2D"]
 script = ExtResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -36,8 +36,10 @@ shape = SubResource( 2 )
 position = Vector2( -1.05946, 0 )
 
 [node name="Label" type="Label" parent="Node2D"]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_left = 5.0
+margin_top = -7.0
+margin_right = 45.0
+margin_bottom = 7.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/sounds/click.wav" type="AudioStream" id=4]
 [ext_resource path="res://assets/img/escena_inicial.png" type="Texture" id=5]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D_Intro" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -25,7 +25,7 @@ position = Vector2( 292.919, 491.445 )
 scale = Vector2( 0.638081, 0.573435 )
 texture = ExtResource( 2 )
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="botonAvanzar" type="TextureButton" parent="."]
 margin_left = 909.475
 margin_top = 523.0
 margin_right = 1004.47
@@ -36,8 +36,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="SonidoClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = -24.0
 
-[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="botonAvanzar" to="." method="_on_botonAvanzar_pressed"]

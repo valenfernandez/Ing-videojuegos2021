@@ -303,9 +303,9 @@ func area_exited(area): # la nota paso y no se apreto ningun boton.
 		if (area.hitted_note == false):
 			notas_perdidas += 1
 			$perdidas.text = str(notas_perdidas)
-			$AudioStreamPlayer.play()
+			$SonidoNotaPerdida.play()
 			# habia casos que este yield tardaba en ejecutarse y provocaba errores en las notas siguientes
-			#yield($AudioStreamPlayer, "finished")
+			#yield($SonidoNotaPerdida, "finished")
 			if(notas_perdidas >= 5):
 				terminar_juego()
 	current_note = null
@@ -421,12 +421,7 @@ func _on_AreaSemiCorcheaOK_area_entered(area):
 
 func _on_boton_bandoneon_pressed():
 	increment_score(30)
+	$animacion_bandoneon.frame = 0 # contraer
 	$boton_bandoneon.disabled = true
 	$boton_bandoneon.hide()
-	if $animacion_bandoneon.frame == 0:
-		$animacion_bandoneon.frame = 1 # expandir
-		$boton_bandoneon.rect_position.y = 440.0
-	else:
-		$animacion_bandoneon.frame = 0 # contraer
-		$boton_bandoneon.rect_position.y = 497.0
 	bandoneon_activo = false

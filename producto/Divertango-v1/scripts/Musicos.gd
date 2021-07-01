@@ -38,8 +38,8 @@ func _ready():
 func _on_musico1_pressed():
 	DiccionarioNiveles.set_musico(1)
 	Global.textura_musico = tmusico1
-	$AudioStreamPlayer.play()
-	yield($AudioStreamPlayer, "finished")
+	$SonidoClick.play()
+	yield($SonidoClick, "finished")
 	if get_tree().change_scene("res://scenes/Ritmico.tscn") != OK:
 		print ("Error")
 
@@ -47,8 +47,8 @@ func _on_musico1_pressed():
 func _on_musico2_pressed():
 	DiccionarioNiveles.set_musico(2)
 	Global.textura_musico = tmusico2
-	$AudioStreamPlayer.play()
-	yield($AudioStreamPlayer, "finished")
+	$SonidoClick.play()
+	yield($SonidoClick, "finished")
 	if get_tree().change_scene("res://scenes/Ritmico.tscn") != OK:
 		print ("Error")
 
@@ -56,7 +56,14 @@ func _on_musico2_pressed():
 func _on_musico3_pressed():
 	DiccionarioNiveles.set_musico(3)
 	Global.textura_musico = tmusico3
-	$AudioStreamPlayer.play()
-	yield($AudioStreamPlayer, "finished")
+	$SonidoClick.play()
+	yield($SonidoClick, "finished")
 	if get_tree().change_scene("res://scenes/Ritmico.tscn") != OK:
+		print ("Error")
+
+
+func _on_botonVolver_pressed():
+	$SonidoClick.play()
+	yield($SonidoClick, "finished")
+	if get_tree().change_scene("res://scenes/Mapa.tscn") != OK:
 		print ("Error")

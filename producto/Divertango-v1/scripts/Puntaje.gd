@@ -15,10 +15,14 @@ func _ready():
 
 
 func _on_volver_jugar_pressed():
+	$SonidoClick.play()
+	yield($SonidoClick, "finished")
 	if get_tree().change_scene("res://scenes/Ritmico.tscn") != OK:
 		print ("Error")
 
 
 func _on_a_menu_pressed():
+	$SonidoClick.play()
+	yield($SonidoClick, "finished")
 	if get_tree().change_scene("res://scenes/Menu.tscn") != OK:
 		print ("Error")

@@ -34,7 +34,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D_Ritmico" type="Node2D"]
 script = ExtResource( 8 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -188,6 +188,14 @@ __meta__ = {
 volume_db = -32.842
 bpm = 160
 
+[node name="labelPuntaje" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Puntaje:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="score" type="Label" parent="."]
 margin_left = 24.0
 margin_top = 16.0
@@ -216,6 +224,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="labelPerdidas" type="Label" parent="."]
+margin_left = -0.243164
+margin_top = 61.8388
+margin_right = 115.757
+margin_bottom = 75.8388
+text = "Notas perdidas:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="perdidas" type="Label" parent="."]
 margin_left = 24.0
 margin_top = 72.0
@@ -226,7 +244,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="SonidoNotaPerdida" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
 volume_db = -30.0
 

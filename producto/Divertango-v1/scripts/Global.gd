@@ -12,6 +12,7 @@ var encuentro_ganado = false
 
 var level_1_passed = false
 var level_2_passed = false
+var level_3_passed = false # ¡¡¡¡¡¡¡¡¡¡ IMPLEMENTAR !!!!!!!!!!!!!!!
 
 var puntos_pasar_nivel1 = 1000 # puntos totales del teatro 1 para considerarse pasado
 var puntos_pasar_nivel2 = 1500 # puntos totales del teatro 2 para considerarse pasado
@@ -22,7 +23,7 @@ var puntos_teatro3 = 0
 
 var textura_musico = null
 
-const SAVE_PATH = "user://saves.sav" # CUANDO QUERAMOS EXPORTAR EL APK, CAMBIAR 'res' POR 'user' para que ande bien
+const SAVE_PATH = "res://saves.sav" # CUANDO QUERAMOS EXPORTAR EL APK, CAMBIAR 'res' POR 'user' para que ande bien
 
 var partidas = []
 

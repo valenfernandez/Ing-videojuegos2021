@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/img/logo_gpl-v3.png" type="Texture" id=1]
+[ext_resource path="res://assets/img/logo_godot.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/flecha-des.png" type="Texture" id=3]
+[ext_resource path="res://scripts/Creditos.gd" type="Script" id=4]
+[ext_resource path="res://assets/sounds/click.wav" type="AudioStream" id=5]
+
+[node name="Node2D_Creditos" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 61.0
+margin_top = 13.0
+margin_right = 953.0
+margin_bottom = 197.0
+text = "Divertango, tras los pasos de Piazzolla.
+
+
+Videojuego diseñado y desarrollado por Valentina Fernández y Enzo Nogueira Barria.
+
+Proyecto supervisado por el Ing. Franco Kühn, miembro de la cátedra de Ingeniería de Videojuegos.
+
+Facultad de Ingeniería - Universidad Nacional de Mar del Plata - 2021
+
+
+Se otorgan los créditos correspondientes por el uso de las canciones \"Milonga del Ángel\", \"Adiós Nonino\", \"Verano Porteño\" y \"Libertango\".
+Astor Piazzolla (Mar del Plata, 11 de marzo de 1921 - Buenos Aires, 4 de julio de 1992)"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LogoGodot" type="TextureRect" parent="."]
+margin_left = 324.0
+margin_top = 276.0
+margin_right = 516.0
+margin_bottom = 353.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LogoGPL" type="TextureRect" parent="."]
+margin_left = 590.0
+margin_top = 286.0
+margin_right = 735.0
+margin_bottom = 351.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="botonVolver" type="TextureButton" parent="."]
+margin_left = 971.878
+margin_top = 487.593
+margin_right = 1035.88
+margin_bottom = 563.593
+rect_rotation = 180.0
+texture_normal = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SonidoClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -24.0
+
+[connection signal="pressed" from="botonVolver" to="." method="_on_botonVolver_pressed"]
