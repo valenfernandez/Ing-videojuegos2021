@@ -92,10 +92,11 @@ frames = SubResource( 1 )
 frame = 2
 
 [node name="labelFacil" type="Label" parent="."]
-margin_left = 102.075
-margin_top = 281.583
-margin_right = 142.075
-margin_bottom = 295.583
+margin_left = 94.4892
+margin_top = 325.424
+margin_right = 162.489
+margin_bottom = 351.424
+custom_fonts/font = ExtResource( 11 )
 text = "FÁCIL"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -106,46 +107,48 @@ margin_left = 317.5
 margin_top = 277.183
 margin_right = 449.5
 margin_bottom = 291.183
-text = "MEDIO/INTERMEDIO"
+custom_fonts/font = ExtResource( 11 )
+text = "INTERMEDIO"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="labelDificil" type="Label" parent="."]
-margin_left = 680.357
-margin_top = 275.923
-margin_right = 727.357
-margin_bottom = 289.923
+margin_left = 656.315
+margin_top = 299.965
+margin_right = 744.315
+margin_bottom = 325.965
+custom_fonts/font = ExtResource( 11 )
 text = "DIFICIL"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LabelPuntaje1" type="Label" parent="."]
-margin_left = 192.272
-margin_top = 420.272
-margin_right = 271.272
-margin_bottom = 448.272
+margin_left = 182.748
+margin_top = 401.223
+margin_right = 261.748
+margin_bottom = 429.223
 custom_fonts/font = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LabelPuntaje2" type="Label" parent="."]
-margin_left = 468.012
-margin_top = 381.065
-margin_right = 547.012
-margin_bottom = 409.065
+margin_left = 485.473
+margin_top = 389.002
+margin_right = 564.473
+margin_bottom = 417.002
 custom_fonts/font = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LabelPuntaje3" type="Label" parent="."]
-margin_left = 751.014
-margin_top = 434.819
-margin_right = 830.014
-margin_bottom = 462.819
+margin_left = 820.014
+margin_top = 394.819
+margin_right = 899.014
+margin_bottom = 422.819
 custom_fonts/font = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -156,10 +159,38 @@ stream = ExtResource( 7 )
 volume_db = -24.0
 
 [node name="LabelMaxUlt" type="Label" parent="."]
-margin_left = 66.4681
-margin_top = 422.85
-margin_right = 173.468
-margin_bottom = 453.85
+margin_left = 12.4965
+margin_top = 400.626
+margin_right = 179.496
+margin_bottom = 455.626
+rect_pivot_offset = Vector2( 170.251, -19.5614 )
+custom_fonts/font = ExtResource( 11 )
+text = "Máximo puntaje:
+Último puntaje:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelMaxUlt2" type="Label" parent="."]
+margin_left = 645.87
+margin_top = 397.452
+margin_right = 812.87
+margin_bottom = 452.452
+rect_pivot_offset = Vector2( 170.251, -19.5614 )
+custom_fonts/font = ExtResource( 11 )
+text = "Máximo puntaje:
+Último puntaje:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelMaxUlt3" type="Label" parent="."]
+margin_left = 310.928
+margin_top = 391.102
+margin_right = 477.928
+margin_bottom = 446.102
+rect_pivot_offset = Vector2( 170.251, -19.5614 )
+custom_fonts/font = ExtResource( 11 )
 text = "Máximo puntaje:
 Último puntaje:"
 __meta__ = {
@@ -167,11 +198,41 @@ __meta__ = {
 }
 
 [node name="LabelCancion" type="Label" parent="."]
-margin_left = 244.179
+margin_left = 242.99
 margin_top = 18.4997
-margin_right = 759.179
+margin_right = 757.99
 margin_bottom = 32.4997
-text = "ELIGE UN MÚSICO PARA TOCAR JUNTOS adios_nonino/verano_porteño/libertango"
+custom_fonts/font = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ultPuntaje1" type="Label" parent="."]
+margin_left = 179.175
+margin_top = 432.238
+margin_right = 244.175
+margin_bottom = 451.238
+custom_fonts/font = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ultPuntaje2" type="Label" parent="."]
+margin_left = 490.305
+margin_top = 424.301
+margin_right = 555.305
+margin_bottom = 443.301
+custom_fonts/font = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ultPuntaje3" type="Label" parent="."]
+margin_left = 818.897
+margin_top = 432.238
+margin_right = 883.897
+margin_bottom = 451.238
+custom_fonts/font = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

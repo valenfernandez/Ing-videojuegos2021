@@ -28,11 +28,13 @@ func _ready():
 		if(enc != null && enc.teatro == teatro):
 			if (enc.musico == 1):
 				$LabelPuntaje1.text = str(enc.highscore)
+				$ultPuntaje1.text = str(enc.score)
 			elif (enc.musico == 2):
 				$LabelPuntaje2.text = str(enc.highscore)
+				$ultPuntaje2.text = str(enc.score)
 			elif (enc.musico == 3):
 				$LabelPuntaje3.text = str(enc.highscore)
-	
+				$ultPuntaje3.text = str(enc.score)
 	
 
 func _on_musico1_pressed():

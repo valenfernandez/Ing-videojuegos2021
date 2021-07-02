@@ -11,7 +11,7 @@
 [ext_resource path="res://assets/img/teatro_regina_byn.png" type="Texture" id=9]
 [ext_resource path="res://assets/fonts/numerosfont.tres" type="DynamicFont" id=10]
 [ext_resource path="res://assets/img/flecha-des.png" type="Texture" id=11]
-[ext_resource path="res://assets/img/boton_bandoneon.png" type="Texture" id=12]
+[ext_resource path="res://assets/img/pregunta.png" type="Texture" id=12]
 [ext_resource path="res://assets/img/fondo_tutorial.png" type="Texture" id=13]
 
 [node name="Node2D_Mapa" type="Node2D"]
@@ -87,31 +87,54 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="points_t1" type="Label" parent="."]
-margin_left = 234.475
-margin_top = 246.284
-margin_right = 313.475
-margin_bottom = 275.284
+[node name="labelPuntos1" type="Label" parent="."]
+margin_left = 127.688
+margin_top = 76.4607
+margin_right = 201.688
+margin_bottom = 102.461
 custom_fonts/font = ExtResource( 10 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="labelPuntos2" type="Label" parent="."]
-margin_left = 534.814
-margin_top = 557.003
-margin_right = 582.814
-margin_bottom = 571.003
 text = "Puntos:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="labelPuntos2" type="Label" parent="."]
+margin_left = 497.439
+margin_top = 552.998
+margin_right = 571.439
+margin_bottom = 578.998
+custom_fonts/font = ExtResource( 10 )
+text = "Puntos:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="labelPuntos3" type="Label" parent="."]
+margin_left = 767.076
+margin_top = 264.673
+margin_right = 841.076
+margin_bottom = 290.673
+custom_fonts/font = ExtResource( 10 )
+text = "Puntos:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="points_t1" type="Label" parent="."]
+margin_left = 210.448
+margin_top = 76.7593
+margin_right = 289.448
+margin_bottom = 105.759
+custom_fonts/font = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="points_t2" type="Label" parent="."]
-margin_left = 592.165
-margin_top = 550.557
-margin_right = 691.165
-margin_bottom = 578.557
+margin_left = 578.817
+margin_top = 553.227
+margin_right = 677.817
+margin_bottom = 581.227
 custom_fonts/font = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -129,10 +152,10 @@ __meta__ = {
 
 [node name="FondoTutorial" type="TextureRect" parent="."]
 modulate = Color( 1, 1, 1, 0.854902 )
-margin_left = 264.52
-margin_top = 11.7798
-margin_right = 857.52
-margin_bottom = 215.78
+margin_left = 114.444
+margin_top = 147.172
+margin_right = 1005.44
+margin_bottom = 454.172
 texture = ExtResource( 13 )
 expand = true
 __meta__ = {
@@ -140,10 +163,13 @@ __meta__ = {
 }
 
 [node name="labelTutorial" type="Label" parent="."]
-margin_left = 283.014
-margin_top = 41.3654
-margin_right = 849.014
-margin_bottom = 174.365
+margin_left = 136.33
+margin_top = 184.0
+margin_right = 969.33
+margin_bottom = 413.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.721569, 0.670588, 0.670588, 1 )
 text = "Recorre cada teatro para tocar piezas de Astor Piazzolla.
 En cada uno de ellos, te encontrarás con 3 músicos con quienes podrás tocar.
 Llega al teatro Colón, gana los 3 encuentros musicales, y ganarás el juego!

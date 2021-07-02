@@ -234,6 +234,7 @@ func check_player_action(button):
 		_reset()
 	else:
 		if ((current_note != null) && trap_pressed(button)): #se apreto una nota trampa
+			notas_trampa += 1
 			increment_score(-10)
 			current_note.hitted()
 			current_note.destroy()

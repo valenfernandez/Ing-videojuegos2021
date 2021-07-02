@@ -191,6 +191,7 @@ bpm = 160
 [node name="labelPuntaje" type="Label" parent="."]
 margin_right = 40.0
 margin_bottom = 14.0
+custom_fonts/font = ExtResource( 14 )
 text = "Puntaje:"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -229,6 +230,7 @@ margin_left = -0.243164
 margin_top = 61.8388
 margin_right = 115.757
 margin_bottom = 75.8388
+custom_fonts/font = ExtResource( 14 )
 text = "Notas perdidas:"
 __meta__ = {
 "_edit_use_anchors_": false
