@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
+[ext_resource path="res://assets/fonts/numerosfont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scripts/Notas_Musicales.gd" type="Script" id=5]
 [ext_resource path="res://assets/img/blanca.png" type="Texture" id=6]
 [ext_resource path="res://assets/img/corchea.png" type="Texture" id=7]
@@ -20,13 +21,14 @@ extents = Vector2( 10.4805, 25.8347 )
 [node name="Area2D_Notas" type="Area2D"]
 script = ExtResource( 5 )
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+visible = false
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 5.69424, -0.909643 )
 scale = Vector2( 0.0545064, 0.053582 )
 frames = SubResource( 1 )
 frame = 3
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1.88727, -0.698541 )
@@ -36,10 +38,11 @@ shape = SubResource( 2 )
 position = Vector2( -1.05946, 0 )
 
 [node name="Label" type="Label" parent="Node2D"]
-margin_left = 5.0
-margin_top = -7.0
-margin_right = 45.0
-margin_bottom = 7.0
+margin_left = -54.6218
+margin_top = -12.5297
+margin_right = -14.6218
+margin_bottom = 13.4703
+custom_fonts/font = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

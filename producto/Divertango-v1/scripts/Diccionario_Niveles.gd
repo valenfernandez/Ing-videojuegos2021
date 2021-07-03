@@ -29,7 +29,7 @@ var nivel1_musico3 = {
 	"cancion": "res://assets/music/Adios_Nonino.mp3",
 	"bpm": 81, 
 	"lanes": 4,
-	"spawn_multiplier" : 2,
+	"spawn_multiplier" : 1,
 	 "bandoneon_prob": [80,50,10,10],
 	"trap_prob": 10
 	}
@@ -55,7 +55,7 @@ var nivel2_musico3 = {
 	"cancion": "res://assets/music/Verano_Portenio.mp3",
 	"bpm": 134, 
 	"lanes": 4,
-	"spawn_multiplier" : 2,
+	"spawn_multiplier" : 1,
 	 "bandoneon_prob": [80,50,100,50],
 	"trap_prob": 10
 	}
@@ -73,7 +73,7 @@ var nivel3_musico2 = {
 	"cancion": "res://assets/music/Libertango.mp3",
 	"bpm": 159, 
 	"lanes": 3,
-	"spawn_multiplier" : 2,
+	"spawn_multiplier" : 1,
 	 "bandoneon_prob": [100,100,80,80],
 	"trap_prob": 10
 }
@@ -81,7 +81,7 @@ var nivel3_musico3 = {
 	"cancion": "res://assets/music/Libertango.mp3",
 	"bpm": 159, 
 	"lanes": 4,
-	"spawn_multiplier" : 2,
+	"spawn_multiplier" : 1,
 	 "bandoneon_prob": [100,100,100,100],
 	"trap_prob": 10
 	}
