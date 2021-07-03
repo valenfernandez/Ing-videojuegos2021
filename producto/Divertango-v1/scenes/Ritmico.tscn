@@ -262,9 +262,10 @@ scale = Vector2( 0.138, 0.125 )
 texture = ExtResource( 16 )
 
 [node name="musico" type="Sprite" parent="."]
-position = Vector2( 124.405, 250.451 )
+position = Vector2( 155.405, 243.451 )
 scale = Vector2( 0.13848, 0.138579 )
 texture = ExtResource( 15 )
+flip_h = true
 
 [connection signal="area_entered" from="linea/AreaBlanca-Perfect" to="." method="_on_AreaBlancaPerfect_area_entered"]
 [connection signal="area_exited" from="linea/AreaBlanca-Perfect" to="." method="area_exited"]
