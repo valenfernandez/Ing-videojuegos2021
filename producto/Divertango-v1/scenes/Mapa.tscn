@@ -88,74 +88,80 @@ __meta__ = {
 }
 
 [node name="labelPuntos1" type="Label" parent="."]
-margin_left = 127.688
-margin_top = 76.4607
-margin_right = 201.688
-margin_bottom = 102.461
+margin_left = 155.324
+margin_top = 64.0
+margin_right = 229.324
+margin_bottom = 90.0003
 custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Puntos:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="labelPuntos2" type="Label" parent="."]
-margin_left = 497.439
-margin_top = 552.998
-margin_right = 571.439
-margin_bottom = 578.998
+margin_left = 471.44
+margin_top = 302.655
+margin_right = 545.44
+margin_bottom = 328.655
 custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Puntos:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="labelPuntos3" type="Label" parent="."]
-margin_left = 767.076
-margin_top = 264.673
-margin_right = 841.076
-margin_bottom = 290.673
+margin_left = 781.076
+margin_top = 17.0
+margin_right = 855.076
+margin_bottom = 43.0
 custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Puntos:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="points_t1" type="Label" parent="."]
-margin_left = 210.448
-margin_top = 76.7593
-margin_right = 289.448
-margin_bottom = 105.759
+margin_left = 234.0
+margin_top = 64.0
+margin_right = 308.0
+margin_bottom = 90.0
 custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="points_t2" type="Label" parent="."]
-margin_left = 578.817
-margin_top = 553.227
-margin_right = 677.817
-margin_bottom = 581.227
+margin_left = 549.818
+margin_top = 302.884
+margin_right = 623.818
+margin_bottom = 328.884
 custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="points_t3" type="Label" parent="."]
-margin_left = 853.719
-margin_top = 260.604
-margin_right = 948.719
-margin_bottom = 290.604
+margin_left = 859.719
+margin_top = 17.0
+margin_right = 933.719
+margin_bottom = 43.0
 custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="FondoTutorial" type="TextureRect" parent="."]
-modulate = Color( 1, 1, 1, 0.854902 )
-margin_left = 114.444
-margin_top = 147.172
-margin_right = 1005.44
-margin_bottom = 454.172
+modulate = Color( 1, 1, 1, 0.901961 )
+margin_left = 70.0
+margin_top = 147.0
+margin_right = 960.996
+margin_bottom = 454.0
 texture = ExtResource( 13 )
 expand = true
 __meta__ = {
@@ -163,16 +169,16 @@ __meta__ = {
 }
 
 [node name="labelTutorial" type="Label" parent="."]
-margin_left = 136.33
-margin_top = 184.0
-margin_right = 969.33
-margin_bottom = 413.0
+margin_left = 100.33
+margin_top = 187.0
+margin_right = 933.33
+margin_bottom = 416.0
 custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0.721569, 0.670588, 0.670588, 1 )
 text = "Recorre cada teatro para tocar piezas de Astor Piazzolla.
 En cada uno de ellos, te encontrarás con 3 músicos con quienes podrás tocar.
-Llega al teatro Colón, gana los 3 encuentros musicales, y ganarás el juego!
+Llega al teatro Colón, consigue 2000 puntos, y ganarás el juego!
 
 El teatro Regina se desbloquea al alcanzar los 1000 puntos en el teatro Gran Rex.
 El teatro Colón se desbloquea al alcanzar los 1500 puntos en el teatro Regina.

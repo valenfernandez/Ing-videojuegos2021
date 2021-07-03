@@ -12,10 +12,11 @@ var encuentro_ganado = false
 
 var level_1_passed = false
 var level_2_passed = false
-var level_3_passed = false # ¡¡¡¡¡¡¡¡¡¡ IMPLEMENTAR !!!!!!!!!!!!!!!
+var level_3_passed = false
 
 var puntos_pasar_nivel1 = 1000 # puntos totales del teatro 1 para considerarse pasado
 var puntos_pasar_nivel2 = 1500 # puntos totales del teatro 2 para considerarse pasado
+var puntos_pasar_nivel3 = 2000 # puntos totales del teatro 3 para considerarse pasado
 
 var puntos_teatro1 = 0 # sumo los max_score que tengo en la persistencia
 var puntos_teatro2 = 0
@@ -41,6 +42,8 @@ func _ready():
 		level_1_passed = true
 	if(puntos_teatro2 >= puntos_pasar_nivel2):
 		level_2_passed = true
+	if(puntos_teatro3 >= puntos_pasar_nivel3):
+		level_3_passed = true
 	
 func cargar_partidas():
 	var aux = []
@@ -134,6 +137,8 @@ func actualizar_puntaje_teatros():
 			level_2_passed = true
 	elif(teatro == 3):
 		puntos_teatro3 = sum
+		if(puntos_teatro3 >= puntos_pasar_nivel3):
+			level_3_passed = true
 	
 
 func persistir_partida():

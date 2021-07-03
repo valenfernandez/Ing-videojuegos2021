@@ -189,20 +189,24 @@ volume_db = -32.842
 bpm = 160
 
 [node name="labelPuntaje" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_left = 2.0
+margin_top = 5.0
+margin_right = 82.0
+margin_bottom = 31.0
 custom_fonts/font = ExtResource( 14 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Puntaje:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="score" type="Label" parent="."]
-margin_left = 24.0
-margin_top = 16.0
-margin_right = 144.0
-margin_bottom = 56.0
+margin_left = 2.0
+margin_top = 27.674
+margin_right = 82.0
+margin_bottom = 53.674
 custom_fonts/font = ExtResource( 14 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -226,22 +230,24 @@ __meta__ = {
 }
 
 [node name="labelPerdidas" type="Label" parent="."]
-margin_left = -0.243164
-margin_top = 61.8388
-margin_right = 115.757
-margin_bottom = 75.8388
+margin_left = 2.0
+margin_top = 66.839
+margin_right = 153.0
+margin_bottom = 92.839
 custom_fonts/font = ExtResource( 14 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Notas perdidas:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="perdidas" type="Label" parent="."]
-margin_left = 24.0
-margin_top = 72.0
-margin_right = 136.0
-margin_bottom = 118.0
+margin_left = 2.0
+margin_top = 89.685
+margin_right = 82.0
+margin_bottom = 115.685
 custom_fonts/font = ExtResource( 14 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

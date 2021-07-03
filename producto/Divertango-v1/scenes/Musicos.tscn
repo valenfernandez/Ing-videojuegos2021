@@ -36,10 +36,10 @@ __meta__ = {
 }
 
 [node name="musico1" type="TextureButton" parent="."]
-margin_left = 98.2274
-margin_top = 81.9216
+margin_left = 98.227
+margin_top = 65.0
 margin_right = 354.227
-margin_bottom = 451.922
+margin_bottom = 435.0
 texture_normal = ExtResource( 9 )
 expand = true
 __meta__ = {
@@ -48,9 +48,9 @@ __meta__ = {
 
 [node name="musico2" type="TextureButton" parent="."]
 margin_left = 392.454
-margin_top = 38.409
-margin_right = 658.454
-margin_bottom = 412.409
+margin_top = 65.0
+margin_right = 648.454
+margin_bottom = 435.0
 texture_normal = ExtResource( 10 )
 expand = true
 __meta__ = {
@@ -59,9 +59,9 @@ __meta__ = {
 
 [node name="musico3" type="TextureButton" parent="."]
 margin_left = 654.0
-margin_top = 42.0
-margin_right = 955.0
-margin_bottom = 492.0
+margin_top = 65.0
+margin_right = 910.0
+margin_bottom = 435.0
 texture_normal = ExtResource( 1 )
 expand = true
 __meta__ = {
@@ -81,7 +81,7 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 520.171, 54.7035 )
+position = Vector2( 520.171, 28.7035 )
 scale = Vector2( 0.891349, 0.911087 )
 texture = ExtResource( 3 )
 
@@ -92,112 +92,157 @@ frames = SubResource( 1 )
 frame = 2
 
 [node name="labelFacil" type="Label" parent="."]
-margin_left = 94.4892
-margin_top = 325.424
-margin_right = 162.489
-margin_bottom = 351.424
+margin_left = 198.512
+margin_top = 74.0
+margin_right = 266.512
+margin_bottom = 100.0
 custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 text = "FÁCIL"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="labelMedio" type="Label" parent="."]
-margin_left = 317.5
-margin_top = 277.183
-margin_right = 449.5
-margin_bottom = 291.183
+margin_left = 445.734
+margin_top = 74.0
+margin_right = 607.734
+margin_bottom = 100.0
 custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 text = "INTERMEDIO"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="labelDificil" type="Label" parent="."]
-margin_left = 656.315
-margin_top = 299.965
-margin_right = 744.315
-margin_bottom = 325.965
+margin_left = 747.162
+margin_top = 74.0
+margin_right = 835.162
+margin_bottom = 100.0
 custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 text = "DIFICIL"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LabelPuntaje1" type="Label" parent="."]
-margin_left = 182.748
-margin_top = 401.223
-margin_right = 261.748
-margin_bottom = 429.223
+margin_left = 259.0
+margin_top = 392.0
+margin_right = 324.0
+margin_bottom = 418.0
 custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LabelPuntaje2" type="Label" parent="."]
-margin_left = 485.473
-margin_top = 389.002
-margin_right = 564.473
-margin_bottom = 417.002
+margin_left = 553.0
+margin_top = 392.0
+margin_right = 618.0
+margin_bottom = 418.0
 custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LabelPuntaje3" type="Label" parent="."]
-margin_left = 820.014
-margin_top = 394.819
-margin_right = 899.014
-margin_bottom = 422.819
+margin_left = 849.0
+margin_top = 392.0
+margin_right = 914.0
+margin_bottom = 418.0
 custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SonidoClick" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
-volume_db = -24.0
+[node name="ultPuntaje1" type="Label" parent="."]
+margin_left = 259.0
+margin_top = 421.0
+margin_right = 324.0
+margin_bottom = 447.0
+custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="LabelMaxUlt" type="Label" parent="."]
-margin_left = 12.4965
-margin_top = 400.626
-margin_right = 179.496
-margin_bottom = 455.626
+[node name="ultPuntaje2" type="Label" parent="."]
+margin_left = 553.0
+margin_top = 421.0
+margin_right = 618.0
+margin_bottom = 447.0
+custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ultPuntaje3" type="Label" parent="."]
+margin_left = 849.0
+margin_top = 421.0
+margin_right = 914.0
+margin_bottom = 447.0
+custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelMaxUlt1" type="Label" parent="."]
+margin_left = 82.0
+margin_top = 393.0
+margin_right = 249.0
+margin_bottom = 448.0
 rect_pivot_offset = Vector2( 170.251, -19.5614 )
 custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Máximo puntaje:
 Último puntaje:"
+align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LabelMaxUlt2" type="Label" parent="."]
-margin_left = 645.87
-margin_top = 397.452
-margin_right = 812.87
-margin_bottom = 452.452
+margin_left = 376.0
+margin_top = 393.0
+margin_right = 543.0
+margin_bottom = 448.0
 rect_pivot_offset = Vector2( 170.251, -19.5614 )
 custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Máximo puntaje:
 Último puntaje:"
+align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LabelMaxUlt3" type="Label" parent="."]
-margin_left = 310.928
-margin_top = 391.102
-margin_right = 477.928
-margin_bottom = 446.102
+margin_left = 672.0
+margin_top = 393.0
+margin_right = 839.0
+margin_bottom = 448.0
 rect_pivot_offset = Vector2( 170.251, -19.5614 )
 custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Máximo puntaje:
 Último puntaje:"
+align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LabelCancion" type="Label" parent="."]
+visible = false
 margin_left = 242.99
 margin_top = 18.4997
 margin_right = 757.99
@@ -207,35 +252,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ultPuntaje1" type="Label" parent="."]
-margin_left = 179.175
-margin_top = 432.238
-margin_right = 244.175
-margin_bottom = 451.238
-custom_fonts/font = ExtResource( 11 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ultPuntaje2" type="Label" parent="."]
-margin_left = 490.305
-margin_top = 424.301
-margin_right = 555.305
-margin_bottom = 443.301
-custom_fonts/font = ExtResource( 11 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ultPuntaje3" type="Label" parent="."]
-margin_left = 818.897
-margin_top = 432.238
-margin_right = 883.897
-margin_bottom = 451.238
-custom_fonts/font = ExtResource( 11 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="SonidoClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -24.0
 
 [connection signal="pressed" from="musico1" to="." method="_on_musico1_pressed"]
 [connection signal="pressed" from="musico2" to="." method="_on_musico2_pressed"]
