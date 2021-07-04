@@ -8,20 +8,24 @@ func _ready():
 	var teatro = DiccionarioNiveles.nivel_actual
 	$AnimatedSprite.frame = teatro - 1
 	if (teatro == 1):
+		$Sprite.texture = load("res://assets/img/musicostext1.png")
 		tmusico1 = load("res://assets/img/musico1.png")
 		tmusico2 = load("res://assets/img/musico2.png")
 		tmusico3 = load("res://assets/img/musico7.png")
 	elif(teatro == 2):
+		$Sprite.texture = load("res://assets/img/musicostext2.png")
 		tmusico1 = load("res://assets/img/musico4.png")
 		tmusico2 = load("res://assets/img/musico5.png")
 		tmusico3 = load("res://assets/img/musico6.png")
 	elif(teatro == 3):
+		$Sprite.texture = load("res://assets/img/musicostext3.png")
 		tmusico1 = load("res://assets/img/musico3.png")
 		tmusico2 = load("res://assets/img/musico8.png")
 		tmusico3 = load("res://assets/img/musico9.png")
 	$musico1.set_normal_texture(tmusico1)
 	$musico2.set_normal_texture(tmusico2)
 	$musico3.set_normal_texture(tmusico3)
+	
 	
 	var partidas_ant = Global.partidas
 	for enc in partidas_ant:

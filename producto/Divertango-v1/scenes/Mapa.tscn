@@ -10,7 +10,7 @@
 [ext_resource path="res://assets/img/teatro_regina.png" type="Texture" id=8]
 [ext_resource path="res://assets/img/teatro_regina_byn.png" type="Texture" id=9]
 [ext_resource path="res://assets/fonts/numerosfont.tres" type="DynamicFont" id=10]
-[ext_resource path="res://assets/img/flecha-des.png" type="Texture" id=11]
+[ext_resource path="res://assets/img/atras.png" type="Texture" id=11]
 [ext_resource path="res://assets/img/signo_pregunta.png" type="Texture" id=12]
 [ext_resource path="res://assets/img/fondo_tutorial.png" type="Texture" id=13]
 
@@ -76,11 +76,10 @@ __meta__ = {
 }
 
 [node name="botonVolver" type="TextureButton" parent="."]
-margin_left = 973.592
-margin_top = 598.714
-margin_right = 1038.59
-margin_bottom = 663.714
-rect_rotation = 180.0
+margin_left = 852.286
+margin_top = 519.652
+margin_right = 1023.29
+margin_bottom = 595.652
 texture_normal = ExtResource( 11 )
 expand = true
 __meta__ = {

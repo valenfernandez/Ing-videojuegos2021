@@ -11,7 +11,7 @@
 [ext_resource path="res://assets/img/musico1.png" type="Texture" id=9]
 [ext_resource path="res://assets/img/musico2.png" type="Texture" id=10]
 [ext_resource path="res://assets/fonts/numerosfont.tres" type="DynamicFont" id=11]
-[ext_resource path="res://assets/img/flecha-des.png" type="Texture" id=12]
+[ext_resource path="res://assets/img/atras.png" type="Texture" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -69,11 +69,10 @@ __meta__ = {
 }
 
 [node name="botonVolver" type="TextureButton" parent="."]
-margin_left = 966.424
-margin_top = 581.99
-margin_right = 1045.42
-margin_bottom = 660.99
-rect_rotation = 180.0
+margin_left = 873.773
+margin_top = 499.082
+margin_right = 1020.77
+margin_bottom = 578.082
 texture_normal = ExtResource( 12 )
 expand = true
 __meta__ = {
@@ -237,17 +236,6 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Máximo puntaje:
 Último puntaje:"
 align = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="LabelCancion" type="Label" parent="."]
-visible = false
-margin_left = 242.99
-margin_top = 18.4997
-margin_right = 757.99
-margin_bottom = 32.4997
-custom_fonts/font = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

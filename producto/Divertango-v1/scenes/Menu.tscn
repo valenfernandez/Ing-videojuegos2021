@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/img/nombre_titulo.png" type="Texture" id=6]
 [ext_resource path="res://assets/music/astor-piazzolla-milonga-del-angel.mp3" type="AudioStream" id=7]
 [ext_resource path="res://assets/sounds/click.wav" type="AudioStream" id=8]
-[ext_resource path="res://assets/img/flecha-des.png" type="Texture" id=9]
+[ext_resource path="res://assets/img/creditos.png" type="Texture" id=9]
 
 [node name="Node2D_Menu" type="Node2D"]
 script = ExtResource( 1 )
@@ -47,11 +47,10 @@ __meta__ = {
 }
 
 [node name="botonCreditos" type="TextureButton" parent="."]
-margin_left = 113.431
-margin_top = 528.364
-margin_right = 174.431
-margin_bottom = 589.364
-rect_rotation = 90.0
+margin_left = 12.7278
+margin_top = 521.318
+margin_right = 144.728
+margin_bottom = 587.318
 texture_normal = ExtResource( 9 )
 expand = true
 __meta__ = {
