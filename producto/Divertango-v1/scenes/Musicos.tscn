@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/img/musico3.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Musicos.gd" type="Script" id=2]
-[ext_resource path="res://assets/img/cartel_musicos.png" type="Texture" id=3]
+[ext_resource path="res://assets/img/musicostext1.png" type="Texture" id=3]
 [ext_resource path="res://assets/img/gran-rex.png" type="Texture" id=4]
 [ext_resource path="res://assets/img/regina.png" type="Texture" id=5]
 [ext_resource path="res://assets/img/colon.png" type="Texture" id=6]
@@ -12,6 +12,8 @@
 [ext_resource path="res://assets/img/musico2.png" type="Texture" id=10]
 [ext_resource path="res://assets/fonts/numerosfont.tres" type="DynamicFont" id=11]
 [ext_resource path="res://assets/img/atras.png" type="Texture" id=12]
+[ext_resource path="res://assets/img/signo_pregunta.png" type="Texture" id=13]
+[ext_resource path="res://assets/img/fondo_tutorial.png" type="Texture" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -68,11 +70,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="botonTutorial" type="TextureButton" parent="."]
+margin_left = 941.062
+margin_top = 9.344
+margin_right = 1008.06
+margin_bottom = 76.344
+texture_normal = ExtResource( 13 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="botonVolver" type="TextureButton" parent="."]
-margin_left = 873.773
-margin_top = 499.082
-margin_right = 1020.77
-margin_bottom = 578.082
+margin_left = 851.286
+margin_top = 525.652
+margin_right = 1022.29
+margin_bottom = 601.652
 texture_normal = ExtResource( 12 )
 expand = true
 __meta__ = {
@@ -80,7 +93,7 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 520.171, 28.7035 )
+position = Vector2( 520.171, 30.7035 )
 scale = Vector2( 0.891349, 0.911087 )
 texture = ExtResource( 3 )
 
@@ -240,6 +253,38 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="FondoTutorial" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0.941176 )
+margin_left = 50.0
+margin_top = 134.0
+margin_right = 981.0
+margin_bottom = 450.0
+texture = ExtResource( 14 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="labelTutorial" type="Label" parent="."]
+margin_left = 73.33
+margin_top = 179.0
+margin_right = 958.33
+margin_bottom = 408.0
+custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.721569, 0.670588, 0.670588, 1 )
+text = "Al comenzar la partida, deberás pulsar los botones de las notas musicales
+cuando se acerquen a la línea del final del carril. Por cada nota acertada, ganarás puntos.
+
+Evita pulsar incorrectamente una nota, o pulsar las notas de color rojo, sino perderás puntos.
+
+Pulsa el bandoneón cuando este se active para ganar puntos extras.
+
+Si dejas pasar 5 notas antes de que termine la canción, perderás la partida."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="SonidoClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 volume_db = -24.0
@@ -247,4 +292,5 @@ volume_db = -24.0
 [connection signal="pressed" from="musico1" to="." method="_on_musico1_pressed"]
 [connection signal="pressed" from="musico2" to="." method="_on_musico2_pressed"]
 [connection signal="pressed" from="musico3" to="." method="_on_musico3_pressed"]
+[connection signal="pressed" from="botonTutorial" to="." method="_on_botonTutorial_pressed"]
 [connection signal="pressed" from="botonVolver" to="." method="_on_botonVolver_pressed"]

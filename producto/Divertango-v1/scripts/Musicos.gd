@@ -4,6 +4,8 @@ var tmusico1 = null
 var tmusico2 = null
 var tmusico3 = null
 
+var tutorial_visible = false
+
 func _ready():
 	var teatro = DiccionarioNiveles.nivel_actual
 	$AnimatedSprite.frame = teatro - 1
@@ -25,6 +27,8 @@ func _ready():
 	$musico1.set_normal_texture(tmusico1)
 	$musico2.set_normal_texture(tmusico2)
 	$musico3.set_normal_texture(tmusico3)
+	$FondoTutorial.hide()
+	$labelTutorial.hide()
 	
 	
 	var partidas_ant = Global.partidas
@@ -73,3 +77,16 @@ func _on_botonVolver_pressed():
 	yield($SonidoClick, "finished")
 	if get_tree().change_scene("res://scenes/Mapa.tscn") != OK:
 		print ("Error")
+
+
+func _on_botonTutorial_pressed():
+	$SonidoClick.play()
+	yield($SonidoClick, "finished")
+	if tutorial_visible == false:
+		$FondoTutorial.show()
+		$labelTutorial.show()
+		tutorial_visible = true
+	else:
+		$labelTutorial.hide()
+		$FondoTutorial.hide()
+		tutorial_visible = false

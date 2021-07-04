@@ -51,8 +51,6 @@ func cargar_partidas():
 	if not save_game.file_exists(SAVE_PATH):
 		return # Error! No hay archivo que cargar (cuando se haga la primera persistencia, se creará)
 	save_game.open(SAVE_PATH, File.READ)
-	#while(!save_game.eof_reached()):
-	#	aux.append(parse_json(save_game.get_line()))
 	aux = parse_json(save_game.get_line())
 	save_game.close()
 	partidas = aux.partidas # para que la lista que conservamos en memoria, se actualice completamente.
@@ -145,8 +143,5 @@ func actualizar_puntaje_teatros():
 func persistir_partida():
 	var save_game = File.new()
 	save_game.open(SAVE_PATH, File.WRITE)
-	#for enc in partidas:
-	#	if(enc != null):
-	#		save_game.store_line(to_json(enc))
 	save_game.store_line(to_json({"partidas": partidas})) # el json debe ser un gran objeto '{}'
 	save_game.close()

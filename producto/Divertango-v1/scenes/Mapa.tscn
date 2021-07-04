@@ -76,10 +76,10 @@ __meta__ = {
 }
 
 [node name="botonVolver" type="TextureButton" parent="."]
-margin_left = 852.286
-margin_top = 519.652
-margin_right = 1023.29
-margin_bottom = 595.652
+margin_left = 851.286
+margin_top = 525.652
+margin_right = 1022.29
+margin_bottom = 601.652
 texture_normal = ExtResource( 11 )
 expand = true
 __meta__ = {
@@ -156,7 +156,7 @@ __meta__ = {
 }
 
 [node name="FondoTutorial" type="TextureRect" parent="."]
-modulate = Color( 1, 1, 1, 0.901961 )
+modulate = Color( 1, 1, 1, 0.941176 )
 margin_left = 70.0
 margin_top = 147.0
 margin_right = 960.996

@@ -83,11 +83,10 @@ func _on_Conductor_measure(position):
 			_spawn_notes(spawn_3_beat)
 	elif position == 4:
 		_spawn_notes(spawn_4_beat)
-		$labelNotaIncorrecta.hide() # a lo sumo veremos el label de nota incorrecta durante 4 tiempos [O AGREGUEMOS OTRO TIMER].
+		if $labelNotaIncorrecta.visible == true:
+			$labelNotaIncorrecta.hide() # a lo sumo veremos el label de nota incorrecta durante 4 tiempos [O AGREGUEMOS OTRO TIMER].
 	
-		
-		
-		
+
 func terminar_juego():
 	Global.set_score(score)
 	Global.set_perfect(perfect)
@@ -308,7 +307,7 @@ func increment_score(by):
 func area_exited(area): # la nota paso y no se apreto ningun boton.
 	if(area.get_class() == "Notas_Musicales"):
 		if (area.hitted_note == false):
-			area.destroy(-1) # estaria bueno esto para mostrar el label de 'nota perdida', o agreguemoslo en '_physics_process' de 'Notas_Musicales.gd'.
+			area.destroy(-1) # esta bueno esto para mostrar el label de 'nota perdida'
 			notas_perdidas += 1
 			$perdidas.text = str(notas_perdidas)
 			$SonidoNotaPerdida.play()
