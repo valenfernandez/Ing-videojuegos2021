@@ -53,6 +53,7 @@ func _ready():
 	$musico.texture = Global.textura_musico
 	$animacion_bandoneon.frame = 0
 	$boton_bandoneon.hide()
+	$labelNotaIncorrecta.hide()
 	cargar_nivel()
 	$Conductor.play_with_beat_offset(8)
 	
@@ -82,6 +83,7 @@ func _on_Conductor_measure(position):
 			_spawn_notes(spawn_3_beat)
 	elif position == 4:
 		_spawn_notes(spawn_4_beat)
+		$labelNotaIncorrecta.hide() # a lo sumo veremos el label de nota incorrecta durante 4 tiempos [O AGREGUEMOS OTRO TIMER].
 	
 		
 		
@@ -240,6 +242,7 @@ func check_player_action(button):
 			current_note.destroy()
 		else:
 			increment_score(-10) #apreto un boton cuando no habia nada
+			$labelNotaIncorrecta.show()
 			
 
 func correct_button(button):
@@ -271,6 +274,9 @@ func trap_pressed(button):
 	return traped 
 	
 	
+# Hay que tener cuidado con las colisiones de las notas, porque si hay 2 notas a la vez tocando
+# areas de colision, la primera nota que toquemos bien provocará este _reset, y se pondrá como 'false'
+# que la otra nota colisionó, entonces cuando vayamos a pulsarla no la contará como acertada.
 func _reset():
 	area_blancas = false
 	area_negras = false
@@ -302,6 +308,7 @@ func increment_score(by):
 func area_exited(area): # la nota paso y no se apreto ningun boton.
 	if(area.get_class() == "Notas_Musicales"):
 		if (area.hitted_note == false):
+			area.destroy(-1) # estaria bueno esto para mostrar el label de 'nota perdida', o agreguemoslo en '_physics_process' de 'Notas_Musicales.gd'.
 			notas_perdidas += 1
 			$perdidas.text = str(notas_perdidas)
 			$SonidoNotaPerdida.play()

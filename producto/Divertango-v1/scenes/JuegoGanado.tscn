@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/img/ganado.png" type="Texture" id=1]
 [ext_resource path="res://assets/img/pasar.png" type="Texture" id=2]
 [ext_resource path="res://assets/sounds/click.wav" type="AudioStream" id=3]
 [ext_resource path="res://scripts/JuegoGanado.gd" type="Script" id=4]
 [ext_resource path="res://assets/img/juegoganado.png" type="Texture" id=5]
+[ext_resource path="res://assets/sounds/fireworks.mp3" type="AudioStream" id=6]
 
 [node name="Node2D_Fin" type="Node2D"]
 script = ExtResource( 4 )
@@ -31,12 +32,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 525.892, 112.373 )
+texture = ExtResource( 5 )
+
 [node name="SonidoClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 volume_db = -24.0
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 537.892, 112.373 )
-texture = ExtResource( 5 )
+[node name="SonidoFuegosArtificiales" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -35.0
+autoplay = true
 
 [connection signal="pressed" from="botonAvanzar" to="." method="_on_botonAvanzar_pressed"]

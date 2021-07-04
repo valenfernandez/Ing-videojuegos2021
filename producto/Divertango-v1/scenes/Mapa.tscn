@@ -11,7 +11,7 @@
 [ext_resource path="res://assets/img/teatro_regina_byn.png" type="Texture" id=9]
 [ext_resource path="res://assets/fonts/numerosfont.tres" type="DynamicFont" id=10]
 [ext_resource path="res://assets/img/flecha-des.png" type="Texture" id=11]
-[ext_resource path="res://assets/img/pregunta.png" type="Texture" id=12]
+[ext_resource path="res://assets/img/signo_pregunta.png" type="Texture" id=12]
 [ext_resource path="res://assets/img/fondo_tutorial.png" type="Texture" id=13]
 
 [node name="Node2D_Mapa" type="Node2D"]
@@ -176,7 +176,7 @@ margin_bottom = 416.0
 custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0.721569, 0.670588, 0.670588, 1 )
-text = "Recorre cada teatro para tocar piezas de Astor Piazzolla.
+text = "Sigue la historia de Daniel, y recorre cada teatro para tocar piezas de Astor Piazzolla.
 En cada uno de ellos, te encontrarás con 3 músicos con quienes podrás tocar.
 Llega al teatro Colón, consigue 2000 puntos, y ganarás el juego!
 

@@ -18,13 +18,13 @@
 [ext_resource path="res://assets/img/bandoneon_abierto.png" type="Texture" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 51.9894, 84.8701 )
+extents = Vector2( 51.3444, 84.8701 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 54.741, 84.7291 )
+extents = Vector2( 41.5837, 84.7291 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 66.101, 84.8728 )
+extents = Vector2( 54.2206, 84.8728 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
@@ -62,7 +62,7 @@ texture = ExtResource( 13 )
 [node name="AreaBlanca-Perfect" type="Area2D" parent="linea"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaBlanca-Perfect"]
-position = Vector2( -5.28709, -351.831 )
+position = Vector2( -13.8735, -351.831 )
 shape = SubResource( 1 )
 
 [node name="AreaBlanca-Good" type="Area2D" parent="linea"]
@@ -70,74 +70,74 @@ position = Vector2( -3273.79, 7.07129 )
 scale = Vector2( 1.02959, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaBlanca-Good"]
-position = Vector2( 3280.52, -358.849 )
+position = Vector2( 3258, -359 )
 shape = SubResource( 2 )
 
 [node name="AreaBlanca-OK" type="Area2D" parent="linea"]
 position = Vector2( -13226.1, -106.687 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaBlanca-OK"]
-position = Vector2( 13453.1, -245.02 )
+position = Vector2( 13404.3, -245.02 )
 shape = SubResource( 3 )
 
 [node name="AreaNegra-Perfect" type="Area2D" parent="linea"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaNegra-Perfect"]
-position = Vector2( -5.87646, -120.409 )
+position = Vector2( -13.8729, -120.409 )
 shape = SubResource( 1 )
 
 [node name="AreaNegra-Good" type="Area2D" parent="linea"]
 position = Vector2( -7988.06, 283.341 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaNegra-Good"]
-position = Vector2( 8089.7, -403.755 )
+position = Vector2( 8067.5, -403.755 )
 shape = SubResource( 2 )
 
 [node name="AreaNegra-OK" type="Area2D" parent="linea"]
 position = Vector2( -13226.1, -106.687 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaNegra-OK"]
-position = Vector2( 13449.3, -13.6193 )
+position = Vector2( 13401.7, -13.619 )
 shape = SubResource( 3 )
 
 [node name="AreaCorchea-Perfect" type="Area2D" parent="linea"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaCorchea-Perfect"]
-position = Vector2( -2.93805, 130.635 )
+position = Vector2( -13.8729, 130.635 )
 shape = SubResource( 1 )
 
 [node name="AreaCorchea-Good" type="Area2D" parent="linea"]
 position = Vector2( -10083.3, 137.08 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaCorchea-Good"]
-position = Vector2( 10187.6, -6.59354 )
+position = Vector2( 10162.5, -6.594 )
 shape = SubResource( 2 )
 
 [node name="AreaCorchea-OK" type="Area2D" parent="linea"]
 position = Vector2( -13226.1, -106.687 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaCorchea-OK"]
-position = Vector2( 13451.5, 237.326 )
+position = Vector2( 13401.4, 237.326 )
 shape = SubResource( 3 )
 
 [node name="AreaSemiCorchea-Perfect2" type="Area2D" parent="linea"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaSemiCorchea-Perfect2"]
-position = Vector2( -1.12299, 367.808 )
+position = Vector2( -13.8729, 367.808 )
 shape = SubResource( 1 )
 
 [node name="AreaSemiCorchea-Good2" type="Area2D" parent="linea"]
 position = Vector2( -10083.3, 137.08 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaSemiCorchea-Good2"]
-position = Vector2( 10189.3, 230.643 )
+position = Vector2( 10162.5, 230.643 )
 shape = SubResource( 2 )
 
 [node name="AreaSemiCorchea-OK" type="Area2D" parent="linea"]
 position = Vector2( -13226.1, -106.687 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="linea/AreaSemiCorchea-OK"]
-position = Vector2( 13453.5, 474.616 )
+position = Vector2( 13401.5, 474.616 )
 shape = SubResource( 3 )
 
 [node name="blanca" type="TextureButton" parent="."]
@@ -266,6 +266,19 @@ position = Vector2( 155.405, 243.451 )
 scale = Vector2( 0.13848, 0.138579 )
 texture = ExtResource( 15 )
 flip_h = true
+
+[node name="labelNotaIncorrecta" type="Label" parent="."]
+margin_left = 359.21
+margin_top = 406.586
+margin_right = 612.21
+margin_bottom = 432.586
+custom_fonts/font = ExtResource( 14 )
+custom_colors/font_color = Color( 0.980392, 0.231373, 0.231373, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "NOTA INCORRECTA !"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="area_entered" from="linea/AreaBlanca-Perfect" to="." method="_on_AreaBlancaPerfect_area_entered"]
 [connection signal="area_exited" from="linea/AreaBlanca-Perfect" to="." method="area_exited"]

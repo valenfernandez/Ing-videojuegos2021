@@ -69,16 +69,16 @@ func destroy(score):
 	hit = true  
 	if score == 20: 
 		$Node2D/Label.text = "PERFECTO"
-		$Node2D/Label.modulate = Color("f6d6bd")
+		$Node2D/Label.modulate = Color("#fa8808")
 	elif score == 15:
 		$Node2D/Label.text = "BIEN"
-		$Node2D/Label.modulate = Color("c3a38a")
+		$Node2D/Label.modulate = Color("#ff5733")
 	elif score == 10:
 		$Node2D/Label.text = "OKAY"
-		$Node2D/Label.modulate = Color("997577")
+		$Node2D/Label.modulate = Color("c70039")
 	else:
-		$Node2D/Label.text = "NOTA PERDIDA"
-		$Node2D/Label.modulate = Color("997577") #CAMBIAR
+		$Node2D/Label.text = "NOTA PERDIDA!"
+		$Node2D/Label.modulate = Color("900c3f")
 	
 
 

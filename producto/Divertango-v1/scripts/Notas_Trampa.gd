@@ -60,9 +60,9 @@ func initialize(enabeled_lanes):
 func destroy():
 	$CPUParticles2D.emitting = true
 	$AnimatedSprite.visible = false
-	$Timer.start() 
-	$Node2D/Label.text = "NOTA TRAMPA"
-	$Node2D/Label.modulate = Color("f6d6bd")
+	$Timer.start()
+	$Node2D/Label.text = "NOTA TRAMPA!"
+	$Node2D/Label.modulate = Color("900c3f")
 	
 
 

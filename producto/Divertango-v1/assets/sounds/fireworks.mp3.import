@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/fireworks.mp3-802a3b183c59c8a09a6b7be836b1942f.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/fireworks.mp3"
+dest_files=[ "res://.import/fireworks.mp3-802a3b183c59c8a09a6b7be836b1942f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
