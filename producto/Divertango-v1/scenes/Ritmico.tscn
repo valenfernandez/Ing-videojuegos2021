@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://assets/img/carriles.png" type="Texture" id=1]
 [ext_resource path="res://assets/img/bandoneon_cerrado.png" type="Texture" id=2]
@@ -18,6 +18,9 @@
 [ext_resource path="res://assets/img/daniel.png" type="Texture" id=16]
 [ext_resource path="res://assets/img/bandoneon_abierto.png" type="Texture" id=17]
 [ext_resource path="res://assets/img/fondo_pausa.png" type="Texture" id=18]
+[ext_resource path="res://assets/img/continuar.png" type="Texture" id=19]
+[ext_resource path="res://assets/img/salir.png" type="Texture" id=20]
+[ext_resource path="res://assets/sounds/click.wav" type="AudioStream" id=21]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 51.3444, 84.8701 )
@@ -295,7 +298,6 @@ __meta__ = {
 
 [node name="Node2D_Pausa" type="Node2D" parent="."]
 pause_mode = 2
-visible = false
 z_index = 1
 
 [node name="FondoPausa" type="TextureRect" parent="Node2D_Pausa"]
@@ -310,27 +312,29 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="botonContinuar" type="Button" parent="Node2D_Pausa"]
-margin_left = 361.0
-margin_top = 228.596
-margin_right = 664.0
-margin_bottom = 283.596
-custom_fonts/font = ExtResource( 14 )
-text = "Continuar"
+[node name="botonContinuar" type="TextureButton" parent="Node2D_Pausa"]
+margin_left = 274.098
+margin_top = 195.633
+margin_right = 751.098
+margin_bottom = 292.633
+texture_normal = ExtResource( 19 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="botonSalirPartida" type="Button" parent="Node2D_Pausa"]
-margin_left = 361.0
-margin_top = 313.156
-margin_right = 664.0
-margin_bottom = 368.156
-custom_fonts/font = ExtResource( 14 )
-text = "Salir de la partida"
+[node name="botonSalirPartida" type="TextureButton" parent="Node2D_Pausa"]
+margin_left = 275.596
+margin_top = 347.617
+margin_right = 752.596
+margin_bottom = 444.617
+texture_normal = ExtResource( 20 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="sonidoclick" type="AudioStreamPlayer2D" parent="Node2D_Pausa"]
+stream = ExtResource( 21 )
+volume_db = -24.0
 
 [connection signal="area_entered" from="linea/AreaBlanca-Perfect" to="." method="_on_AreaBlancaPerfect_area_entered"]
 [connection signal="area_exited" from="linea/AreaBlanca-Perfect" to="." method="area_exited"]

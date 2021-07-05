@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/img/inicio_pressed.png" type="Texture" id=6]
 [ext_resource path="res://assets/img/bandoneon.png" type="Texture" id=7]
 [ext_resource path="res://assets/img/reintentar_pressed.png" type="Texture" id=8]
-[ext_resource path="res://assets/img/trampa.png" type="Texture" id=9]
+[ext_resource path="res://assets/img/notastrampa_text.png" type="Texture" id=9]
 [ext_resource path="res://assets/img/inicio.png" type="Texture" id=10]
 [ext_resource path="res://assets/img/SCORE.png" type="Texture" id=11]
 [ext_resource path="res://assets/img/reintentar.png" type="Texture" id=12]
@@ -99,10 +99,10 @@ __meta__ = {
 }
 
 [node name="bandoneon_num" type="Label" parent="."]
-margin_left = 448.0
-margin_top = 232.0
-margin_right = 512.0
-margin_bottom = 256.0
+margin_left = 447.0
+margin_top = 237.0
+margin_right = 511.0
+margin_bottom = 263.0
 rect_pivot_offset = Vector2( -240, 304 )
 custom_fonts/font = ExtResource( 14 )
 valign = 2
@@ -160,8 +160,8 @@ scale = Vector2( 0.359825, 0.329181 )
 texture = ExtResource( 7 )
 
 [node name="trampa" type="Sprite" parent="."]
-position = Vector2( 328, 296 )
-scale = Vector2( 0.329787, 0.329181 )
+position = Vector2( 258.304, 293.568 )
+scale = Vector2( 0.588509, 0.725405 )
 texture = ExtResource( 9 )
 
 [node name="score" type="Sprite" parent="."]

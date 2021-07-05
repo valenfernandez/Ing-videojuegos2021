@@ -441,11 +441,15 @@ func _on_botonPausa_pressed():
 
 
 func _on_botonContinuar_pressed():
+	$Node2D_Pausa/sonidoclick.play()
+	yield($Node2D_Pausa/sonidoclick, "finished")
 	$Node2D_Pausa.visible = false
 	get_tree().paused = false
 
 
 func _on_botonSalirPartida_pressed():
+	$Node2D_Pausa/sonidoclick.play()
+	yield($Node2D_Pausa/sonidoclick, "finished")
 	if get_tree().change_scene("res://scenes/Menu.tscn") != OK:
 		print ("Error")
 	get_tree().paused = false
