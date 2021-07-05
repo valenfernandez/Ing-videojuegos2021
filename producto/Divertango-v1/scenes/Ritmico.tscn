@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/img/carriles.png" type="Texture" id=1]
 [ext_resource path="res://assets/img/bandoneon_cerrado.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scenes/Conductor.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scripts/Ritmico.gd" type="Script" id=8]
 [ext_resource path="res://assets/img/boton_bandoneon.png" type="Texture" id=9]
+[ext_resource path="res://assets/img/boton_pausa.png" type="Texture" id=10]
 [ext_resource path="res://assets/sounds/incorrect_note.wav" type="AudioStream" id=11]
 [ext_resource path="res://assets/img/fondo_ritmico.png" type="Texture" id=12]
 [ext_resource path="res://assets/img/linea.png" type="Texture" id=13]
@@ -16,6 +17,7 @@
 [ext_resource path="res://assets/img/musico1.png" type="Texture" id=15]
 [ext_resource path="res://assets/img/daniel.png" type="Texture" id=16]
 [ext_resource path="res://assets/img/bandoneon_abierto.png" type="Texture" id=17]
+[ext_resource path="res://assets/img/fondo_pausa.png" type="Texture" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 51.3444, 84.8701 )
@@ -280,6 +282,56 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="botonPausa" type="TextureButton" parent="."]
+margin_left = 948.392
+margin_top = 4.0
+margin_right = 997.392
+margin_bottom = 53.0
+texture_normal = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D_Pausa" type="Node2D" parent="."]
+pause_mode = 2
+visible = false
+z_index = 1
+
+[node name="FondoPausa" type="TextureRect" parent="Node2D_Pausa"]
+modulate = Color( 1, 1, 1, 0.94902 )
+margin_left = -48.0
+margin_top = -43.0
+margin_right = 1064.0
+margin_bottom = 637.0
+texture = ExtResource( 18 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="botonContinuar" type="Button" parent="Node2D_Pausa"]
+margin_left = 361.0
+margin_top = 228.596
+margin_right = 664.0
+margin_bottom = 283.596
+custom_fonts/font = ExtResource( 14 )
+text = "Continuar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="botonSalirPartida" type="Button" parent="Node2D_Pausa"]
+margin_left = 361.0
+margin_top = 313.156
+margin_right = 664.0
+margin_bottom = 368.156
+custom_fonts/font = ExtResource( 14 )
+text = "Salir de la partida"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="area_entered" from="linea/AreaBlanca-Perfect" to="." method="_on_AreaBlancaPerfect_area_entered"]
 [connection signal="area_exited" from="linea/AreaBlanca-Perfect" to="." method="area_exited"]
 [connection signal="area_entered" from="linea/AreaBlanca-Good" to="." method="_on_AreaBlancaGood_area_entered"]
@@ -303,3 +355,6 @@ __meta__ = {
 [connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
 [connection signal="measure" from="Conductor" to="." method="_on_Conductor_measure"]
 [connection signal="pressed" from="boton_bandoneon" to="." method="_on_boton_bandoneon_pressed"]
+[connection signal="pressed" from="botonPausa" to="." method="_on_botonPausa_pressed"]
+[connection signal="pressed" from="Node2D_Pausa/botonContinuar" to="." method="_on_botonContinuar_pressed"]
+[connection signal="pressed" from="Node2D_Pausa/botonSalirPartida" to="." method="_on_botonSalirPartida_pressed"]

@@ -54,6 +54,7 @@ func _ready():
 	$animacion_bandoneon.frame = 0
 	$boton_bandoneon.hide()
 	$labelNotaIncorrecta.hide()
+	$Node2D_Pausa.hide()
 	cargar_nivel()
 	$Conductor.play_with_beat_offset(8)
 	
@@ -432,3 +433,19 @@ func _on_boton_bandoneon_pressed():
 	$boton_bandoneon.disabled = true
 	$boton_bandoneon.hide()
 	bandoneon_activo = false
+
+
+func _on_botonPausa_pressed():
+	$Node2D_Pausa.visible = true
+	get_tree().paused = true
+
+
+func _on_botonContinuar_pressed():
+	$Node2D_Pausa.visible = false
+	get_tree().paused = false
+
+
+func _on_botonSalirPartida_pressed():
+	if get_tree().change_scene("res://scenes/Menu.tscn") != OK:
+		print ("Error")
+	get_tree().paused = false
