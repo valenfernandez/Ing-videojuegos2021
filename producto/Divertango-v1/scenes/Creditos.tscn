@@ -16,18 +16,22 @@ margin_top = 20.0
 margin_right = 1217.0
 margin_bottom = 415.0
 custom_fonts/font = ExtResource( 6 )
-text = "Divertango, tras los pasos de Piazzolla.
+text = "DIVERTANGO, TRAS LOS PASOS DE PIAZZOLLA
 
+DISEÑO Y DESARROLLO
+Valentina Fernández - Enzo Nogueira Barria
 
-Videojuego diseñado y desarrollado por Valentina Fernández y Enzo Nogueira Barria.
-
-Proyecto supervisado por el Ing. Franco Kühn, miembro de la cátedra de Ingeniería de Videojuegos.
-
+SUPERVISIÓN
+Ing. Franco Kühn, miembro de la cátedra de Ingeniería de Videojuegos.
 Facultad de Ingeniería - Universidad Nacional de Mar del Plata - 2021
 
+Videojuego homenaje sin fines de lucro.
+
+Se otorgan los créditos correspondientes por el uso del código base del juego rítmico.
+LegionGames (https://github.com/LegionGames/Conductor-Example/)
 
 Se otorgan los créditos correspondientes por el uso de las canciones
- \"Milonga del Ángel\", \"Adiós Nonino\", \"Verano Porteño\" y \"Libertango\".
+\"Milonga del Ángel\", \"Adiós Nonino\", \"Verano Porteño\" y \"Libertango\".
 Astor Piazzolla (Mar del Plata, 11 de marzo de 1921 - Buenos Aires, 4 de julio de 1992)"
 align = 1
 __meta__ = {
@@ -35,10 +39,10 @@ __meta__ = {
 }
 
 [node name="LogoGodot" type="TextureRect" parent="."]
-margin_left = 266.983
-margin_top = 461.307
-margin_right = 458.983
-margin_bottom = 538.307
+margin_left = 284.0
+margin_top = 520.0
+margin_right = 459.0
+margin_bottom = 589.0
 texture = ExtResource( 2 )
 expand = true
 __meta__ = {
@@ -46,10 +50,10 @@ __meta__ = {
 }
 
 [node name="LogoGPL" type="TextureRect" parent="."]
-margin_left = 598.909
-margin_top = 465.962
-margin_right = 743.909
-margin_bottom = 530.962
+margin_left = 597.0
+margin_top = 532.0
+margin_right = 715.0
+margin_bottom = 585.0
 texture = ExtResource( 1 )
 expand = true
 __meta__ = {
@@ -57,10 +61,10 @@ __meta__ = {
 }
 
 [node name="botonVolver" type="TextureButton" parent="."]
-margin_left = 837.0
-margin_top = 490.0
+margin_left = 848.0
+margin_top = 514.0
 margin_right = 1009.0
-margin_bottom = 584.0
+margin_bottom = 602.0
 texture_normal = ExtResource( 3 )
 expand = true
 __meta__ = {

@@ -64,11 +64,12 @@ __meta__ = {
 
 [node name="perfect_num" type="Label" parent="."]
 margin_left = 448.0
-margin_top = 128.0
+margin_top = 127.0
 margin_right = 488.0
-margin_bottom = 150.0
+margin_bottom = 153.0
 rect_pivot_offset = Vector2( -240, 304 )
 custom_fonts/font = ExtResource( 14 )
+align = 2
 valign = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -76,11 +77,12 @@ __meta__ = {
 
 [node name="bien_num" type="Label" parent="."]
 margin_left = 448.0
-margin_top = 160.0
+margin_top = 163.0
 margin_right = 488.0
-margin_bottom = 182.0
+margin_bottom = 189.0
 rect_pivot_offset = Vector2( -240, 304 )
 custom_fonts/font = ExtResource( 14 )
+align = 2
 valign = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -88,23 +90,25 @@ __meta__ = {
 
 [node name="ok_num" type="Label" parent="."]
 margin_left = 448.0
-margin_top = 200.0
-margin_right = 512.0
-margin_bottom = 224.0
+margin_top = 203.0
+margin_right = 488.0
+margin_bottom = 229.0
 rect_pivot_offset = Vector2( -240, 304 )
 custom_fonts/font = ExtResource( 14 )
+align = 2
 valign = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="bandoneon_num" type="Label" parent="."]
-margin_left = 447.0
-margin_top = 237.0
-margin_right = 511.0
-margin_bottom = 263.0
+margin_left = 448.0
+margin_top = 240.0
+margin_right = 488.0
+margin_bottom = 266.0
 rect_pivot_offset = Vector2( -240, 304 )
 custom_fonts/font = ExtResource( 14 )
+align = 2
 valign = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -112,11 +116,12 @@ __meta__ = {
 
 [node name="trampa_num" type="Label" parent="."]
 margin_left = 448.0
-margin_top = 280.0
-margin_right = 512.0
-margin_bottom = 304.0
+margin_top = 283.0
+margin_right = 488.0
+margin_bottom = 309.0
 rect_pivot_offset = Vector2( -240, 304 )
 custom_fonts/font = ExtResource( 14 )
+align = 2
 valign = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -160,7 +165,7 @@ scale = Vector2( 0.359825, 0.329181 )
 texture = ExtResource( 7 )
 
 [node name="trampa" type="Sprite" parent="."]
-position = Vector2( 258.304, 293.568 )
+position = Vector2( 251.304, 293.568 )
 scale = Vector2( 0.588509, 0.725405 )
 texture = ExtResource( 9 )
 

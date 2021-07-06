@@ -16,7 +16,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 4.53451, 25.8347 )
+extents = Vector2( 1.93151, 25.8347 )
 
 [node name="Area2D_Notas" type="Area2D"]
 script = ExtResource( 5 )
@@ -27,7 +27,6 @@ visible = false
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.0545064, 0.053582 )
 frames = SubResource( 1 )
-frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -4.11273, 2.30146 )
@@ -47,7 +46,7 @@ __meta__ = {
 }
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.5
 one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -156,11 +156,12 @@ __meta__ = {
 }
 
 [node name="FondoTutorial" type="TextureRect" parent="."]
+visible = false
 modulate = Color( 1, 1, 1, 0.941176 )
 margin_left = 70.0
-margin_top = 147.0
-margin_right = 960.996
-margin_bottom = 454.0
+margin_top = 138.0
+margin_right = 961.0
+margin_bottom = 464.0
 texture = ExtResource( 13 )
 expand = true
 __meta__ = {
@@ -168,21 +169,24 @@ __meta__ = {
 }
 
 [node name="labelTutorial" type="Label" parent="."]
-margin_left = 100.33
-margin_top = 187.0
-margin_right = 933.33
-margin_bottom = 416.0
+visible = false
+margin_left = 102.33
+margin_top = 158.0
+margin_right = 935.33
+margin_bottom = 445.0
 custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0.721569, 0.670588, 0.670588, 1 )
 text = "Sigue la historia de Daniel, y recorre cada teatro para tocar piezas de Astor Piazzolla.
 En cada uno de ellos, te encontrarás con 3 músicos con quienes podrás tocar.
-Llega al teatro Colón, consigue 2000 puntos, y ganarás el juego!
+Llega al teatro Colón, consigue una victoria con algún músico que te permita
+superar los 2000 puntos, y ganarás el juego!
 
 El teatro Regina se desbloquea al alcanzar los 1000 puntos en el teatro Gran Rex.
 El teatro Colón se desbloquea al alcanzar los 1500 puntos en el teatro Regina.
 
-Los puntos se calculan en base a las máximas puntuaciones obtenidas con cada músico."
+Los puntos de cada teatro se calculan sumando las máximas puntuaciones obtenidas
+con cada músico, por lo cuál podrás repetir algún músico para mejorar tu puntuación."
 __meta__ = {
 "_edit_use_anchors_": false
 }

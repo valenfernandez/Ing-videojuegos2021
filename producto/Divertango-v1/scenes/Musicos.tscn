@@ -137,7 +137,7 @@ margin_bottom = 100.0
 custom_fonts/font = ExtResource( 11 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "DIFICIL"
+text = "DIFÍCIL"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -254,6 +254,7 @@ __meta__ = {
 }
 
 [node name="FondoTutorial" type="TextureRect" parent="."]
+visible = false
 modulate = Color( 1, 1, 1, 0.941176 )
 margin_left = 50.0
 margin_top = 134.0
@@ -266,15 +267,16 @@ __meta__ = {
 }
 
 [node name="labelTutorial" type="Label" parent="."]
-margin_left = 73.33
+visible = false
+margin_left = 73.0
 margin_top = 179.0
-margin_right = 958.33
+margin_right = 958.0
 margin_bottom = 408.0
 custom_fonts/font = ExtResource( 11 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0.721569, 0.670588, 0.670588, 1 )
-text = "Al comenzar la partida, deberás pulsar los botones de las notas musicales
-cuando se acerquen a la línea del final del carril. Por cada nota acertada, ganarás puntos.
+text = "Al comenzar la partida, deberás pulsar los botones de las notas musicales cuando
+se acerquen a la línea del final del carril. Por cada nota acertada, ganarás puntos.
 
 Evita pulsar incorrectamente una nota, o pulsar las notas de color rojo, sino perderás puntos.
 

@@ -27,9 +27,9 @@ __meta__ = {
 
 [node name="HSlider" type="HSlider" parent="."]
 margin_left = 753.815
-margin_top = 537.853
+margin_top = 529.853
 margin_right = 992.815
-margin_bottom = 642.853
+margin_bottom = 634.853
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -47,10 +47,10 @@ __meta__ = {
 }
 
 [node name="botonCreditos" type="TextureButton" parent="."]
-margin_left = 12.7278
-margin_top = 521.318
-margin_right = 144.728
-margin_bottom = 587.318
+margin_left = 25.7278
+margin_top = 527.318
+margin_right = 157.728
+margin_bottom = 593.318
 texture_normal = ExtResource( 9 )
 expand = true
 __meta__ = {
@@ -58,7 +58,7 @@ __meta__ = {
 }
 
 [node name="volumen" type="Sprite" parent="."]
-position = Vector2( 832.999, 555.061 )
+position = Vector2( 832.999, 551.061 )
 scale = Vector2( 0.20918, 0.178864 )
 texture = ExtResource( 5 )
 
