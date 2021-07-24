@@ -24,7 +24,7 @@ var puntos_teatro3 = 0
 
 var textura_musico = null
 
-const SAVE_PATH = "user://saves.sav" # CUANDO QUERAMOS EXPORTAR EL APK, CAMBIAR 'res' POR 'user' para que ande bien
+const SAVE_PATH = "res://saves.sav" # CUANDO QUERAMOS EXPORTAR EL APK, CAMBIAR 'res' POR 'user' para que ande bien
 
 var partidas = []
 
